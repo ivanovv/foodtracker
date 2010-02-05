@@ -1,0 +1,30 @@
+- title "Product"
+
+%p
+  %strong Category:
+  =h @product.category.name.capitalize
+%p
+  %strong Name:
+  =h @product.name
+%p
+  %strong Water:
+  =h @product.water
+%p
+  %strong Protein:
+  =h @product.protein
+%p
+  %strong Fat:
+  =h @product.fat
+%p
+  %strong Carbohydrate:
+  =h @product.carbohydrate
+%p
+  %strong Energy:
+  =h @product.energy
+
+%p
+  = link_to "Edit", edit_product_path(@product)
+  |
+  = link_to "Destroy", @product, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", products_path

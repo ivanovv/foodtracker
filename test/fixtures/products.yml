@@ -1,0 +1,17 @@
+one:
+  category_id: 1
+  name: MyString
+  water: 1.5
+  protein: 1.5
+  fat: 1.5
+  carbohydrate: 1.5
+  energy: 1
+
+two:
+  category_id: 1
+  name: MyString
+  water: 1.5
+  protein: 1.5
+  fat: 1.5
+  carbohydrate: 1.5
+  energy: 1

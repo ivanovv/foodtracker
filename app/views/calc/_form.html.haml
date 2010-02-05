@@ -1,0 +1,8 @@
+- form_for @calc, :url => {:action => "update" } do |f|
+  = f.error_messages
+  %p
+    = f.label :weight
+    %br
+    = f.text_field :weight
+  %p
+    = f.submit "Submit"

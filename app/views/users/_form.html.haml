@@ -1,0 +1,15 @@
+- semantic_form_for @user do |f|
+  -# = f.error_messages
+  %p
+    - f.inputs do 
+      = f.input :username
+      = f.input :email
+      = f.input :born, :start_year => 1910
+      = f.input :height, :hint => "Specify your height in sm"
+      = f.input :female, :as => :radio, :label => "Gender", :collection => [["Male", false], ["Female", true]]
+      = f.input :password, :as => :password
+      = f.input :password_confirmation, :as => :password, :label => "Confirm password", :hint => "Retype your password"
+      
+  %p
+    - f.buttons do
+      = f.commit_button :label => "Submit"

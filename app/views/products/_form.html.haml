@@ -1,0 +1,14 @@
+- semantic_form_for @product do |f|
+  -# = f.error_messages
+  %p
+    - f.inputs do
+      = f.input :category, :include_blank => false
+      = f.input :name
+      = f.input :water
+      = f.input :protein
+      = f.input :fat
+      = f.input :carbohydrate
+      = f.input :energy
+      
+  %p
+    = f.buttons
