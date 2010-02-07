@@ -1,0 +1,11 @@
+%tr
+  -# %td= h category.name
+  %td= h product.name
+  %td= h product.water
+  %td= h product.protein
+  %td= h product.fat
+  %td= h product.carbohydrate
+  %td= h product.energy
+  %td= link_to 'Show', product
+  %td= link_to 'Edit', edit_product_path(product)
+  %td= link_to 'Destroy', product, :confirm => 'Are you sure?', :method => :delete
