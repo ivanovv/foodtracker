@@ -1,0 +1,19 @@
+- title "Calory Lines"
+
+%table
+  %tr
+    %th Days
+    %th Products
+    %th Net weight
+    %th Energy
+  - for calory_line in @calory_lines
+    %tr
+      %td= h calory_line.day.enter_date.to_s
+      %td= h calory_line.product.name
+      %td= h calory_line.net_weight
+      %td= h calory_line.energy
+      %td= link_to 'Show', calory_line
+      %td= link_to 'Edit', edit_calory_line_path(calory_line)
+      %td= link_to 'Destroy', calory_line, :confirm => 'Are you sure?', :method => :delete
+
+%p= link_to "New Calory Line", new_calory_line_path

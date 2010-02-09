@@ -1,0 +1,15 @@
+- title "Day"
+
+%p
+  %strong Enter Date:
+  =h @day.enter_date
+%p
+  %strong Weight:
+  =h @day.weight
+
+%p
+  = link_to "Edit", edit_day_path(@day)
+  |
+  = link_to "Destroy", @day, :confirm => 'Are you sure?', :method => :delete
+  |
+  = link_to "View All", days_path

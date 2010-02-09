@@ -1,13 +1,14 @@
 ActionController::Routing::Routes.draw do |map|
-    
   map.login "login", :controller => "user_sessions", :action => "new"
   map.logout "logout", :controller => "user_sessions", :action => "destroy"
 
-  map.resources :user_sessions
+  map.resources :user_sessions, :only => [:new, :create, :destroy]
   map.resources :users
   map.resources :categories, :has_many => :products
   map.resources :products
   map.resources :calc
+  map.resources :days, :has_many => :calory_lines
+  map.resources :calory_lines
     
 
   # The priority is based upon order of creation: first created -> highest priority.
