@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
     
   validates_presence_of :username, :email, :born, :height
   validates_numericality_of :height
+  
+  has_many :days
     
   def age
     (Date.today - born).to_i / 365
