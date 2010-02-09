@@ -1,8 +1,12 @@
 - title "Products"
 
+- form_tag(products_path, :method => 'get') do
+  %p
+    = text_field_tag :search, params[:search]
+    = submit_tag "Search", :name => nil
+
 %table
   %tr
-    -# %th Category
     %th Name
     %th Water
     %th Protein
@@ -10,7 +14,6 @@
     %th Carbohydrate
     %th Energy
   - for category in @categories  
-    -# - @products.select {|p| p.category_id == category.id}.each do |product|
     %tr
       %td(colspan="6" style="text-align: center")
         %h4= category.name.capitalize
