@@ -35,4 +35,6 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  # Test::Unit::UI::Console::TestRunner.set_test_benchmark_limits(1,5)
+  
 end

@@ -1,9 +1,31 @@
 one:
   username: MyString
   email: MyString
-  password: MyString
+  crypted_password: MyString
+  password_salt: MyString
+  persistence_token: MyString
+  single_access_token: MyString
+  perishable_token: MyString
+  current_login_at: 2010-02-09 04:49:39
+  last_login_at: 2010-02-09 04:49:39
+  login_count: 1
+  failed_login_count: 1
+  height: 1
+  born: 2010-02-09
+  female: false
 
 two:
   username: MyString
   email: MyString
-  password: MyString
+  crypted_password: MyString
+  password_salt: MyString
+  persistence_token: MyString
+  single_access_token: MyString
+  perishable_token: MyString
+  current_login_at: 2010-02-09 04:49:39
+  last_login_at: 2010-02-09 04:49:39
+  login_count: 1
+  failed_login_count: 1
+  height: 1
+  born: 2010-02-09
+  female: false
