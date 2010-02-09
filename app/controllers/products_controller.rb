@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
-    @categories = Category.all    
-    @products = Product.all
+    @categories = Category.search_by_product_name(params[:search])
+    @products = Product.search(params[:search])
   end
   
   def show
@@ -41,5 +41,8 @@ class ProductsController < ApplicationController
     @product.destroy
     flash[:notice] = "Successfully destroyed product."
     redirect_to products_url
+  end
+  
+  def search
   end
 end
