@@ -2,7 +2,7 @@
 
 - form_tag(products_path, :method => 'get') do
   %p
-    = text_field_tag :search, params[:search]
+    = text_field_tag :search, (params[:search]||"").force_encoding('utf-8')
     = submit_tag "Search", :name => nil
 
 %table
@@ -13,11 +13,12 @@
     %th Fat
     %th Carbohydrate
     %th Energy
-  - for category in @categories  
+  - for category in @categories
     %tr
       %td(colspan="6" style="text-align: center")
-        %h4= category.name.capitalize
-    
+        %h4= Unichars.new(category.name).capitalize
+
     = render(:partial => "product", :collection => @products.select {|p| p.category_id == category.id})
 
 %p= link_to "New Product", new_product_path
+
