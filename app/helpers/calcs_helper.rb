@@ -1,3 +1,0 @@
-module CalcsHelper
-end
-
