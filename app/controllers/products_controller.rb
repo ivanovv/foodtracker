@@ -3,15 +3,15 @@ class ProductsController < ApplicationController
     @categories = Category.search_by_product_name(params[:search])
     @products = Product.search(params[:search])
   end
-  
+
   def show
     @product = Product.find(params[:id])
   end
-  
+
   def new
     @product = Product.new
   end
-  
+
   def create
     @product = Product.new(params[:product])
     if @product.save
@@ -21,11 +21,11 @@ class ProductsController < ApplicationController
       render :action => 'new'
     end
   end
-  
+
   def edit
     @product = Product.find(params[:id])
   end
-  
+
   def update
     @product = Product.find(params[:id])
     if @product.update_attributes(params[:product])
@@ -35,14 +35,15 @@ class ProductsController < ApplicationController
       render :action => 'edit'
     end
   end
-  
+
   def destroy
     @product = Product.find(params[:id])
     @product.destroy
     flash[:notice] = "Successfully destroyed product."
     redirect_to products_url
   end
-  
+
   def search
   end
 end
+

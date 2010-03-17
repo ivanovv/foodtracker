@@ -3,16 +3,16 @@ class CalcController < ApplicationController
     @calc = Calc.new
     @calc.weight = session[:weight] if session[:weight]
   end
-  
+
   def edit
     @calc = Calc.new
   end
-    
+
   def new
     @calc = Calc.new
     @calc.weight = session[:weight] if session[:weight]
   end
-  
+
   def update
     @calc = Calc.new
     @calc.weight = params[:calc][:weight]
@@ -26,5 +26,6 @@ class CalcController < ApplicationController
     else
       render :action => "index"
     end
-  end  
+  end
 end
+

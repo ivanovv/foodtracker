@@ -9,7 +9,7 @@ module ApplicationHelper
       block.call
     end
   end
-  
+
   # Block method that creates an area of the view that
   # only renders if the request is coming from an
   # authenticated user.
@@ -20,3 +20,4 @@ module ApplicationHelper
   end
 
 end
+
