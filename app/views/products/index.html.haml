@@ -5,20 +5,14 @@
     = text_field_tag :search, (params[:search]||"").force_encoding('utf-8')
     = submit_tag "Search", :name => nil
 
-%table
-  %tr
-    %th Name
-    %th Water
-    %th Protein
-    %th Fat
-    %th Carbohydrate
-    %th Energy
-  - for category in @categories
-    %tr
-      %td(colspan="6" style="text-align: center")
-        %h4= Unichars.new(category.name).capitalize
+- for category in @categories
+  %h4= Unichars.new(category.name).capitalize
+  = product_table(@products.select {|p| p.category_id == category.id})
 
-    = render(:partial => "product", :collection => @products.select {|p| p.category_id == category.id})
+-#.pagination
+-#  = will_paginate(@products, :container => false)
+-#  &nbsp;&nbsp;
+-#  -#= page_entries_info(@users)
 
 %p= link_to "New Product", new_product_path
 

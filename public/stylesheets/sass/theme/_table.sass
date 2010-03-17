@@ -1,0 +1,64 @@
+=table-data-types-align
+  &.left
+    text-align: left
+
+  &.center
+    text-align: center
+
+  &.right
+    text-align: right
+
+  &.text
+    text-align: left
+
+  &.integer
+    text-align: right
+
+  &.float
+    text-align: right
+
+  &.date
+    text-align: right
+
+  &.time
+    text-align: right
+
+  &.datetime
+    text-align: left
+
+  &.email
+    text-align: left
+
+  &.enum
+    text-align: left
+
+  &.buttons
+    text-align: center
+
+.app-table
+  width: 100%
+
+  thead tr
+
+    th
+      text-align: left
+      white-space: nowrap
+      color: #FFF
+      background-color: #576C82
+      padding: 2px
+
+      +table-data-types-align
+
+  tbody tr
+
+    td
+      border-bottom: 1px solid #AAA
+      padding: 2px
+
+      +table-data-types-align
+
+      a
+        text-decoration: none
+
+    &:hover
+      background-color: #FBFBFB
