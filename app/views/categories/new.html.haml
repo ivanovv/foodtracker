@@ -1,5 +1,6 @@
-- title "New Category"
+- title t('.title')
 
 = render :partial => 'form'
 
-%p= link_to "Back to List", categories_path
+%p= link_to t(:back_to_list), categories_path
+

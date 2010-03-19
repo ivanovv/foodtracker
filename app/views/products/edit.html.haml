@@ -1,4 +1,4 @@
-- title "Edit Product"
+- title t('.title')
 
 = render :partial => 'form'
 
@@ -6,3 +6,4 @@
   = link_to "Show", product_path(@product)
   |
   = link_to "View All", products_path
+

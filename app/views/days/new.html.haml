@@ -1,5 +1,6 @@
-- title "New Day"
+- title t('.title')
 
 = render :partial => 'form'
 
-%p= link_to "Back to List", days_path
+%p= link_to t(:back_to_list), days_path
+

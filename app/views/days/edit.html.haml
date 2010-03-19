@@ -1,8 +1,9 @@
-- title "Edit Day"
+- title t('.title')
 
 = render :partial => 'form'
 
 %p
-  = link_to "Show", day_path(@day)
+  = link_to t(:show), day_path(@day)
   |
-  = link_to "View All", days_path
+  = link_to t(:view_all), days_path
+

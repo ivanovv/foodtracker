@@ -1,8 +1,9 @@
-- title "Edit Category"
+- title t('.title')
 
 = render :partial => 'form'
 
 %p
-  = link_to "Show", category_path(@category)
+  = link_to t(:show), category_path(@category)
   |
-  = link_to "View All", categories_path
+  = link_to t(:view_all), categories_path
+
