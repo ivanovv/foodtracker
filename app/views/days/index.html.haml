@@ -1,15 +1,6 @@
-- title "Days"
+- title t('.title')
 
-%table
-  %tr
-    %th Enter date
-    %th Weight
-  - for day in @days
-    %tr
-      %td= h day.enter_date
-      %td= h day.weight
-      %td= link_to 'Show', day
-      %td= link_to 'Edit', edit_day_path(day)
-      %td= link_to 'Destroy', day, :confirm => 'Are you sure?', :method => :delete
+=day_table
 
-%p= link_to "New Day", new_day_path
+%p= link_to t('.new_day'), new_day_path
+

@@ -1,7 +1,32 @@
 class ProductsController < ApplicationController
   def index
-    @categories = Category.search_by_product_name(params[:search])
-    @products = Product.search(params[:search])
+    if params[:category_id]
+      @categories = []
+      @categories << Category.find(params[:category_id])
+    else
+      @categories = Category.search_by_product_name(params[:search])
+    end
+
+    options = {
+      :order => 'name ASC',
+      :per_page => 10,
+      :page => params[:page]
+    }
+
+    if params[:search]
+      options[:conditions] = "name LIKE '%#{params[:search]}%'"
+    end
+
+    if params[:category_id]
+      if options[:conditions]
+        options[:conditions] << " AND "
+      else
+        options[:conditions] = ""
+      end
+      options[:conditions]  << "category_id = #{params[:category_id].to_i}"
+    end
+
+    @products = Product.paginate(options)
   end
 
   def show

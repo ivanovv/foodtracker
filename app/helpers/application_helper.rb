@@ -19,5 +19,23 @@ module ApplicationHelper
     end
   end
 
+
+  def table_actions(edit_url, delete_url, item)
+    #edit_url = edit_category_path(item)
+    #delete_url = category_path(item)
+
+    parts = []
+    parts << link_to(image_tag("edit.png"), edit_url, :title => t(:edit))
+    parts << "&nbsp;"
+
+    parts << link_to(image_tag("delete.png"), delete_url, :method => "delete",
+                     :title => t(:delete),
+                     :confirm => t(".confirm_for_delete", :name => item.to_s))
+
+    parts.join("\n")
+  end
+
+
+
 end
 

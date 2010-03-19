@@ -39,17 +39,10 @@ module ProductsHelper
   def product_table_actions(item)
     edit_url = edit_product_path(item)
     delete_url = product_path(item)
-    i_ate_this_url = new_calory_line_path(:product_id => item, :day_id =>Date.today)
+    i_ate_this_url = new_day_calory_line_path(:product_id => item, :day_id =>params[:day_id] || Date.today)
 
     parts = []
-    parts << link_to(image_tag("edit.png"), edit_url, :title => t(".edit_hint"))
-    parts << "&nbsp;"
-
-    parts << link_to(image_tag("delete.png"), delete_url, :method => "delete",
-                     :title => t(".delete_hint"),
-                     :confirm => t(".confirm_for_delete", :name => item.name))
-    parts << "&nbsp;"
-
+    parts << table_actions(edit_url, delete_url, item)
     parts << link_to(image_tag("i_ate_this_small.gif"), i_ate_this_url, :title => "I ate this")
 
     parts.join("\n")
