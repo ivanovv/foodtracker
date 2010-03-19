@@ -15,5 +15,10 @@ class Product < ActiveRecord::Base
       find(:all)
     end
   end
+
+  def to_s
+    name
+  end
+
 end
 
