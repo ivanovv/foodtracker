@@ -1,16 +1,10 @@
-- title "New User Session"
+- title t(".title")
 
-- form_for @user_session do |f|
-  = f.error_messages
-  %p
-    = f.label :username
-    %br
-    = f.text_field :username
-  %p
-    = f.label :password
-    %br
-    = f.text_field :password
-  %p
-    = f.submit "Submit"
-
+- semantic_form_for @user_session do |form|
+  -form.inputs do
+    = form.error_messages :header_message => nil, :message => nil, :class => "errors"
+    = form.input :username
+    = form.input :password, :as => :password
+  - form.buttons do
+    = form.commit_button t(".login")
 
