@@ -1,15 +1,30 @@
-- title "Day"
+- title t('.title', :date => @day.enter_date)
 
 %p
-  %strong Enter Date:
-  =h @day.enter_date
-%p
-  %strong Weight:
+  %strong= t('.my_weight')
   =h @day.weight
+  =t(:kg)
 
 %p
-  = link_to "Edit", edit_day_path(@day)
+  %strong= t('.metabolic_norm')
+  =h @day.base_metabolic_rate
+  =t(:cals)
+
+%p
+  %strong=t('.total_calories')
+  =h @day.total_calories
+  =t(:cals)
+
+%p
+  = link_to t(:edit), edit_day_path(@day)
   |
-  = link_to "Destroy", @day, :confirm => 'Are you sure?', :method => :delete
+  = link_to t(:destroy), @day, :confirm => 'Are you sure?', :method => :delete
   |
-  = link_to "View All", days_path
+  = link_to t(:view_all), days_path
+%p
+  - form_tag(products_path, :method => 'get') do
+    %p
+      = text_field_tag :search, (params[:search]||"").force_encoding('utf-8')
+      = hidden_field_tag :day_id, @day
+      = submit_tag t('.search_products'), :name => nil
+
