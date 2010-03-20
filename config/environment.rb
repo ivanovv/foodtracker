@@ -22,6 +22,10 @@ Rails::Initializer.run do |config|
   config.gem 'formtastic'
   #config.gem 'mongo_mapper'
   config.gem 'authlogic'
+  config.gem 'unichars'
+  config.gem 'table_helper'
+  config.gem 'will_paginate'
+  config.gem 'russian'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -42,3 +46,7 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
+
+Haml::Template.options[:encoding] = "utf-8"
+Haml::Template.options[:format] = :html5
+
