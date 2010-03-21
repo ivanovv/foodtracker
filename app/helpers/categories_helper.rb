@@ -3,7 +3,7 @@ module CategoriesHelper
   def category_table
     collection_table(@categories, :class => 'app-table') do |t|
       t.header.hide_when_empty = false
-      t.header.column :name, t('categories.name'), :class => "text"
+      t.header.column :name, t('categories.name')
       t.header.column :actions, ''
 
       t.rows.alternate = :odd
