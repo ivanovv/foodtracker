@@ -14,15 +14,29 @@ class Day < ActiveRecord::Base
   end
 
   def to_param
-    "#{enter_date.year.to_s}-#{enter_date.month.to_s}-#{enter_date.day.to_s}"
+    enter_date.strftime("%Y-%m-%d")
   end
 
   def to_s
-    to_param
+    current = Date.today
+    case
+    when enter_date.year != current.year
+      to_param
+    when enter_date.yday == (current.yday + 1)
+      I18n.t(:tomorrow)
+    when enter_date.yday == current.yday
+      I18n.t(:today)
+    when enter_date.yday == (current.yday - 1)
+      I18n.t(:yesterday)
+    when (current.yday - enter_date.yday).abs < 7
+      enter_date.strftime("%A, %d %b")
+    else
+      enter_date.strftime("%d %b")
+    end
   end
 
   def to_label
-    enter_date.to_param
+    to_s
   end
 
   def base_metabolic_rate
