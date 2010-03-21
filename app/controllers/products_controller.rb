@@ -33,6 +33,13 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def get_energy
+    @product = Product.find(params[:product_id])
+    respond_to do |format|
+      format.js if request.xhr?
+    end
+  end
+
   def new
     @product = Product.new
   end

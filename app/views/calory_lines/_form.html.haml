@@ -10,3 +10,5 @@
     - f.buttons do
       = f.commit_button
 
+= observe_field :calory_line_product_id, :url => { :controller=> :products, :action => "get_energy" }, :with => 'product_id'
+
