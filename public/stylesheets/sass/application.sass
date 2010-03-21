@@ -1,12 +1,17 @@
 !primary_color = #4B7399
+!text_color = #333
+!light_text_color = #EAEAEA
 
+
+@import theme/core/core
 @import layout/formtastic_base
+@import theme/skintastic
 @import theme/table
 @import theme/category
 @import theme/product
-@import theme/skintastic
 @import theme/pagination
 @import theme/flash
+
 
 
 body
@@ -26,7 +31,7 @@ a
   :overflow hidden
 
 #container
-  :width 75%
+  :width 800px
   :margin 0 auto
   :background #fff
   :padding 20px 40px
@@ -50,33 +55,12 @@ a
 .fieldWithErrors
   :display inline
 
-#errorExplanation
-  :width 400px
-  :border 2px solid #CF0000
-  :padding 0
-  :padding-bottom 12px
-  :margin-bottom 20px
-  :background-color #f0f0f0
-  h2
-    :text-align left
-    :padding 5px 5px 5px 15px
-    :margin 0
-    :font
-      :weight bold
-      :size 12px
-    :background-color #c00
-    :color #fff
-  p
-    :color #333
-    :margin-bottom 0
-    :padding 8px
-  ul
-    :margin 2px 24px
-    li
-      :font-size 12px
-      :list-style disc
-
 #user_nav
   :float right
   :font-size 12px
+
+form.formtastic
+  +bold-labels
+  +float-form-left(100%,20%,72%,2%)
+  +float-inputs
 
