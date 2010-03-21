@@ -14,6 +14,11 @@ en:
   view_all: "View All"
   back_to_list: "Back to List"
   search: "Search"
+  search_products: "Search products"
+  today: Today
+  tomorrow: Tomorrow
+  yesterday: Yesterday
+
 
   layouts:
     main_navigation:
@@ -52,6 +57,7 @@ en:
 
     show:
       title: "Food record"
+      add_another_record: "Add another record"
 
   categories:
     name: "Name"
@@ -94,7 +100,7 @@ en:
       my_weight: "My weight"
       metabolic_norm: "My Metabolic Norm"
       total_calories: "Total Calories"
-      search_products: "Search products"
+
 
   products:
     index:
@@ -252,4 +258,11 @@ en:
         energy: "cals"
       day:
         weight: "Enter your weight in kilograms"
+      user:
+        height: "Specify your height in sm"
+        password_confirmation: "Retype your password"
+
+    labels:
+      password_confirmation: "Confirm password"
+      female: "Gender"
 
