@@ -3,10 +3,10 @@
     = f.input :username
     = f.input :email
     = f.input :born, :start_year => 1930
-    = f.input :height, :hint => t(".height_hint")
-    = f.input :female, :as => :radio, :label => t(".gender"), :collection => [[t(".male"), false], [t(".female"), true]]
+    = f.input :height
+    = f.input :female, :as => :radio, :collection => [[t(".male"), false], [t(".female"), true]]
     = f.input :password, :as => :password
-    = f.input :password_confirmation, :as => :password, :label => t(".confirm_pass"), :hint => t(".pass_hint")
+    = f.input :password_confirmation, :as => :password
   - f.buttons :class => "buttons" do
     = f.commit_button
 
