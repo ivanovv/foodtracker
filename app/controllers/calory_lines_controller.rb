@@ -23,7 +23,7 @@ class CaloryLinesController < ApplicationController
 
   def new
     @calory_line = CaloryLine.new
-    @user_days = current_user.days
+    @user_days = current_user.days.all(:order => "enter_date DESC")
     if params[:day_id]
       if @day
         @calory_line.day_id = @day.id
