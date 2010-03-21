@@ -16,11 +16,19 @@
   %strong= t('calory_lines.total_calories') + ":"
   =h @calory_line.total_calories
 
-
 %p
   = link_to t(:edit), edit_day_calory_line_path(@calory_line.day, @calory_line)
   |
   = link_to t(:delete), @calory_line, :confirm => 'Are you sure?', :method => :delete
   |
   = link_to t(:view_all), day_calory_lines_path(@calory_line.day)
+
+
+%p
+  Add another record
+  - form_tag(products_path, :method => 'get') do
+    %p
+      = text_field_tag :search, (params[:search]||"").force_encoding('utf-8')
+      = hidden_field_tag :day_id, @day
+      = submit_tag t(:search_products), :name => nil
 
