@@ -15,13 +15,12 @@ module CaloryLinesHelper
       t.rows.empty_caption = t('.no_calory_lines')
       t.rows.each do |row, item, index|
         row[:id] = "calory_line-#{item.id}"
-        row.day  item.day.enter_date.to_s
+        row.day  item.day.to_s
         row.product item.product.name
         row.net_weight item.net_weight, :class => "float"
         row.energy item.energy, :class => "float"
         row.total_calories item.total_calories, :class => "float"
         delete_url = @day ? day_calory_line_path(@day, item) : calory_line_path(item)
-        logger.debug delete_url
         edit_url = @day ? edit_day_calory_line_path(@day, item) :  edit_calory_line_path(item)
 
         row.actions table_actions(edit_url, delete_url, item), :class => "buttons"
