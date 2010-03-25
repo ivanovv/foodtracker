@@ -8,8 +8,6 @@ class UserSessionsController < ApplicationController
     if @user_session.save
       flash[:notice] = "Successfully logged in."
       day = Day.find_by_date()
-      logger.debug "session = " + session[:return_to].to_s
-      logger.debug "day = " + day.to_s
       redirect_to (session[:return_to] || (day ? root_url : new_day_path))
       session[:return_to] = nil
     else
