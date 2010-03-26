@@ -5,14 +5,12 @@
   =h @calory_line.day.enter_date.to_s
   %strong= t('calory_lines.product') + ":"
   =h @calory_line.product.name
+
 %p
   %strong= t('calory_lines.net_weight') + ":"
   =h @calory_line.net_weight
-%p
   %strong= t('calory_lines.energy') + ":"
   =h @calory_line.energy
-
-%p
   %strong= t('calory_lines.total_calories') + ":"
   =h @calory_line.total_calories
 
