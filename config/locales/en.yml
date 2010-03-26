@@ -61,23 +61,24 @@ en:
 
   categories:
     name: "Name"
+
     index:
       title: "Categories"
 
       no_categories: "There are no categories."
       confirm_for_delete: "Do you want to delete category named '{{name}}'?"
 
-      new:
-        title: "New Category"
+    new:
+      title: "New Category"
 
-      edit:
-        title: "Update Category"
+    edit:
+      title: "Update Category"
 
-      show:
-        title: "Category"
+    show:
+      title: "Category"
 
-      sidebar:
-        new: "New Category..."
+    sidebar:
+      new: "New Category..."
 
   days:
     enter_date: "Enter date"
