@@ -11,9 +11,10 @@ class CaloryLinesController < ApplicationController
         @calory_lines = []
       end
     else
-      @calory_lines = CaloryLine.find(:all, :include => [:day, :product],
-        :conditions => ["days.user_id = :user_id", {:user_id => current_user.id}])
-
+      @calory_lines = CaloryLine.find(:all,
+        :include => [:day, :product],
+        :conditions => ["days.user_id = :user_id", {:user_id => current_user.id}],
+        :order => "days.enter_date DESC")
     end
   end
 
