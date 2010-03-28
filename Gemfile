@@ -6,7 +6,7 @@ gem "authlogic"
 gem "formtastic"
 gem "haml"
 gem "russian"
-gem "unichars"
+#gem "unichars"
 gem "table_helper"
 gem "will_paginate"
 
