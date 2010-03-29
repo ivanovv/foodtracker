@@ -15,8 +15,8 @@ one:
   female: false
 
 two:
-  username: MyString
-  email: MyString
+  username: MyString2
+  email: MyString2
   crypted_password: MyString
   password_salt: MyString
   persistence_token: MyString
@@ -29,3 +29,4 @@ two:
   height: 1
   born: 2010-02-09
   female: false
+
