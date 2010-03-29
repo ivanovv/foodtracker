@@ -181,7 +181,7 @@
       :width auto
       :clear none
     label
-      :display none
+    // :display block
       :width auto
     input
       :display inline
@@ -462,148 +462,6 @@
             :font-weight normal
 
 
-//---------------------------------------------------
-// Original Mixin (deprecated!)
-//
-!form_layout="float"
-// Set the general layout of the form
-// "float" will use two column layout with labels on the left
-// "clear" will have labels above the inputs
-
-//
-!total_width=100%
-// Set width of entire fieldset
-//
-// Set label widths and hint/error left margins
-!label_width=24%
-//
-!input_width=70%
-// Set width of inputs, textareas and selects
-//
-!label_pad=2%
-// Set horizontal padding for labels
-
-//
-!label_float="left"
-// Set alignment of labels
-// "clear" puts labels above inputs
-// "left" floats labels left and aligns text left
-// "right" floats labels left and aligns text right
-
-//
-// Set widths of all inputs, textareas and selects (all aligned)
-// False will preserve auto width
-!full_width_inputs=true
-//
-// Set float direction of form buttons ("right" or "left")
-!button_float="left"
-// Installation ------------------------------------------
-//
-//$ sudo gem install haml
-//$ cd rails app
-//$ haml --rails (or merb/sinatra/etc)
-//
-// Set up master Sass file and include it in your html
-// Save this file as _base.sass and include it in master sass like so:
-//
-// @import base.sass
-//
-// Usage -------------------------------------------------
-//
-// form.formtastic
-//   +formtastic-float
-//
-//  This will provide forms of columns with label floated left
-//  For label on top of inputs you can use
-//
-// form.formtastic
-//   +formtastic-block
-//
-// Customize ---------------------------------------------
-//
-// form.formtastic
-//   +formtastic(410px,100px,300px,12px,"right",true)
-//
-// Note: When using pixel values be sure to pad total width by 10px
-// Still looking for a way to make this cleaner
-//--------------------------------------------------------
-=formtastic(!total_width,!label_width,!input_width,!label_pad,!label_float,!button_float,!full_width_inputs)
-  fieldset
-    :width = !total_width
-  ol li
-    label
-      @if !label_float=="clear"
-        :display block
-        :clear both
-        :float none
-      @else
-        :float left
-        :width = !label_width - !label_pad
-        @if !label_float=="left"
-          :padding-left = !label_pad
-          :text-align left
-        @else
-          :text-align right
-    fieldset
-      legend
-        @if !label_float=="clear"
-          :display block
-          :clear both
-          :float none
-          span.label
-            :display block
-            :clear both
-            :float none
-
-        @else
-          :width = !label_width - !label_pad
-          @if !label_float=="left"
-            :padding-left = !label_pad
-          @else
-            :padding-right = !label_pad
-            :text-align right
-          span.label
-            :position absolute
-            :width = !label_width - !label_pad
-      ol
-        @if !label_float=="clear"
-          :padding 0
-        @else
-          :padding =  0 ( !total_width - (!input_width + !label_width)) 0 !label_width
-    @if !label_float == "clear"
-      &.string input, &.password input, &.numeric input, &.text textarea, select
-        :width = !input_width
-    @else
-      p.inline-hints, p.inline-errors, ul.errors
-        :margin = 0 0 0 !label_width
-      @if !full_width_inputs
-        &.string input, &.password input, &.numeric input, &.text textarea, select
-          :width = !input_width
-      &.boolean label
-        :padding-left = !label_width
-  fieldset
-    &.buttons
-      @if !label_float == "clear"
-        :width = !total_width
-      @else
-        :padding-left = !label_width
-        :width = !input_width
-      @if !button_float == "left"
-        ol
-          li
-            :display inline
-            :width auto
-            :float left
-      @if !button_float == "right"
-        ol
-          :padding-left 0
-          @if !label_float == "clear"
-            :width = !input_width
-          li
-            :float right
-            :width auto
-            @if !label_float != "clear"
-              :padding-left = !label_pad
 //--------------------------------------------------------
 // Formtastic Errors on top (aligned with label)
 //
@@ -622,3 +480,4 @@
     fieldset label
       :margin-top 0
       :padding-bottom 0
+
