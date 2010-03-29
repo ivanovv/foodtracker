@@ -20,9 +20,10 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem 'formtastic'
+  config.gem 'haml'
   #config.gem 'mongo_mapper'
   config.gem 'authlogic'
-  config.gem 'unichars'
+#  config.gem 'unichars'
   config.gem 'table_helper'
   config.gem 'will_paginate'
   config.gem 'russian'
@@ -46,7 +47,4 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
-
-Haml::Template.options[:encoding] = "utf-8"
-Haml::Template.options[:format] = :html5
 

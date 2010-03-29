@@ -1,2 +1,2 @@
-  ActiveSupport::Multibyte.proxy_class = Unichars
+ # ActiveSupport::Multibyte.proxy_class = Unichars
 

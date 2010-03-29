@@ -1,9 +1,10 @@
 class ProductsController < ApplicationController
   def index
 
-    if params[:search]
-      params[:search] = params[:search].force_encoding('utf-8')
-    end
+    #if params[:search]
+      #params[:search] = params[:search].force_encoding('utf-8')
+      #params[:search] = params[:search]
+    #end
 
     options = default_options
 
@@ -58,7 +59,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    params[:product][:name] = params[:product][:name].force_encoding('UTF-8')
+    #params[:product][:name] = params[:product][:name].force_encoding('UTF-8')
 
     @product = Product.new(params[:product])
     if @product.save

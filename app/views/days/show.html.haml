@@ -24,7 +24,8 @@
 %p
   - form_tag(products_path, :method => 'get') do
     %p
-      = text_field_tag :search, (params[:search]||"").force_encoding('utf-8')
+      -#= text_field_tag :search, (params[:search]||"").force_encoding('utf-8')
+      = text_field_tag :search, params[:search]
       = hidden_field_tag :day_id, @day.to_param
       = submit_tag t(:search_products), :name => nil
 
