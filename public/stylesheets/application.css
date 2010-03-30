@@ -1,3 +1,137 @@
+html, body {
+  font: normal 13px/19px "Lucida Grande","Lucida Sans Unicode",Lucida,arial,sans-serif;
+  color: #333333; }
+
+hr, p {
+  margin-bottom: 0.8em; }
+
+ul.square-list {
+  list-style-type: square;
+  margin-left: 1.5em;
+  line-height: 1.2em; }
+
+h1 {
+  font-size: 2.2em;
+  line-height: 1;
+  margin-bottom: .5em; }
+
+h2 {
+  font-size: 2em;
+  line-height: 1;
+  margin-bottom: .535em; }
+
+h3 {
+  font-size: 1.8em;
+  line-height: 1;
+  margin-bottom: .57em; }
+
+h4 {
+  font-size: 1.6em;
+  line-height: 1;
+  margin-bottom: .615em; }
+
+h5 {
+  font-size: 1.4em;
+  line-height: 1;
+  margin-bottom: .67em; }
+
+h6 {
+  font-size: 1.2em;
+  line-height: 1;
+  margin-bottom: .8em; }
+
+h1, h2, h3, h4, h5, h6 {
+  color: #333333; }
+
+a:link, a:visited {
+  color: #3399ff;
+  text-decoration: none; }
+
+a:hover, a:active {
+  color: #cc3333;
+  text-decoration: underline; }
+
+form.formtastic li {
+  padding: 10px 0px; }
+  form.formtastic li li {
+    padding: 0; }
+form.formtastic fieldset {
+  margin-top: 20px; }
+form.formtastic li fieldset {
+  padding: 0; }
+form.formtastic legend, form.formtastic label {
+  color: #333; }
+form.formtastic label, form.formtastic .label {
+  padding-bottom: 5px; }
+  form.formtastic label abbr, form.formtastic .label abbr {
+    color: #f00; }
+form.formtastic label {
+  line-height: 1.4em;
+  font-size: 13px; }
+form.formtastic legend span {
+  font-size: 1.4em;
+  line-height: 1em; }
+  form.formtastic legend span.label {
+    font-size: 1em; }
+form.formtastic select {
+  padding: 3px; }
+form.formtastic input, form.formtastic textarea, form.formtastic select {
+  font-family: inherit;
+  font-size: 14px; }
+form.formtastic textarea, form.formtastic input {
+  border: 1px solid #999;
+  padding: 6px 8px;
+  line-height: 100%; }
+form.formtastic input[type="text"], form.formtastic input[type="password"], form.formtastic textarea, form.formtastic select {
+  background: #FFFFFF url(images/input.gif) repeat-x scroll 0 0;
+  border: 1px solid #E5E3D8;
+  padding: 3px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+form.formtastic input[type="submit"], form.formtastic input[type="button"], form.formtastic input[type="checkbox"] {
+  background: #FFFFFF url(images/input.gif) repeat-x scroll 0 0;
+  border: 1px solid #AAA;
+  padding: 3px; }
+form.formtastic input[type="checkbox"] {
+  width: auto;
+  margin-right: 3px; }
+form.formtastic .numeric input[type="text"] {
+  width: 200px;
+  text-align: right; }
+form.formtastic .date li, form.formtastic .time li, form.formtastic .datetime li {
+  margin: 0 0.3em 0 0; }
+form.formtastic #errorExplanation li {
+  margin-left: 15px; }
+form.formtastic form p, form.formtastic .errors {
+  padding: 3px 0px; }
+form.formtastic .required input, form.formtastic .required textarea, form.formtastic .required select {
+  background-color: #fff; }
+form.formtastic .error input, form.formtastic .error textarea, form.formtastic .error select {
+  background-color: #fcc;
+  border: 1px solid #f66; }
+form.formtastic .optional input, form.formtastic .optional textarea, form.formtastic .optional select {
+  background-color: #fff; }
+form.formtastic .errors {
+  color: #a00; }
+  form.formtastic .errors li {
+    margin-left: 1.2em; }
+form.formtastic p.inline-errors {
+  color: #f00; }
+form.formtastic p.inline-hints {
+  color: #777;
+  padding-top: 4px; }
+form.formtastic .buttons {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 8px; }
+  form.formtastic .buttons li {
+    padding-right: 0.5em; }
+  form.formtastic .buttons li.cancel {
+    padding-top: 1.1em; }
+  form.formtastic .buttons input {
+    border: 1px solid #999; }
+
 .app-table {
   width: 100%; }
   .app-table thead tr th {
@@ -61,6 +195,20 @@
       text-decoration: none; }
   .app-table tbody tr:hover {
     background-color: #FBFBFB; }
+  .app-table tfoot tr td {
+    border-top: 2px solid #AAA;
+    border-bottom: 2px solid #AAA;
+    padding: 2px;
+    font-weight: bold; }
+    .app-table tfoot tr td.name {
+      text-align: left; }
+    .app-table tfoot tr td.value {
+      text-align: right;
+      padding-right: 70px; }
+    .app-table tfoot tr td a {
+      text-decoration: none; }
+  .app-table tfoot tr:hover {
+    background-color: #FBFBFB; }
 
 .app-table.categories th.category-name {
   width: auto; }
@@ -68,688 +216,11 @@
   width: 100px; }
 
 .app-table.products th.product-name {
-  width: 450px; }
+  width: 350px; }
 .app-table.products th.product-actions {
-  width: 200px; }
-
-form.formtastic li label, form.formtastic li legend span.label {
+  width: 150px; }
+.app-table.products td.product-energy {
   font-weight: bold; }
-form.formtastic li li label {
-  font-weight: normal; }
-form.formtastic ul, form.formtastic ol, form.formtastic legend, form.formtastic p {
-  margin: 0;
-  padding: 0; }
-form.formtastic li {
-  margin-left: 0px;
-  margin-right: 0px;
-  padding-left: 0px;
-  padding-right: 0px; }
-form.formtastic fieldset {
-  display: block;
-  *display: inline-block; }
-  form.formtastic fieldset:after {
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-form.formtastic abbr, form.formtastic acronym {
-  border: 0;
-  font-variant: normal;
-  font-weight: normal; }
-form.formtastic ol, form.formtastic ul {
-  list-style: none; }
-form.formtastic label {
-  display: block;
-  *display: inline-block; }
-  form.formtastic label:after {
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-form.formtastic input, form.formtastic textarea {
-  vertical-align: middle; }
-form.formtastic .check_boxes input, form.formtastic .radio input {
-  margin: 0; }
-form.formtastic .check_boxes label, form.formtastic .radio label {
-  cursor: pointer; }
-form.formtastic .hidden {
-  display: none; }
-form.formtastic .date li, form.formtastic .time li, form.formtastic .datetime li {
-  float: left;
-  width: auto;
-  clear: none; }
-form.formtastic .date label, form.formtastic .time label, form.formtastic .datetime label {
-  display: none;
-  width: auto; }
-form.formtastic .date input, form.formtastic .time input, form.formtastic .datetime input {
-  display: inline;
-  margin: 0;
-  padding: 0; }
-form.formtastic .errors {
-  list-style: square; }
-  form.formtastic .errors li {
-    padding: 0;
-    border: none;
-    display: list-item;
-    float: none;
-    clear: both; }
-form.formtastic .inputs {
-  z-index: 99; }
-form.formtastic .buttons li {
-  float: left; }
-form.formtastic li {
-  *display: inline-block;
-  display: block; }
-  form.formtastic li:after {
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-  form.formtastic li fieldset {
-    border: none;
-    position: relative;
-    margin-top: 0px; }
-  form.formtastic li legend {
-    display: block;
-    margin-bottom: 0; }
-  form.formtastic li .label {
-    display: block;
-    clear: both;
-    background: transparent; }
-  form.formtastic li ol {
-    float: left;
-    margin: 0; }
-    form.formtastic li ol li {
-      padding: 0;
-      border: 0;
-      display: inline; }
-form.formtastic fieldset {
-  width: 100%; }
-form.formtastic label {
-  float: left;
-  width: 18%;
-  text-align: right;
-  padding-right: 2%; }
-form.formtastic li ol {
-  padding: 0 8% 0 20%; }
-form.formtastic li fieldset legend, form.formtastic li fieldset legend .label {
-  display: block; }
-form.formtastic li fieldset legend {
-  width: 18%;
-  text-align: right;
-  display: inline;
-  float: left;
-  clear: none;
-  padding-right: 2%;
-  width: 98%; }
-form.formtastic li fieldset .label {
-  position: absolute;
-  width: 18%;
-  top: 0px;
-  left: 0; }
-form.formtastic li fieldset label {
-  padding-left: 0; }
-form.formtastic li fieldset label, form.formtastic li fieldset input {
-  width: auto;
-  display: inline;
-  clear: none;
-  text-align: left; }
-form.formtastic li fieldset select {
-  padding: 0;
-  clear: both;
-  display: block; }
-form.formtastic .inline-hints, form.formtastic .inline-errors, form.formtastic .errors {
-  margin: 0 0 0 20%; }
-form.formtastic input, form.formtastic textarea {
-  width: 72%; }
-form.formtastic select {
-  width: auto; }
-form.formtastic .checkbox li, form.formtastic .radio li {
-  display: block;
-  clear: both; }
-form.formtastic .checkbox input, form.formtastic .radio input {
-  border: none; }
-form.formtastic .buttons {
-  padding-left: 20%;
-  width: 80%; }
-  form.formtastic .buttons input {
-    width: auto; }
-  form.formtastic .buttons li {
-    width: auto;
-    float: left;
-    display: inline; }
-form.formtastic #errorExplanation {
-  margin-left: 20%;
-  width: 72%; }
-form.formtastic.small-form ul, form.formtastic.small-form ol, form.formtastic.small-form legend, form.formtastic.small-form p {
-  margin: 0;
-  padding: 0; }
-form.formtastic.small-form li {
-  margin-left: 0px;
-  margin-right: 0px;
-  padding-left: 0px;
-  padding-right: 0px; }
-form.formtastic.small-form fieldset {
-  display: block;
-  *display: inline-block; }
-  form.formtastic.small-form fieldset:after {
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-form.formtastic.small-form abbr, form.formtastic.small-form acronym {
-  border: 0;
-  font-variant: normal;
-  font-weight: normal; }
-form.formtastic.small-form ol, form.formtastic.small-form ul {
-  list-style: none; }
-form.formtastic.small-form label {
-  display: block;
-  *display: inline-block; }
-  form.formtastic.small-form label:after {
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-form.formtastic.small-form input, form.formtastic.small-form textarea {
-  vertical-align: middle; }
-form.formtastic.small-form .check_boxes input, form.formtastic.small-form .radio input {
-  margin: 0; }
-form.formtastic.small-form .check_boxes label, form.formtastic.small-form .radio label {
-  cursor: pointer; }
-form.formtastic.small-form .hidden {
-  display: none; }
-form.formtastic.small-form .date li, form.formtastic.small-form .time li, form.formtastic.small-form .datetime li {
-  float: left;
-  width: auto;
-  clear: none; }
-form.formtastic.small-form .date label, form.formtastic.small-form .time label, form.formtastic.small-form .datetime label {
-  display: none;
-  width: auto; }
-form.formtastic.small-form .date input, form.formtastic.small-form .time input, form.formtastic.small-form .datetime input {
-  display: inline;
-  margin: 0;
-  padding: 0; }
-form.formtastic.small-form .errors {
-  list-style: square; }
-  form.formtastic.small-form .errors li {
-    padding: 0;
-    border: none;
-    display: list-item;
-    float: none;
-    clear: both; }
-form.formtastic.small-form .inputs {
-  z-index: 99; }
-form.formtastic.small-form .buttons li {
-  float: left; }
-form.formtastic.small-form li {
-  *display: inline-block;
-  display: block; }
-  form.formtastic.small-form li:after {
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-  form.formtastic.small-form li fieldset {
-    border: none;
-    position: relative;
-    margin-top: 0px; }
-  form.formtastic.small-form li legend {
-    display: block;
-    margin-bottom: 0; }
-  form.formtastic.small-form li .label {
-    display: block;
-    clear: both;
-    background: transparent; }
-  form.formtastic.small-form li ol {
-    float: left;
-    margin: 0; }
-    form.formtastic.small-form li ol li {
-      padding: 0;
-      border: 0;
-      display: inline; }
-form.formtastic.small-form fieldset {
-  width: 400px; }
-form.formtastic.small-form label {
-  float: left;
-  width: 96px;
-  text-align: right;
-  padding-right: 14px; }
-form.formtastic.small-form li ol {
-  padding: 0 20px 0 110px; }
-form.formtastic.small-form li fieldset legend, form.formtastic.small-form li fieldset legend .label {
-  display: block; }
-form.formtastic.small-form li fieldset legend {
-  width: 96px;
-  text-align: right;
-  display: inline;
-  float: left;
-  clear: none;
-  padding-right: 14px;
-  width: 386px; }
-form.formtastic.small-form li fieldset .label {
-  position: absolute;
-  width: 96px;
-  top: 0px;
-  left: 0; }
-form.formtastic.small-form li fieldset label {
-  padding-left: 0; }
-form.formtastic.small-form li fieldset label, form.formtastic.small-form li fieldset input {
-  width: auto;
-  display: inline;
-  clear: none;
-  text-align: left; }
-form.formtastic.small-form li fieldset select {
-  padding: 0;
-  clear: both;
-  display: block; }
-form.formtastic.small-form .inline-hints, form.formtastic.small-form .inline-errors, form.formtastic.small-form .errors {
-  margin: 0 0 0 110px; }
-form.formtastic.small-form input, form.formtastic.small-form textarea {
-  width: 270px; }
-form.formtastic.small-form select {
-  width: auto; }
-form.formtastic.small-form .checkbox li, form.formtastic.small-form .radio li {
-  display: block;
-  clear: both; }
-form.formtastic.small-form .checkbox input, form.formtastic.small-form .radio input {
-  border: none; }
-form.formtastic.small-form .buttons {
-  padding-left: 110px;
-  width: 290px; }
-  form.formtastic.small-form .buttons input {
-    width: auto; }
-  form.formtastic.small-form .buttons li {
-    width: auto;
-    float: left;
-    display: inline; }
-form.formtastic.small-form #errorExplanation {
-  margin-left: 110px;
-  width: 270px; }
-form.formtastic.medium-form ul, form.formtastic.medium-form ol, form.formtastic.medium-form legend, form.formtastic.medium-form p {
-  margin: 0;
-  padding: 0; }
-form.formtastic.medium-form li {
-  margin-left: 0px;
-  margin-right: 0px;
-  padding-left: 0px;
-  padding-right: 0px; }
-form.formtastic.medium-form fieldset {
-  display: block;
-  *display: inline-block; }
-  form.formtastic.medium-form fieldset:after {
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-form.formtastic.medium-form abbr, form.formtastic.medium-form acronym {
-  border: 0;
-  font-variant: normal;
-  font-weight: normal; }
-form.formtastic.medium-form ol, form.formtastic.medium-form ul {
-  list-style: none; }
-form.formtastic.medium-form label {
-  display: block;
-  *display: inline-block; }
-  form.formtastic.medium-form label:after {
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-form.formtastic.medium-form input, form.formtastic.medium-form textarea {
-  vertical-align: middle; }
-form.formtastic.medium-form .check_boxes input, form.formtastic.medium-form .radio input {
-  margin: 0; }
-form.formtastic.medium-form .check_boxes label, form.formtastic.medium-form .radio label {
-  cursor: pointer; }
-form.formtastic.medium-form .hidden {
-  display: none; }
-form.formtastic.medium-form .date li, form.formtastic.medium-form .time li, form.formtastic.medium-form .datetime li {
-  float: left;
-  width: auto;
-  clear: none; }
-form.formtastic.medium-form .date label, form.formtastic.medium-form .time label, form.formtastic.medium-form .datetime label {
-  display: none;
-  width: auto; }
-form.formtastic.medium-form .date input, form.formtastic.medium-form .time input, form.formtastic.medium-form .datetime input {
-  display: inline;
-  margin: 0;
-  padding: 0; }
-form.formtastic.medium-form .errors {
-  list-style: square; }
-  form.formtastic.medium-form .errors li {
-    padding: 0;
-    border: none;
-    display: list-item;
-    float: none;
-    clear: both; }
-form.formtastic.medium-form .inputs {
-  z-index: 99; }
-form.formtastic.medium-form .buttons li {
-  float: left; }
-form.formtastic.medium-form li {
-  *display: inline-block;
-  display: block; }
-  form.formtastic.medium-form li:after {
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-  form.formtastic.medium-form li fieldset {
-    border: none;
-    position: relative;
-    margin-top: 0px; }
-  form.formtastic.medium-form li legend {
-    display: block;
-    margin-bottom: 0; }
-  form.formtastic.medium-form li .label {
-    display: block;
-    clear: both;
-    background: transparent; }
-  form.formtastic.medium-form li ol {
-    float: left;
-    margin: 0; }
-    form.formtastic.medium-form li ol li {
-      padding: 0;
-      border: 0;
-      display: inline; }
-form.formtastic.medium-form fieldset {
-  width: 500px; }
-form.formtastic.medium-form label {
-  float: left;
-  width: 156px;
-  text-align: right;
-  padding-right: 14px; }
-form.formtastic.medium-form li ol {
-  padding: 0 30px 0 170px; }
-form.formtastic.medium-form li fieldset legend, form.formtastic.medium-form li fieldset legend .label {
-  display: block; }
-form.formtastic.medium-form li fieldset legend {
-  width: 156px;
-  text-align: right;
-  display: inline;
-  float: left;
-  clear: none;
-  padding-right: 14px;
-  width: 486px; }
-form.formtastic.medium-form li fieldset .label {
-  position: absolute;
-  width: 156px;
-  top: 0px;
-  left: 0; }
-form.formtastic.medium-form li fieldset label {
-  padding-left: 0; }
-form.formtastic.medium-form li fieldset label, form.formtastic.medium-form li fieldset input {
-  width: auto;
-  display: inline;
-  clear: none;
-  text-align: left; }
-form.formtastic.medium-form li fieldset select {
-  padding: 0;
-  clear: both;
-  display: block; }
-form.formtastic.medium-form .inline-hints, form.formtastic.medium-form .inline-errors, form.formtastic.medium-form .errors {
-  margin: 0 0 0 170px; }
-form.formtastic.medium-form input, form.formtastic.medium-form textarea {
-  width: 300px; }
-form.formtastic.medium-form select {
-  width: auto; }
-form.formtastic.medium-form .checkbox li, form.formtastic.medium-form .radio li {
-  display: block;
-  clear: both; }
-form.formtastic.medium-form .checkbox input, form.formtastic.medium-form .radio input {
-  border: none; }
-form.formtastic.medium-form .buttons {
-  padding-left: 170px;
-  width: 330px; }
-  form.formtastic.medium-form .buttons input {
-    width: auto; }
-  form.formtastic.medium-form .buttons li {
-    width: auto;
-    float: left;
-    display: inline; }
-form.formtastic.medium-form #errorExplanation {
-  margin-left: 170px;
-  width: 300px; }
-form.formtastic.large-form ul, form.formtastic.large-form ol, form.formtastic.large-form legend, form.formtastic.large-form p {
-  margin: 0;
-  padding: 0; }
-form.formtastic.large-form li {
-  margin-left: 0px;
-  margin-right: 0px;
-  padding-left: 0px;
-  padding-right: 0px; }
-form.formtastic.large-form fieldset {
-  display: block;
-  *display: inline-block; }
-  form.formtastic.large-form fieldset:after {
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-form.formtastic.large-form abbr, form.formtastic.large-form acronym {
-  border: 0;
-  font-variant: normal;
-  font-weight: normal; }
-form.formtastic.large-form ol, form.formtastic.large-form ul {
-  list-style: none; }
-form.formtastic.large-form label {
-  display: block;
-  *display: inline-block; }
-  form.formtastic.large-form label:after {
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-form.formtastic.large-form input, form.formtastic.large-form textarea {
-  vertical-align: middle; }
-form.formtastic.large-form .check_boxes input, form.formtastic.large-form .radio input {
-  margin: 0; }
-form.formtastic.large-form .check_boxes label, form.formtastic.large-form .radio label {
-  cursor: pointer; }
-form.formtastic.large-form .hidden {
-  display: none; }
-form.formtastic.large-form .date li, form.formtastic.large-form .time li, form.formtastic.large-form .datetime li {
-  float: left;
-  width: auto;
-  clear: none; }
-form.formtastic.large-form .date label, form.formtastic.large-form .time label, form.formtastic.large-form .datetime label {
-  display: none;
-  width: auto; }
-form.formtastic.large-form .date input, form.formtastic.large-form .time input, form.formtastic.large-form .datetime input {
-  display: inline;
-  margin: 0;
-  padding: 0; }
-form.formtastic.large-form .errors {
-  list-style: square; }
-  form.formtastic.large-form .errors li {
-    padding: 0;
-    border: none;
-    display: list-item;
-    float: none;
-    clear: both; }
-form.formtastic.large-form .inputs {
-  z-index: 99; }
-form.formtastic.large-form .buttons li {
-  float: left; }
-form.formtastic.large-form li {
-  *display: inline-block;
-  display: block; }
-  form.formtastic.large-form li:after {
-    content: " ";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-  form.formtastic.large-form li fieldset {
-    border: none;
-    position: relative;
-    margin-top: 0px; }
-  form.formtastic.large-form li legend {
-    display: block;
-    margin-bottom: 0; }
-  form.formtastic.large-form li .label {
-    display: block;
-    clear: both;
-    background: transparent; }
-  form.formtastic.large-form li ol {
-    float: left;
-    margin: 0; }
-    form.formtastic.large-form li ol li {
-      padding: 0;
-      border: 0;
-      display: inline; }
-form.formtastic.large-form fieldset {
-  width: 600px; }
-form.formtastic.large-form label {
-  float: left;
-  width: 186px;
-  text-align: right;
-  padding-right: 14px; }
-form.formtastic.large-form li ol {
-  padding: 0 20px 0 200px; }
-form.formtastic.large-form li fieldset legend, form.formtastic.large-form li fieldset legend .label {
-  display: block; }
-form.formtastic.large-form li fieldset legend {
-  width: 186px;
-  text-align: right;
-  display: inline;
-  float: left;
-  clear: none;
-  padding-right: 14px;
-  width: 586px; }
-form.formtastic.large-form li fieldset .label {
-  position: absolute;
-  width: 186px;
-  top: 0px;
-  left: 0; }
-form.formtastic.large-form li fieldset label {
-  padding-left: 0; }
-form.formtastic.large-form li fieldset label, form.formtastic.large-form li fieldset input {
-  width: auto;
-  display: inline;
-  clear: none;
-  text-align: left; }
-form.formtastic.large-form li fieldset select {
-  padding: 0;
-  clear: both;
-  display: block; }
-form.formtastic.large-form .inline-hints, form.formtastic.large-form .inline-errors, form.formtastic.large-form .errors {
-  margin: 0 0 0 200px; }
-form.formtastic.large-form input, form.formtastic.large-form textarea {
-  width: 380px; }
-form.formtastic.large-form select {
-  width: auto; }
-form.formtastic.large-form .checkbox li, form.formtastic.large-form .radio li {
-  display: block;
-  clear: both; }
-form.formtastic.large-form .checkbox input, form.formtastic.large-form .radio input {
-  border: none; }
-form.formtastic.large-form .buttons {
-  padding-left: 200px;
-  width: 400px; }
-  form.formtastic.large-form .buttons input {
-    width: auto; }
-  form.formtastic.large-form .buttons li {
-    width: auto;
-    float: left;
-    display: inline; }
-form.formtastic.large-form #errorExplanation {
-  margin-left: 200px;
-  width: 380px; }
-form.formtastic li {
-  padding: 10px 0px; }
-  form.formtastic li li {
-    padding: 0; }
-form.formtastic fieldset {
-  margin-top: 20px; }
-form.formtastic li fieldset {
-  padding: 0; }
-form.formtastic legend, form.formtastic label {
-  color: #333; }
-form.formtastic label, form.formtastic .label {
-  padding-bottom: 5px; }
-  form.formtastic label abbr, form.formtastic .label abbr {
-    color: #f00;
-    font-weight: bold; }
-    form.formtastic label abbr:before, form.formtastic .label abbr:before {
-      content: " "; }
-form.formtastic label {
-  line-height: 1.4em;
-  font-size: 13px; }
-form.formtastic legend span {
-  font-size: 1.4em;
-  line-height: 1em; }
-  form.formtastic legend span.label {
-    font-size: 1em; }
-form.formtastic select {
-  padding: 3px; }
-form.formtastic input, form.formtastic textarea, form.formtastic select {
-  font-family: inherit;
-  font-size: 14px; }
-form.formtastic textarea, form.formtastic input {
-  border: 1px solid #999;
-  padding: 6px 8px;
-  line-height: 100%; }
-form.formtastic input[type="text"], form.formtastic input[type="password"], form.formtastic textarea, form.formtastic select {
-  background: #FFFFFF url(images/input.gif) repeat-x scroll 0 0;
-  border: 1px solid #E5E3D8;
-  padding: 3px;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-form.formtastic input[type="submit"], form.formtastic input[type="button"], form.formtastic input[type="checkbox"] {
-  background: #FFFFFF url(images/input.gif) repeat-x scroll 0 0;
-  border: 1px solid #AAA;
-  padding: 3px; }
-form.formtastic input[type="checkbox"] {
-  width: auto;
-  margin-right: 3px; }
-form.formtastic .numeric input[type="text"] {
-  width: 200px;
-  text-align: right; }
-form.formtastic .date li, form.formtastic .time li, form.formtastic .datetime li {
-  margin: 0 0.3em 0 0; }
-form.formtastic #errorExplanation li {
-  margin-left: 15px; }
-form.formtastic form p, form.formtastic .errors {
-  padding: 3px 0px; }
-form.formtastic .required input, form.formtastic .required textarea, form.formtastic .required select {
-  background-color: #fff; }
-form.formtastic .error input, form.formtastic .error textarea, form.formtastic .error select {
-  border: 1px solid #f66; }
-form.formtastic .optional input, form.formtastic .optional textarea, form.formtastic .optional select {
-  background-color: #fff; }
-form.formtastic .errors {
-  color: #a00; }
-  form.formtastic .errors li {
-    margin-left: 1.2em; }
-form.formtastic p.inline-errors {
-  color: #f00; }
-form.formtastic p.inline-hints {
-  color: #777;
-  padding-top: 4px; }
-form.formtastic .buttons {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  margin-top: 8px; }
-  form.formtastic .buttons li {
-    padding-right: 0.5em; }
-  form.formtastic .buttons li.cancel {
-    padding-top: 1.1em; }
-  form.formtastic .buttons input {
-    border: 1px solid #999; }
 
 .pagination {
   text-align: center;
@@ -816,7 +287,7 @@ a {
   overflow: hidden; }
 
 #container {
-  width: 75%;
+  width: 800px;
   margin: 0 auto;
   background: #fff;
   padding: 20px 40px;
@@ -840,31 +311,175 @@ a {
 .fieldWithErrors {
   display: inline; }
 
-#errorExplanation {
-  width: 400px;
-  border: 2px solid #CF0000;
-  padding: 0;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0; }
-  #errorExplanation h2 {
-    text-align: left;
-    padding: 5px 5px 5px 15px;
-    margin: 0;
-    font-weight: bold;
-    font-size: 12px;
-    background-color: #c00;
-    color: #fff; }
-  #errorExplanation p {
-    color: #333;
-    margin-bottom: 0;
-    padding: 8px; }
-  #errorExplanation ul {
-    margin: 2px 24px; }
-    #errorExplanation ul li {
-      font-size: 12px;
-      list-style: disc; }
-
 #user_nav {
   float: right;
   font-size: 12px; }
+
+form.formtastic li label, form.formtastic li legend span.label {
+  font-weight: bold; }
+form.formtastic li li label {
+  font-weight: normal; }
+form.formtastic ul, form.formtastic ol, form.formtastic legend, form.formtastic p {
+  margin: 0;
+  padding: 0; }
+form.formtastic li {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 0px;
+  padding-right: 0px; }
+form.formtastic fieldset {
+  display: block;
+  *display: inline-block; }
+  form.formtastic fieldset:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+form.formtastic abbr, form.formtastic acronym {
+  border: 0;
+  font-variant: normal;
+  font-weight: normal; }
+form.formtastic ol, form.formtastic ul {
+  list-style: none; }
+form.formtastic label {
+  display: block;
+  *display: inline-block; }
+  form.formtastic label:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+form.formtastic input, form.formtastic textarea {
+  vertical-align: middle; }
+form.formtastic .check_boxes input, form.formtastic .radio input {
+  margin: 0; }
+form.formtastic .check_boxes label, form.formtastic .radio label {
+  cursor: pointer; }
+form.formtastic .hidden {
+  display: none; }
+form.formtastic .date li, form.formtastic .time li, form.formtastic .datetime li {
+  float: left;
+  width: auto;
+  clear: none; }
+form.formtastic .date input, form.formtastic .time input, form.formtastic .datetime input {
+  display: inline;
+  margin: 0;
+  padding: 0; }
+form.formtastic .errors {
+  list-style: square; }
+  form.formtastic .errors li {
+    padding: 0;
+    border: none;
+    display: list-item;
+    float: none;
+    clear: both; }
+form.formtastic .inputs {
+  z-index: 99; }
+form.formtastic .buttons li {
+  float: left; }
+form.formtastic li {
+  *display: inline-block;
+  display: block; }
+  form.formtastic li:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  form.formtastic li fieldset {
+    border: none;
+    position: relative;
+    margin-top: 0px; }
+  form.formtastic li legend {
+    display: block;
+    margin-bottom: 0; }
+  form.formtastic li .label {
+    display: block;
+    clear: both;
+    background: transparent; }
+  form.formtastic li ol {
+    float: left;
+    margin: 0; }
+    form.formtastic li ol li {
+      padding: 0;
+      border: 0;
+      display: inline; }
+form.formtastic fieldset {
+  width: 100%; }
+form.formtastic label {
+  float: left;
+  width: 18%;
+  text-align: left;
+  padding-left: 2%; }
+form.formtastic li ol {
+  padding: 0 8% 0 20%; }
+form.formtastic li fieldset legend, form.formtastic li fieldset legend .label {
+  display: block; }
+form.formtastic li fieldset legend {
+  width: 18%;
+  text-align: left;
+  display: inline;
+  float: left;
+  clear: none;
+  padding-left: 2%;
+  width: 98%; }
+form.formtastic li fieldset .label {
+  position: absolute;
+  width: 18%;
+  top: 0px;
+  left: 2%; }
+form.formtastic li fieldset label {
+  padding-left: 0; }
+form.formtastic li fieldset label, form.formtastic li fieldset input {
+  width: auto;
+  display: inline;
+  clear: none;
+  text-align: left; }
+form.formtastic li fieldset select {
+  padding: 0;
+  clear: both;
+  display: block; }
+form.formtastic .inline-hints, form.formtastic .inline-errors, form.formtastic .errors {
+  margin: 0 0 0 20%; }
+form.formtastic input, form.formtastic textarea {
+  width: 72%; }
+form.formtastic select {
+  width: auto; }
+form.formtastic .checkbox li, form.formtastic .radio li {
+  display: block;
+  clear: both; }
+form.formtastic .checkbox input, form.formtastic .radio input {
+  border: none; }
+form.formtastic .buttons {
+  padding-left: 20%;
+  width: 80%; }
+  form.formtastic .buttons input {
+    width: auto; }
+  form.formtastic .buttons li {
+    width: auto;
+    float: left;
+    display: inline; }
+form.formtastic #errorExplanation {
+  margin-left: 20%;
+  width: 72%; }
+form.formtastic .radio ol, form.formtastic .check_boxes ol {
+  display: inline;
+  float: left;
+  clear: none; }
+form.formtastic .radio li, form.formtastic .check_boxes li {
+  width: auto;
+  display: inline;
+  float: left;
+  clear: none; }
+form.formtastic .radio input, form.formtastic .check_boxes input {
+  float: none;
+  display: inline; }
+form.formtastic .radio label, form.formtastic .check_boxes label {
+  display: block;
+  clear: none;
+  width: auto;
+  padding-left: 0;
+  line-height: 150%;
+  margin-right: 10px; }
