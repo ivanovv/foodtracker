@@ -2,6 +2,8 @@
 !text_color = #333
 !light_text_color = #EAEAEA
 
+!footer_background_color = #DDDDDD
+!footer_height = 50px
 
 @import theme/core/core
 @import layout/formtastic_base
@@ -11,7 +13,6 @@
 @import theme/product
 @import theme/pagination
 @import theme/flash
-
 
 
 body
@@ -30,13 +31,21 @@ a
   :height 0
   :overflow hidden
 
-#container
+#app-container
+  :width 881px
+  :margin-top 40px
+  :margin 0 auto
+  :background #fff
+  :padding 0
+  :margin-top 40px
+  :border solid 1px #ccc
+
+#content-container
   :width 800px
   :margin 0 auto
   :background #fff
-  :padding 20px 40px
-  :border solid 1px black
-  :margin-top 20px
+  :padding 0px 40px 20px 40px
+  :margin-top 10px
 
 #flash_notice,
 #flash_error
@@ -63,4 +72,45 @@ form.formtastic
   +bold-labels
   +float-form-left(100%,20%,72%,2%)
   +float-inputs
+
+#nav
+  :width 100%
+  :float left
+  :margin 0
+  :padding 0
+  :list-style none
+  //:background-color #f2f2f2
+  :background-color  #fff
+  :border-bottom 1px solid #ccc
+  //:border-top 1px solid #ccc
+
+  li.right
+    :float right
+  li
+    :float left
+    a
+      :display block
+      :padding 8px 15px
+      :text-decoration none
+      :font-weight bold
+      :color #069
+      :border-right 1px solid #ccc
+
+#nav li a:hover
+  :color #c00
+  :background-color #fff
+
+
+.app-footer
+  :position relative
+  :bottom 0
+  :height = !footer_height
+  :width 100%
+  :background-color = !footer_background_color
+  :border-top 1px solid #BBB
+
+  p
+    :text-align right
+    :margin 15px 0
+    :padding 0 10px
 

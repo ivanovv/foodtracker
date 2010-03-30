@@ -2,6 +2,9 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
+
+  TITLE = I18n.t(:application_title)
+
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
@@ -12,7 +15,7 @@ class ApplicationController < ActionController::Base
 
   private
 
-    def logged_in?
+  def logged_in?
     !current_user_session.nil?
   end
 
