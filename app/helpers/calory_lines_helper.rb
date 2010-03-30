@@ -25,6 +25,8 @@ module CaloryLinesHelper
 
         row.actions table_actions(edit_url, delete_url, item), :class => "buttons"
       end
+      t.footer :name, "Total calories", :class => "name"
+      t.footer :total_calories, @total_calories, :class => "value"
     end
   end
 

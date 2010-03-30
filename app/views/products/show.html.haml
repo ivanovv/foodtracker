@@ -1,8 +1,8 @@
-- title "Product"
+- title t('.title')
 
 %p
   %strong Category:
-  =h @product.category.name.capitalize
+  =h @product.category.name.mb_chars.capitalize
 %p
   %strong Name:
   =h @product.name
@@ -22,9 +22,29 @@
   %strong Energy:
   =h @product.energy
 
+
+-#%p
+  -#- form_tag(products_path, :method => 'get') do
+    -#%p
+      -#= text_field_tag :weight
+      -#- if params[:day_id]
+        -#= hidden_field_tag :day_id, params[:day_id] || Date.today
+      -#-# else
+        -#-#= select_tag
+      -#= hidden_field_tag :calory_line_product_id, @product
+      -#= submit_tag t(:record_food), :name => nil
+
+%br
 %p
-  = link_to "Edit", edit_product_path(@product)
+  - form_tag(new_day_calory_line_path(:day_id => params[:day_id] || Date.today), :method=> 'get') do
+    = submit_tag t('.record_food'), :name => nil
+    = text_field_tag :net_weight
+    = hidden_field_tag :product_id, @product.to_param
+%br
+%p
+  = link_to t(:edit), edit_product_path(@product)
   |
-  = link_to "Destroy", @product, :confirm => 'Are you sure?', :method => :delete
+  = link_to t(:delete), @product, :confirm => 'Are you sure?', :method => :delete
   |
-  = link_to "View All", products_path
+  = link_to t(:view_all), products_path
+

@@ -35,6 +35,15 @@
   &.buttons
     text-align: center
 
+=table-footer-align
+  &.name
+    text-align: left
+
+  &.value
+    text-align: right
+    padding-right: 70px
+
+
 .app-table
   width: 100%
 
@@ -62,3 +71,19 @@
 
     &:hover
       background-color: #FBFBFB
+
+  tfoot tr
+
+    td
+      border-top: 2px solid #AAA
+      border-bottom: 2px solid #AAA
+      padding: 2px
+      font-weight: bold
+      +table-footer-align
+
+      a
+        text-decoration: none
+
+    &:hover
+      background-color: #FBFBFB
+

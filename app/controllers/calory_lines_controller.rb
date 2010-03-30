@@ -16,6 +16,7 @@ class CaloryLinesController < ApplicationController
         :conditions => ["days.user_id = :user_id", {:user_id => current_user.id}],
         :order => "days.enter_date DESC")
     end
+    @total_calories = @calory_lines.inject(0) { |sum, calory_line| sum + calory_line.total_calories }
   end
 
   def show
@@ -46,6 +47,10 @@ class CaloryLinesController < ApplicationController
         flash[:notice] = "Product not found!"
         redirect_to products_path
       end
+    end
+
+    if params[:net_weight]
+      @calory_line.net_weight = params[:net_weight].to_f
     end
   end
 

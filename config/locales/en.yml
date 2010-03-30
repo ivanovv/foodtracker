@@ -123,6 +123,10 @@ en:
     edit:
       title: "Update Product"
 
+    show:
+      title: "Product"
+      record_food: "Add this product to the nutrition log, g"
+
     sidebar:
       new: "New Product..."
 
