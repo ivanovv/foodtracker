@@ -164,6 +164,8 @@ form.formtastic .buttons {
       text-align: left; }
     .app-table thead tr th.buttons {
       text-align: center; }
+  .app-table tbody tr.ui-state-alternate {
+    background-color: #eef; }
   .app-table tbody tr td {
     border-bottom: 1px solid #AAA;
     padding: 2px; }
@@ -192,9 +194,10 @@ form.formtastic .buttons {
     .app-table tbody tr td.buttons {
       text-align: center; }
     .app-table tbody tr td a {
-      text-decoration: none; }
+      text-decoration: none;
+      color: #333333; }
   .app-table tbody tr:hover {
-    background-color: #FBFBFB; }
+    background-color: #DDDDDD; }
   .app-table tfoot tr td {
     border-top: 2px solid #AAA;
     border-bottom: 2px solid #AAA;
