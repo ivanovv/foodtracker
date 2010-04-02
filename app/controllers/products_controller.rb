@@ -56,6 +56,7 @@ class ProductsController < ApplicationController
     @product.carbohydrate = 0
     @product.protein = 0
     @product.energy = 0
+    @categories = Category.all(:order => "name ASC")
   end
 
   def create
@@ -72,6 +73,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @categories = Category.all(:order => "name ASC")
   end
 
   def update

@@ -1,7 +1,7 @@
 - semantic_form_for @product do |f|
   %p
     - f.inputs do
-      = f.input :category, :include_blank => false
+      = f.input :category, :include_blank => false, :collection => @categories
       = f.input :name
       = f.input :water
       = f.input :protein
