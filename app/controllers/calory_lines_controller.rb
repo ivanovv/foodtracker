@@ -11,10 +11,9 @@ class CaloryLinesController < ApplicationController
         @calory_lines = []
       end
     else
-      @calory_lines = CaloryLine.find(:all,
-        :include => [:day, :product],
-        :conditions => ["days.user_id = :user_id", {:user_id => current_user.id}],
-        :order => "days.enter_date DESC")
+      @calory_lines = CaloryLine.includes(:day, :product).
+        where("days.user_id = :user_id", {:user_id => current_user.id}).
+        order("days.enter_date DESC")
     end
     @total_calories = @calory_lines.inject(0) { |sum, calory_line| sum + calory_line.total_calories }
   end
@@ -25,7 +24,7 @@ class CaloryLinesController < ApplicationController
 
   def new
     @calory_line = CaloryLine.new
-    @user_days = current_user.days.all(:order => "enter_date DESC")
+    @user_days = current_user.days.order("enter_date DESC")
     if params[:day_id]
       if @day
         @calory_line.day_id = @day.id

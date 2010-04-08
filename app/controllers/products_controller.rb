@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
     @products = Product.paginate(options)
 
     if @products.size == 0  && !params[:category_id] #&& params[:search].chars.length > 3
-      category = Category.find(:first, :conditions =>"name LIKE '%#{params[:search]}%'")
+      category = Category.first.where("name LIKE '%#{params[:search]}%'")
       if category
         @categories = []; @categories << category;
         @products = @categories[0].products.paginate(default_options)
@@ -56,7 +56,7 @@ class ProductsController < ApplicationController
     @product.carbohydrate = 0
     @product.protein = 0
     @product.energy = 0
-    @categories = Category.all(:order => "name ASC")
+    @categories = Category.order("name ASC").all
   end
 
   def create
@@ -73,7 +73,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @categories = Category.all(:order => "name ASC")
+    @categories = Category.order("name ASC").all
   end
 
   def update
