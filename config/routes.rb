@@ -1,13 +1,26 @@
 ActionController::Routing::Routes.draw do |map|
-  map.login "login", :controller => "user_sessions", :action => "new"
-  map.logout "logout", :controller => "user_sessions", :action => "destroy"
+  #map.login "login", :controller => "user_sessions", :action => "new"
+  match "login" :to => "user_sessions#new"
+  #map.logout "logout", :controller => "user_sessions", :action => "destroy"
+  match "logout" :to => "user_sessions#destroy"
 
-  map.resources :user_sessions, :only => [:new, :create, :destroy]
-  map.resources :users
-  map.resources :categories, :has_many => :products
-  map.resources :products
-  map.resources :days, :has_many => :calory_lines
-  map.resources :calory_lines
+  #map.resources :user_sessions, :only => [:new, :create, :destroy]
+  resources :user_sessions, :only => [:new, :create, :destroy]
+
+  #map.resources :categories, :has_many => :products
+  resources :categories do
+    resources :product
+  end
+
+  #map.resources :days, :has_many => :calory_lines
+  resources :days do
+    resources :calory_line
+  end
+
+
+  #map.resources :calory_lines, :users, :products
+  resources :calory_lines, :users, :products
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -43,6 +56,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => "products"
+  root :to => "products#index"
 
   # See how all your routes lay out with "rake routes"
 
