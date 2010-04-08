@@ -10,9 +10,9 @@ class Product < ActiveRecord::Base
 
   def self.search(product_name)
     if product_name
-      find(:all, :conditions => ['name like ?', "%#{product_name}%"])
+      where('name like ?', "%#{product_name}%")
     else
-      find(:all)
+      all
     end
   end
 

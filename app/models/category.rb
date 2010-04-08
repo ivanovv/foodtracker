@@ -8,10 +8,11 @@ class Category < ActiveRecord::Base
 
   def self.search_by_product_name(product_name)
     if product_name
-      find_by_sql( "select distinct categories.* from categories inner join products " +
-      "on products.category_id = categories.id where products.name like '%#{product_name}%'")
+      #find_by_sql( "select distinct categories.* from categories inner join products " +
+      #"on products.category_id = categories.id where products.name like '%#{product_name}%'")
+      select("distinct(*)").joins(:products).where("products.name like '%#{product_name}%'")
     else
-      find(:all)
+      all
     end
   end
 

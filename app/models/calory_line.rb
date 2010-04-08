@@ -8,8 +8,7 @@ class CaloryLine < ActiveRecord::Base
   validates_numericality_of :net_weight
 
   def self.get_by_user(user)
-    find_by_sql( "select calory_lines.*, days.* from calory_lines " +
-      "inner join days on calory_lines.day_id = days.id where days.user_id = #{user.id} order by days.enter_date")
+      joins(:days).where("days.user_id = ?", user.id).order("days.enter_date")
   end
 
   def total_calories

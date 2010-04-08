@@ -1,16 +1,20 @@
 # A sample Gemfile
 source 'http://rubygems.org'
 
-gem "rails", '3.0.0.beta2'
-gem "authlogic"
-gem "formtastic"
-gem "haml"
-gem "russian"
-#gem "unichars"
-gem "table_helper"
-gem "will_paginate"
+gem 'rails', '3.0.0.beta2'
+#gem 'authlogic', :git => 'http://github.com/binarylogic/authlogic.git'
+gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
+#gem 'blankslate', :git => 'git://github.com/JackDanger/blankslate.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'formtastic'
+gem 'haml'
+gem 'builder'
+gem 'russian'
+#gem 'unichars'
+gem 'table_helper'
+gem 'will_paginate'
+
+gem 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -29,3 +33,4 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # group :test do
 #   gem 'webrat'
 # end
+
