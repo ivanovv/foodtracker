@@ -13,7 +13,8 @@ module DaysHelper
       t.rows.empty_caption = t('.no_days')
       t.rows.each do |row, item, index|
         row[:id] = "day-#{item.id}"
-        row.enter_date  item.to_s
+        row.enter_date  link_to(item.to_s, day_calory_lines_path(item))
+        row[:onclick] = "location.href =  '#{day_calory_lines_path(item)}'"
         row.weight item.weight, :class => "float"
         row.metabolic_norm item.base_metabolic_rate, :class => "float"
         row.total_calories item.total_calories, :class => "float"
