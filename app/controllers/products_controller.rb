@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
     @products = Product.paginate(options)
 
     if @products.size == 0  && !params[:category_id] #&& params[:search].chars.length > 3
-      category = Category.first.where("name LIKE '%#{params[:search]}%'")
+      category = Category.where("name LIKE '%#{params[:search]}%'").first
       if category
         @categories = []; @categories << category;
         @products = @categories[0].products.paginate(default_options)
