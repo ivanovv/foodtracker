@@ -21,7 +21,6 @@ module ProductsHelper
       t.rows.alternate = :odd
       t.rows.empty_caption = t('.no_products')
       t.rows.each do |row, item, index|
-        #last_login_at = item.last_login_at ? I18n.l(item.last_login_at.localtime, :format => "%e %B %Y") : "-"
 
         row[:id] = "product-#{item.id}"
         row.name  item.name
