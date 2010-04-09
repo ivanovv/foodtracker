@@ -1,9 +1,9 @@
 Demo::Application.routes.draw do |map|
 
   #map.login "login", :controller => "user_sessions", :action => "new"
-  match "login" :to => "user_sessions#new"
+  match "login", :to => "user_sessions#new"
   #map.logout "logout", :controller => "user_sessions", :action => "destroy"
-  match "logout" :to => "user_sessions#destroy"
+  match "logout", :to => "user_sessions#destroy"
 
   #map.resources :user_sessions, :only => [:new, :create, :destroy]
   resources :user_sessions, :only => [:new, :create, :destroy]
