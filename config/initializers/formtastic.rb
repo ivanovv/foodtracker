@@ -1,3 +1,10 @@
+# coding: utf-8
+require 'formtastic'
+require 'formtastic/layout_helper'
+
+ActionView::Base.send(:include, Formtastic::SemanticFormHelper)
+ActionView::Base.send(:include, Formtastic::LayoutHelper)
+
 # Set the default text field size when input is a string. Default is 50.
 # Formtastic::SemanticFormBuilder.default_text_field_size = 50
 
