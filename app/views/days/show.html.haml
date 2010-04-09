@@ -2,17 +2,17 @@
 
 %p
   %strong= t('.my_weight')
-  =h @day.weight
+  = @day.weight
   =t(:kg)
 
 %p
   %strong= t('.metabolic_norm')
-  =h @day.base_metabolic_rate
+  = @day.base_metabolic_rate
   =t(:cals)
 
 %p
   %strong=t('.total_calories')
-  =h @day.total_calories
+  = @day.total_calories
   =t(:cals)
 
 %p
@@ -22,7 +22,7 @@
   |
   = link_to t(:view_all), days_path
 %p
-  - form_tag(products_path, :method => 'get') do
+  = form_tag(products_path, :method => 'get') do
     %p
       -#= text_field_tag :search, (params[:search]||"").force_encoding('utf-8')
       = text_field_tag :search, params[:search]

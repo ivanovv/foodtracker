@@ -32,7 +32,7 @@ module ApplicationHelper
                      :title => t(:delete),
                      :confirm => t(".confirm_for_delete", :name => item.to_s))
 
-    parts.join("\n")
+    parts.join("\n").html_safe
   end
 
 

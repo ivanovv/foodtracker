@@ -2,25 +2,25 @@
 
 %p
   %strong Category:
-  =h @product.category.name.mb_chars.capitalize
+  = @product.category.name.mb_chars.capitalize
 %p
   %strong Name:
-  =h @product.name
+  = @product.name
 %p
   %strong Water:
-  =h @product.water
+  = @product.water
 %p
   %strong Protein:
-  =h @product.protein
+  = @product.protein
 %p
   %strong Fat:
-  =h @product.fat
+  = @product.fat
 %p
   %strong Carbohydrate:
-  =h @product.carbohydrate
+  = @product.carbohydrate
 %p
   %strong Energy:
-  =h @product.energy
+  = @product.energy
 
 
 -#%p
@@ -36,7 +36,7 @@
 
 %br
 %p
-  - form_tag(new_day_calory_line_path(:day_id => params[:day_id] || Date.today), :method=> 'get') do
+  = form_tag(new_day_calory_line_path(:day_id => params[:day_id] || Date.today), :method=> 'get') do
     = submit_tag t('.record_food'), :name => nil
     = text_field_tag :net_weight
     = hidden_field_tag :product_id, @product.to_param
