@@ -1,6 +1,8 @@
 class CategoriesController < ApplicationController
+  respond_to :html
+
   def index
-    @categories = Category.all(:order => "name ASC")
+    respond_with(@categories = Category.by_name.all)
   end
 
   def show
@@ -8,31 +10,23 @@ class CategoriesController < ApplicationController
   end
 
   def new
-    @category = Category.new
+    respond_with(@category = Category.new)
   end
 
   def create
     @category = Category.new(params[:category])
-    if @category.save
-      flash[:notice] = "Successfully created category."
-      redirect_to @category
-    else
-      render :action => 'new'
-    end
+    flash[:notice] = "Successfully created category." if @category.save
+    respond_with(@category)
   end
 
   def edit
-    @category = Category.find(params[:id])
+    respond_with(@category = Category.find(params[:id]))
   end
 
   def update
     @category = Category.find(params[:id])
-    if @category.update_attributes(params[:category])
-      flash[:notice] = "Successfully updated category."
-      redirect_to @category
-    else
-      render :action => 'edit'
-    end
+    flash[:notice] = "Successfully updated category." if @category.update_attributes(params[:category])
+    respond_with(@category)
   end
 
   def destroy
