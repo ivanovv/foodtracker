@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+
   def index
 
     #if params[:search]
@@ -9,31 +10,21 @@ class ProductsController < ApplicationController
     options = default_options
 
     if params[:category_id]
-      @categories = []
-      @categories << Category.find(params[:category_id])
-      options[:conditions]  = "category_id = #{params[:category_id].to_i}"
+      @categories = [Category.find(params[:category_id])]
+      options[:conditions] = "category_id = #{params[:category_id].to_i}"
     else
       @categories = Category.search_by_product_name(params[:search])
     end
 
     if params[:search]
-      if options[:conditions]
-        options[:conditions] << " AND "
-      else
-        options[:conditions] = ""
-      end
-
+      add_and_to_conditions(options)
       options[:conditions] << "name LIKE '%#{params[:search]}%'"
     end
 
     @products = Product.paginate(options)
 
     if @products.size == 0  && !params[:category_id] #&& params[:search].chars.length > 3
-      category = Category.where("name LIKE '%#{params[:search]}%'").first
-      if category
-        @categories = []; @categories << category;
-        @products = @categories[0].products.paginate(default_options)
-      end
+      find_category_by_name(params[:search])
     end
 
   end
@@ -50,13 +41,8 @@ class ProductsController < ApplicationController
   end
 
   def new
-    @product = Product.new
-    @product.water = 0
-    @product.fat = 0
-    @product.carbohydrate = 0
-    @product.protein = 0
-    @product.energy = 0
-    @categories = Category.order("name ASC").all
+    @product = product_with_defaults
+    @categories = Category.by_name.all
   end
 
   def create
@@ -73,7 +59,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @categories = Category.order("name ASC").all
+    @categories = Category.by_name.all
   end
 
   def update
@@ -93,8 +79,7 @@ class ProductsController < ApplicationController
     redirect_to products_url
   end
 
-  def search
-  end
+  private
 
   def default_options
     {
@@ -103,5 +88,32 @@ class ProductsController < ApplicationController
       :page => params[:page]
     }
   end
+
+  def find_category_by_name(category_name)
+    category = Category.name(category_name).first
+      if category
+        @categories = [category]
+        @products = category.products.paginate(default_options)
+      end
+  end
+
+  def add_and_to_conditions(options)
+    if options[:conditions]
+      options[:conditions] << " AND "
+    else
+      options[:conditions] = ""
+    end
+  end
+
+  def product_with_defaults
+    product = Product.new
+    product.water = 0
+    product.fat = 0
+    product.carbohydrate = 0
+    product.protein = 0
+    product.energy = 0
+    product
+  end
+
 end
 
