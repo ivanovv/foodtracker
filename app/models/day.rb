@@ -15,15 +15,14 @@ class Day < ActiveRecord::Base
 
   scope :user, proc { |user| where(:user => user) }
   scope :date, proc { |date|
-    if date == nil
-      where(:enter_date => Date.today)
-    else
+    if date
       where(:enter_date => date)
-    }
+    else
+      where(:enter_date => Date.today)
+    end
+  }
 
   scope :recent, order("enter_date DESC")
-
-
 
   def self.find_by_date(date = Date.today)
     find_by_enter_date_and_user_id(date, UserSession.find.user)
