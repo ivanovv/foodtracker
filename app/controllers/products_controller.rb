@@ -42,7 +42,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = product_with_defaults
-    @categories = Category.by_name.all
+    @categories = Category.by_name
   end
 
   def create
@@ -59,7 +59,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
-    @categories = Category.by_name.all
+    @categories = Category.by_name
   end
 
   def update
@@ -90,7 +90,7 @@ class ProductsController < ApplicationController
   end
 
   def find_category_by_name(category_name)
-    category = Category.name(category_name).first
+    category = Category.search_by_name(category_name).first
       if category
         @categories = [category]
         @products = category.products.paginate(default_options)
