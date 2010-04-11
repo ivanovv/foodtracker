@@ -1,10 +1,10 @@
 - title t(".title")
 
-- semantic_form_for @user_session do |form|
-  -form.inputs do
+= semantic_form_for @user_session do |form|
+  = form.inputs do
     = form.error_messages :header_message => nil, :message => nil, :class => "errors"
     = form.input :username
     = form.input :password, :as => :password
-  - form.buttons do
+  = form.buttons do
     = form.commit_button t(".login")
 

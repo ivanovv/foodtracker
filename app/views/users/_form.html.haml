@@ -1,5 +1,5 @@
-- semantic_form_for @user do |f|
-  - f.inputs do
+= semantic_form_for @user do |f|
+  = f.inputs do
     = f.input :username
     = f.input :email
     = f.input :born, :start_year => 1930
@@ -7,6 +7,6 @@
     = f.input :female, :as => :radio, :collection => [[t(".male"), false], [t(".female"), true]]
     = f.input :password, :as => :password
     = f.input :password_confirmation, :as => :password
-  - f.buttons :class => "buttons" do
+  = f.buttons :class => "buttons" do
     = f.commit_button
 
