@@ -7,13 +7,13 @@ class Category < ActiveRecord::Base
   validates_uniqueness_of :name
 
   scope :by_name, order("name ASC")
-  scope :name, proc{|name| where("name LIKE '%#{name}%'") }
+  scope :search_by_name, proc { |name| where("name LIKE '%#{name}%'") }
 
   def self.search_by_product_name(product_name)
     if product_name
       #find_by_sql( "select distinct categories.* from categories inner join products " +
       #"on products.category_id = categories.id where products.name like '%#{product_name}%'")
-      select("distinct * ").joins(:products).where("products.name like '%#{product_name}%'")
+      select("distinct categories.* ").joins(:products).where("products.name like '%#{product_name}%'")
     else
       all
     end
