@@ -9,6 +9,22 @@ class Day < ActiveRecord::Base
   belongs_to :user
   has_many :calory_lines
 
+  scope :for_current_user, lambda {
+    where("user_id = ?", UserSession.find.user)
+  }
+
+  scope :user, proc { |user| where(:user => user) }
+  scope :date, proc { |date|
+    if date == nil
+      where(:enter_date => Date.today)
+    else
+      where(:enter_date => date)
+    }
+
+  scope :recent, order("enter_date DESC")
+
+
+
   def self.find_by_date(date = Date.today)
     find_by_enter_date_and_user_id(date, UserSession.find.user)
   end

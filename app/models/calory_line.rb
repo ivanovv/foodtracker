@@ -7,8 +7,19 @@ class CaloryLine < ActiveRecord::Base
   validates_presence_of :net_weight
   validates_numericality_of :net_weight
 
+  scope :for_current_user, lambda {
+    joins(:days).where("days.user_id = ?", UserSession.find.user.id)
+  }
+
+  scope :user, proc {|user| join(:days).where("days.user_id = ?", user.id)}
+
+  scope :by_enter_date, order("days.enter_date DESC")
+
+  scope :user_full, proc{ |user| includes(:day, :product).
+        where("days.user_id = :user_id", {:user_id => user.id}).by_enter_date }
+
   def self.get_by_user(user)
-      joins(:days).where("days.user_id = ?", user.id).order("days.enter_date")
+      user(user).by_enter_date
   end
 
   def total_calories
