@@ -9,14 +9,14 @@ class ProductTest < ActiveSupport::TestCase
 
   test "product name should be unique" do
     p = Product.new
-    p.name = products(:one).name
-    p.energy = products(:one).energy
-    p.category = products(:one).category
+    p.name = products(:ham).name
+    p.energy = products(:ham).energy
+    p.category = products(:ham).category
     assert !p.save, "Saved product with not unique name"
   end
 
   test "water should be numeric" do
-    p = products(:one)
+    p = products(:ham)
     p.water = "fifty"
     assert !p.valid?, "water is fifty, and the record is valid"
     p.water = 50
@@ -24,7 +24,7 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "protein should be numeric" do
-    p = products(:one)
+    p = products(:ham)
     p.protein = "fifty"
     assert !p.valid?, "protein is fifty, and the record is valid"
     p.protein = 50
@@ -32,7 +32,7 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "fat should be numeric" do
-    p = products(:one)
+    p = products(:ham)
     p.fat = "fifty"
     assert !p.valid?, "fat is fifty, and the record is valid"
     p.fat = 50
@@ -40,7 +40,7 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "carbohydrate should be numeric" do
-    p = products(:one)
+    p = products(:ham)
     p.carbohydrate = "fifty"
     assert !p.valid?, "carbohydrate is fifty, and the record is valid"
     p.carbohydrate = 50
@@ -49,7 +49,7 @@ class ProductTest < ActiveSupport::TestCase
 
 
   test "energy should be numeric" do
-    p = products(:one)
+    p = products(:ham)
     p.energy = "fifty"
     assert !p.valid?, "energy is fifty, and the record is valid"
     p.energy = 50
@@ -57,22 +57,22 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "energy should be present" do
-    p = products(:one)
+    p = products(:ham)
     p.energy = nil
     assert !p.valid?, "energy is nil, and the record is valid"
   end
 
   test "category_id should be present" do
-    p = products(:one)
+    p = products(:ham)
     p.category_id = nil
     assert !p.valid?, "category_id is nil, and the record is valid"
   end
 
   test "search by name" do
-    p = Product.find_by_name(products(:one).name)
-    found_p = Product.search(products(:one).name).first
+    p = Product.find_by_name(products(:ham).name)
+    found_p = Product.search(products(:ham).name).first
     assert_equal p, found_p
-    found_p = Product.search(products(:one).name[3..-1]).first
+    found_p = Product.search(products(:ham).name[2..-1]).first
     assert_equal p, found_p
   end
 
