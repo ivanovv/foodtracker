@@ -2,7 +2,6 @@ desc "load energy data from web"
 
 task :import_products => :environment do
 
-  require 'rubygems'
   require 'nokogiri'
   require 'open-uri'
   require 'mechanize'
