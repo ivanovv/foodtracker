@@ -8,7 +8,7 @@ class Product < ActiveRecord::Base
   validates_uniqueness_of :name
   validates_numericality_of :water, :protein, :fat, :carbohydrate, :energy
 
-  def self.search(product_name)
+  def self.search(product_name = nil)
     if product_name
       find(:all, :conditions => ['name like ?', "%#{product_name}%"])
     else
