@@ -2,3 +2,6 @@ log/*
 tmp/**/*
 db/*.sqlite3
 *.*~
+.bundle/*
+nbproject/*
+
