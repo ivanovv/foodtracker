@@ -1,8 +1,10 @@
 one:
   enter_date: 2010-02-07
-  user_id: 1
+  user: vic
+  weight: 60
 
 two:
   enter_date: 2010-02-08
-  user_id: 1
+  user: vic
+  weight: 60.2
 
