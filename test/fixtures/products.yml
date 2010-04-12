@@ -1,17 +1,18 @@
-one:
-  category_id: 1
-  name: MyString
+ham:
+  category: meat
+  name: Ham
   water: 1.5
   protein: 1.5
   fat: 1.5
   carbohydrate: 1.5
   energy: 1
 
-two:
-  category_id: 1
-  name: MyString
+banana:
+  category: fruits
+  name: Banana
   water: 1.5
   protein: 1.5
   fat: 1.5
   carbohydrate: 1.5
   energy: 1
+

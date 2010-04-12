@@ -1,5 +1,6 @@
-one:
-  name: MyString
+meat:
+  name: Meat
 
-two:
-  name: MyString
+fruits:
+  name: Fruits
+
