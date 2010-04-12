@@ -12,7 +12,7 @@ class ProductTest < ActiveSupport::TestCase
     p.name = products(:ham).name
     p.energy = products(:ham).energy
     p.category = products(:ham).category
-    assert !p.save, "Saved product with not unique name"
+    assert !p.save, "Saved product with non unique name"
   end
 
   test "water should be numeric" do
@@ -71,9 +71,24 @@ class ProductTest < ActiveSupport::TestCase
   test "search by name" do
     p = Product.find_by_name(products(:ham).name)
     found_p = Product.search(products(:ham).name).first
-    assert_equal p, found_p
+    assert_equal p, found_p, "found product doesn't equal to the product we searched for"
+  end
+
+  test "search by incomplete name" do
+    p = Product.find_by_name(products(:ham).name)
     found_p = Product.search(products(:ham).name[2..-1]).first
-    assert_equal p, found_p
+    assert_equal p, found_p, "incomplete search failed"
+  end
+
+  test "search with no parameters returns all products" do
+    products = Product.all
+    found_products = Product.search
+    assert_equal products, found_products, "products returned by search with empty parameters are not equal"
+  end
+
+  test "to_s should be equal to name" do
+    p = products(:ham)
+    assert_equal p.to_s, p.name, "product.to_s <> product.name"
   end
 
 
