@@ -15,11 +15,11 @@ namespace :app do
     page = agent.get(url)
 
     column_names = [:name, :water, :protein, :fat, :carbohydrate, :energy]
-    heading_index = 10
+    heading_index = 8
     add_row = 3
     while heading_index < 108  do
       heading_index += 1 if heading_index > 100
-      category = Category.find_or_create_by_name( page.at("h2:nth-child(#{heading_index})").text.split(" ")[3..-1].join(" "))
+      category = Category.find_or_create_by_name( page.at("h2:nth-child(#{heading_index})").text)
 
       i = 0
       raw_product = {}
