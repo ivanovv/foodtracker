@@ -4,10 +4,10 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.0.beta2'
 #gem 'authlogic', :git => 'http://github.com/binarylogic/authlogic.git'
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
-#gem 'blankslate', :git => 'git://github.com/JackDanger/blankslate.git'
 
 gem 'formtastic', :git => 'git://github.com/justinfrench/formtastic.git', :branch => 'rails3'
 #gem 'formtastic', :git => 'git://github.com/adamhunter/formtastic.git', :branch => 'rails3'
+
 gem 'haml'#, :git => 'git://github.com/nex3/haml.git'
 gem 'builder'
 gem 'russian', :git => 'git://github.com/yaroslav/russian.git'
