@@ -1,12 +1,12 @@
 one:
   day: one
-  product_id: 1
-  net_weight: 1
-  energy: 1.5
+  product: ham
+  net_weight: 100
+  energy: 150.7
 
 two:
   day: one
-  product_id: 1
-  net_weight: 10
-  energy: 2
+  product: banana
+  net_weight: 250
+  energy: 57
 
