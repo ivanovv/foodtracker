@@ -1,43 +1,47 @@
-desc "load energy data from web"
+# encoding: UTF-8
 
-task :import_products => :environment do
+namespace :app do
 
-  require 'nokogiri'
-  require 'open-uri'
-  require 'mechanize'
-  #require 'logger'
+  desc "load energy data from web"
 
-  url = 'http://www.missfit.ru/diet/table-calory'
-  agent = WWW::Mechanize.new
-  page = agent.get(url)
+  task :import_products => :environment do
 
-  column_names = [:name, :water, :protein, :fat, :carbohydrate, :energy]
-  heading_index = 10
-  add_row = 3
-  while heading_index < 108  do
-    heading_index += 1 if heading_index > 100
-    category = Category.find_or_create_by_name( page.at("h2:nth-child(#{heading_index})").text.split(" ")[3..-1].join(" "))
+    require 'nokogiri'
+    require 'open-uri'
+    require 'mechanize'
 
-    i = 0
-    raw_product = {}
+    url = 'http://www.missfit.ru/diet/table-calory'
+    agent = WWW::Mechanize.new
+    page = agent.get(url)
 
-    if heading_index == 100
-      add_row = 4
-    else
-      add_row = 3
-    end
+    column_names = [:name, :water, :protein, :fat, :carbohydrate, :energy]
+    heading_index = 10
+    add_row = 3
+    while heading_index < 108  do
+      heading_index += 1 if heading_index > 100
+      category = Category.find_or_create_by_name( page.at("h2:nth-child(#{heading_index})").text.split(" ")[3..-1].join(" "))
 
-    page.search(".tbl:nth-child(#{heading_index + add_row}) td").each do |item|
-      raw_product[column_names[i]] = item.text.tr(',', '.')
-      i += 1
-      if i > 5
-        i = 0
-        raw_product[:category_id] = category.id
-        Product.find_or_create_by_name(raw_product)
-        raw_product.clear
+      i = 0
+      raw_product = {}
+
+      if heading_index == 100
+        add_row = 4
+      else
+        add_row = 3
       end
+
+      page.search(".tbl:nth-child(#{heading_index + add_row}) td").each do |item|
+        raw_product[column_names[i]] = item.text.tr(',', '.')
+        i += 1
+        if i > 5
+          i = 0
+          raw_product[:category_id] = category.id
+          Product.find_or_create_by_name(raw_product)
+          raw_product.clear
+        end
+      end
+      heading_index += 6
     end
-    heading_index += 6
   end
 end
 
