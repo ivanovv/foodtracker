@@ -21,5 +21,11 @@ class CaloryLineTest < ActiveSupport::TestCase
       "something wrong with to_s"
   end
 
+  should "search by user and return most recent records" do
+    cl = CaloryLine.get_by_user(users(:vic))
+    assert_equal cl[0], calory_lines(:three)
+    assert_equal cl.size, 3
+  end
+
 end
 
