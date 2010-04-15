@@ -20,5 +20,9 @@ class CategoryTest < ActiveSupport::TestCase
     assert_equal categories[0], category, "Found category differs"
   end
 
+  should "have scope by_name" do
+    should_have_named_scope :by_name, :order => "name ASC"
+  end
+
 end
 
