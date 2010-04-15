@@ -9,4 +9,5 @@ gem "russian"
 #gem "unichars"
 gem "table_helper"
 gem "will_paginate"
+gem "shoulda"
 
