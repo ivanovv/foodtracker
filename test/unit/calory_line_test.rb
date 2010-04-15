@@ -23,7 +23,8 @@ class CaloryLineTest < ActiveSupport::TestCase
 
   should "search by user and return most recent records" do
     cl = CaloryLine.get_by_user(users(:vic))
-    assert_equal cl[0], calory_lines(:three)
+    assert_equal cl[0].product_id, calory_lines(:three).product_id
+    assert_equal cl[0].day_id, calory_lines(:three).day_id
     assert_equal cl.size, 3
   end
 

@@ -34,4 +34,3 @@ gem 'mechanize'
    gem 'mocha'
    gem 'shoulda', :git => 'git://github.com/bmaddy/shoulda.git', :branch => 'rails3'
  end
-
