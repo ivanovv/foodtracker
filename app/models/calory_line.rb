@@ -11,7 +11,7 @@ class CaloryLine < ActiveRecord::Base
     joins(:days).where("days.user_id = ?", UserSession.find.user.id)
   }
 
-  scope :user, proc {|user| join(:days).where("days.user_id = ?", user.id)}
+  scope :user, proc {|user| joins(:day).where("days.user_id = ?", user.id)}
 
   scope :by_enter_date, order("days.enter_date DESC")
 
