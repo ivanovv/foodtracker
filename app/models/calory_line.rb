@@ -9,7 +9,7 @@ class CaloryLine < ActiveRecord::Base
 
   def self.get_by_user(user)
     find_by_sql( "select calory_lines.*, days.* from calory_lines " +
-      "inner join days on calory_lines.day_id = days.id where days.user_id = #{user.id} order by days.enter_date")
+      "inner join days on calory_lines.day_id = days.id where days.user_id = #{user.id} order by days.enter_date DESC")
   end
 
   def total_calories
