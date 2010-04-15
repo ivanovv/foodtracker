@@ -10,3 +10,9 @@ two:
   net_weight: 250
   energy: 57
 
+three:
+  day: two
+  product: banana
+  net_weight: 148
+  energy: 57
+
