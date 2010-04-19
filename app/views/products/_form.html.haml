@@ -8,6 +8,15 @@
       = f.input :fat
       = f.input :carbohydrate
       = f.input :energy
+      = link_to_remote image_tag("utkonos.gif", :alt => "Search Утконос", :height => 50), |
+        {:url => {:action => 'get_utkonos_link'}, |
+        :with => "'name=' + $('product_name').value"}, :href => "http://www.utkonos.ru/search.php" |
+
   %p
     = f.buttons
+
+%br
+
+-#.search
+-#  Поиск
 

@@ -1,3 +1,5 @@
+require 'iconv'
+
 class ProductsController < ApplicationController
 
   def index
@@ -39,6 +41,15 @@ class ProductsController < ApplicationController
       format.js if request.xhr?
     end
   end
+
+  def get_utkonos_link
+    @link = CGI.escape(Iconv.conv("WINDOWS-1251", "UTF-8", params[:name])) if !params[:name].blank?
+    @link = "http://www.utkonos.ru/search.php?q=" + @link
+    respond_to do |format|
+      format.js
+    end
+  end
+
 
   def new
     @product = product_with_defaults
