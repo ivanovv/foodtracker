@@ -1,7 +1,7 @@
 # A sample Gemfile
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.beta2'
+gem 'rails', '3.0.0.beta3'
 #gem 'authlogic', :git => 'http://github.com/binarylogic/authlogic.git'
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 
@@ -33,4 +33,7 @@ gem 'mechanize'
  group :test do
    gem 'mocha'
    gem 'shoulda', :git => 'git://github.com/bmaddy/shoulda.git', :branch => 'rails3'
+   gem 'redgreen'
+   #gem  'webrat'
  end
+
