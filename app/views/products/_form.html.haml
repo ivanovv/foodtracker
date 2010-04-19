@@ -1,6 +1,6 @@
 = semantic_form_for @product do |f|
   %p
-    - f.inputs do
+    = f.inputs do
       = f.input :category, :include_blank => false, :collection => @categories
       = f.input :name
       = link_to_function "search utkonos", ""
@@ -16,5 +16,5 @@
   = hidden_field_tag "q"
   = submit_tag "Утконос", :name => nil
 
-= observe_field("product_name", :frequency => 0.5, :function => "$('q').value = escape(value)")
+-#= observe_field("product_name", :frequency => 0.5, :function => "$('q').value = escape(value)")
 
