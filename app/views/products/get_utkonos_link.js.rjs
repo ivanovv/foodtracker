@@ -1,0 +1,9 @@
+#page << "document.observe('lightview:loaded', function() {"
+page << "  Lightview.show( { href: '#{@link}', rel: 'iframe', options: { width: 1100, height: 700 } } );"
+#page << "}"
+
+
+#page << "Shadowbox.init({ skipSetup: true });"
+#page << "Shadowbox.open({ content: '#{@link}', "
+#page << "  player: 'html', title: 'Utkonos', height: 350, width:  350 }); "
+

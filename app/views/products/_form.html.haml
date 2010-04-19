@@ -9,12 +9,16 @@
       = f.input :fat
       = f.input :carbohydrate
       = f.input :energy
+      = link_to_remote image_tag("utkonos.gif", :alt => "Search Утконос", :height => 50), |
+        {:url => {:action => 'get_utkonos_link'}, |
+        :with => "'name=' + $('product_name').value"}, :href => "http://www.utkonos.ru/search.php" |
+
   %p
     = f.buttons
 
-= form_tag("http://www.utkonos.ru/search.php", :method => 'get') do
-  = hidden_field_tag "q"
-  = submit_tag "Утконос", :name => nil
+%br
 
--#= observe_field("product_name", :frequency => 0.5, :function => "$('q').value = escape(value)")
+-#.search
+-#  Поиск
+
 
