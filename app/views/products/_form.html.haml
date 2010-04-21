@@ -3,7 +3,6 @@
     = f.inputs do
       = f.input :category, :include_blank => false, :collection => @categories
       = f.input :name
-      = link_to_function "search utkonos", ""
       = f.input :water
       = f.input :protein
       = f.input :fat
@@ -12,7 +11,6 @@
       = link_to_remote image_tag("utkonos.gif", :alt => "Search Утконос", :height => 50), |
         {:url => {:action => 'get_utkonos_link'}, |
         :with => "'name=' + $('product_name').value"}, :href => "http://www.utkonos.ru/search.php" |
-
   %p
     = f.buttons
 
@@ -20,5 +18,3 @@
 
 -#.search
 -#  Поиск
-
-
