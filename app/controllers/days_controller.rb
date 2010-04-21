@@ -7,7 +7,6 @@ class DaysController < ApplicationController
 
   def show
     @day = current_user.days.date(params[:id].to_date)
-    user = current_user
   end
 
   def new

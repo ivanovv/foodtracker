@@ -31,9 +31,7 @@ class CaloryLinesController < ApplicationController
         redirect_to new_day_path
       end
     else
-      if @today
-        @calory_line.day_id = @today.id
-      end
+      @calory_line.day_id = @today.id if @today
     end
 
     if params[:product_id]
@@ -46,9 +44,7 @@ class CaloryLinesController < ApplicationController
       end
     end
 
-    if params[:net_weight]
-      @calory_line.net_weight = params[:net_weight].to_f
-    end
+    @calory_line.net_weight = params[:net_weight].to_f if params[:net_weight]
   end
 
   def create
@@ -96,12 +92,8 @@ class CaloryLinesController < ApplicationController
     end
   end
 
-  def get_product
-    @product = nil
-    if params[:product_id]
-      @product = Product.find(params[:product_id])
-    end
+  def get_product    
+    @product = Product.find(params[:product_id]) if params[:product_id]
   end
 
 end
-
