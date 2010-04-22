@@ -43,7 +43,8 @@ class ProductsController < ApplicationController
   end
 
   def get_utkonos_link
-    @link = CGI.escape(Iconv.conv("WINDOWS-1251", "UTF-8", params[:name])) if !params[:name].blank?
+    @link = CGI.escape(Iconv.conv("WINDOWS-1251", "UTF-8", params[:product_name])) if !params[:product_name].blank?
+    @link||= ""
     @link = "http://www.utkonos.ru/search.php?q=" + @link
     respond_to do |format|
       format.js
