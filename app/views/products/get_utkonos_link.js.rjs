@@ -1,5 +1,8 @@
 #page << "document.observe('lightview:loaded', function() {"
-page << "  Lightview.show( { href: '#{@link}', rel: 'iframe', options: { width: 1100, height: 700 } } );"
+#page << "  Lightview.show( { href: '#{@link}', rel: 'iframe', options: { width: 1100, height: 700 } } );"
+#page << "$.fn.colorbox({href:'#{@link}', iframe: true, width: '1100px', height: '700px', }); "
+page << "$.fancybox({'href' : '#{@link}', 'title' : 'Поиск в Утконосе', 'type' : 'iframe', 'width' : '75%', 'height' : '75%', 'autoScale' : false, 'transitionIn' : 'none',  'transitionOut' : 'none'});"
+
 #page << "}"
 
 

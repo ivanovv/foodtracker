@@ -10,7 +10,7 @@ Demo::Application.routes.draw do |map|
 
   #map.resources :categories, :has_many => :products
   resources :categories do
-    resources :product
+    resources :products
   end
 
   #map.resources :days, :has_many => :calory_lines
@@ -20,8 +20,9 @@ Demo::Application.routes.draw do |map|
 
 
   #map.resources :calory_lines, :users, :products
+  match 'products/get_energy' => 'products#get_energy'
+  match 'products/get_utkonos_link' => 'products#get_utkonos_link'
   resources :calory_lines, :users, :products
-
 
 
   # The priority is based upon order of creation:

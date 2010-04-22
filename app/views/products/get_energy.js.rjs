@@ -1,2 +1,0 @@
-page['calory_line_energy'].value = @product.energy
-

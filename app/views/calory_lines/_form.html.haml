@@ -1,14 +1,19 @@
-- semantic_form_for @calory_line do |f|
+= semantic_form_for @calory_line do |f|
   %p
-    - f.inputs do
+    = f.inputs do
       = f.input :product, :include_blank => false
       = f.input :day, :include_blank => false, :hint => false, :collection => @user_days
       = f.input :net_weight
-      = link_to_function t('calory_lines.specify_energy') , "Element.toggle('calory_line_energy_input')"
+      = link_to_function t('calory_lines.specify_energy') , "$('#calory_line_energy_input').toggle()"
       = f.input :energy, :wrapper_html => { :style => "display:none;" }
   %p
-    - f.buttons do
+    = f.buttons do
       = f.commit_button
 
-= observe_field :calory_line_product_id, :url => { :controller=> :products, :action => "get_energy" }, :with => 'product_id'
 
+:javascript
+  $('#calory_line_product_id').change(function() {
+    $.post("#{url_for(:controller=> :products, :action => :get_energy)}", 'product_id=' + $('#calory_line_product_id').val(), function(html) {
+      $('#calory_line_energy').val(html);
+    });
+  });

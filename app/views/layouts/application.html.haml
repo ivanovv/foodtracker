@@ -6,9 +6,8 @@
       = h("#{ApplicationController::TITLE} ") +  h(yield(:title) || "Untitled")
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
     = csrf_meta_tag
-    = javascript_include_tag :defaults,  :cache => "all"
-    = javascript_include_tag 'scriptaculous', 'lightview', :cache => "all"
-    -#= javascript_include_tag 'shadowbox'
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
+    = javascript_include_tag 'rails'
 
     = stylesheet_link_tag 'clearfix', 'reset', 'application' #, 'formtastic'
     = stylesheet_link_tag 'lightview'

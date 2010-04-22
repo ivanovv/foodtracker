@@ -1,3 +1,6 @@
+= javascript_include_tag 'jquery.fancybox-1.3.1.pack'
+= stylesheet_link_tag 'jquery.fancybox-1.3.1'
+
 = semantic_form_for @product do |f|
   %p
     = f.inputs do
@@ -8,9 +11,9 @@
       = f.input :fat
       = f.input :carbohydrate
       = f.input :energy
-      = link_to_remote image_tag("utkonos.gif", :alt => "Search Утконос", :height => 50), |
-        {:url => {:action => 'get_utkonos_link'}, |
-        :with => "'name=' + $('product_name').value"}, :href => "http://www.utkonos.ru/search.php" |
+      = link_to(image_tag("utkonos.gif", :alt => "Search Утконос", :height => 50), |
+        url_for(:action => 'get_utkonos_link'), "data-method" => "get", "data-remote" => true, "data-input" => "product_name") |
+      -#{:href => "http://www.utkonos.ru/search.php"})
   %p
     = f.buttons
 
