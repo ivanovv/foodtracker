@@ -1,40 +1,33 @@
 class DaysController < ApplicationController
   before_filter :require_user
+  respond_to :html
 
   def index
-    @days = current_user.days.recent
+    respond_with(@days = current_user.days.recent)
   end
 
   def show
-    @day = current_user.days.date(params[:id].to_date)
+    respond_with(@day = current_user.days.date(params[:id].to_date))
   end
 
   def new
-    @day = Day.new(:user => current_user)
+    respond_with(@day = Day.new(:user => current_user))
   end
 
   def create
-    @day = current_user.days.build(params[:day])
-    if @day.save
-      flash[:notice] = "Successfully created day."
-      redirect_to (session[:return_to] || @day)
-    else
-      render :action => 'new'
-    end
+    @day = current_user.days.build(params[:day])    
+    flash[:notice] = "Successfully created day." if @day.save
+    respond_with(@day)
   end
 
   def edit
-    @day = current_user.days.date(params[:id].to_date)
+    respond_with(@day = current_user.days.date(params[:id].to_date))
   end
 
   def update
-    @day = current_user.days.date(params[:id].to_date)
-    if @day.update_attributes(params[:day])
-      flash[:notice] = "Successfully updated day."
-      redirect_to @day
-    else
-      render :action => 'edit'
-    end
+    @day = current_user.days.date(params[:id].to_date)    
+    flash[:notice] = "Successfully updated day." if @day.update_attributes(params[:day])
+    respond_with(@day)
   end
 
   def destroy
@@ -49,4 +42,3 @@ class DaysController < ApplicationController
     @day ||= current_user.days.date(params[:id].to_date)
   end
 end
-

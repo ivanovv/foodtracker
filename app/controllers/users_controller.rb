@@ -1,30 +1,25 @@
 class UsersController < ApplicationController
+  respond_to :html
+
   def new
-    @user = User.new
+    respond_with(@user = User.new)
   end
 
   def create
     @user = User.new(params[:user])
-    if @user.save
-      flash[:notice] = "Registration successful."
-      redirect_to root_url
-    else
-      render :action => 'new'
-    end
+    flash[:notice] = t(:success_reg) if @user.save
+    respond_with(@user)
   end
 
   def edit
     @user = current_user
+    respond_with(@user)
   end
 
   def update
     @user = current_user
-    if @user.update_attributes(params[:user])
-      flash[:notice] = "Successfully updated your profile."
-      redirect_to root_url
-    else
-      render :action => 'edit'
-    end
+    flash[:notice] = t(:success_profile_update) if @user.update_attributes(params[:user])
+    respond_with(@user)
   end
 end
 
