@@ -18,6 +18,10 @@ en:
   today: Today
   tomorrow: Tomorrow
   yesterday: Yesterday
+  success_reg: Registration successful.
+  success_profile_update: Successfully updated your profile.
+  success_login: Successfully logged in.
+  success_logout: Successfully logged out.
 
 
   layouts:
