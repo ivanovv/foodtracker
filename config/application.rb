@@ -39,7 +39,7 @@ module Demo
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters << [:password, :password_confirmation, :confirm_password]
-    config.cookie_secret = '35fc70f2a852fe0213b5e60bbad63548f1dcacdae76a67c1f25d8f33c72580cbb1cda2ec48b40b49bfe39d63cc68b1e7fea683284d124f5addb38b5d04c46df8'
+    config.secret_token = '35fc70f2a852fe0213b5e60bbad63548f1dcacdae76a67c1f25d8f33c72580cbb1cda2ec48b40b49bfe39d63cc68b1e7fea683284d124f5addb38b5d04c46df8'
 
   end
 end
