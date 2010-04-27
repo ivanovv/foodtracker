@@ -92,8 +92,9 @@ class CaloryLinesController < ApplicationController
     end
   end
 
-  def get_product    
+  def get_product
     @product = Product.find(params[:product_id]) if params[:product_id]
   end
 
 end
+
