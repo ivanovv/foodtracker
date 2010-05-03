@@ -163,7 +163,8 @@ form.formtastic .buttons {
     .app-table thead tr th.enum {
       text-align: left; }
     .app-table thead tr th.buttons {
-      text-align: center; }
+      text-align: center;
+      width: 65px; }
   .app-table tbody tr.ui-state-alternate {
     background-color: #eef; }
   .app-table tbody tr td {
@@ -192,7 +193,8 @@ form.formtastic .buttons {
     .app-table tbody tr td.enum {
       text-align: left; }
     .app-table tbody tr td.buttons {
-      text-align: center; }
+      text-align: center;
+      width: 65px; }
     .app-table tbody tr td a {
       text-decoration: none;
       color: #333333; }
@@ -215,8 +217,6 @@ form.formtastic .buttons {
 
 .app-table.categories th.category-name {
   width: auto; }
-.app-table.categories th.category-actions {
-  width: 100px; }
 
 .app-table.products th.product-name {
   width: 350px; }
