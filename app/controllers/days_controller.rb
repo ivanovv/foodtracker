@@ -2,7 +2,7 @@ class DaysController < ApplicationController
   before_filter :require_user
 
   def index
-    @days = current_user.days.all(:order => 'enter_date DESC')
+    @days = current_user.days.all(:order => 'enter_date DESC', :include=> [:calory_lines, :user])
   end
 
   def show
