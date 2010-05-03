@@ -7,6 +7,7 @@ module DaysHelper
       t.header.column :weight, t('days.weight'), :class => "float"
       t.header.column :metabolic_norm, t('days.metabolic_norm'), :class => "float"
       t.header.column :total_calories, t('days.total_calories'), :class => "float"
+      t.header.column :to_eat, t('days.to_eat'), :class => "float"
       t.header.column :actions, ''
 
       t.rows.alternate = :odd
@@ -18,6 +19,7 @@ module DaysHelper
         row.weight item.weight, :class => "float"
         row.metabolic_norm item.base_metabolic_rate, :class => "float"
         row.total_calories item.total_calories, :class => "float"
+        row.to_eat item.to_eat, :class => "float"
         row.actions table_actions(edit_day_path(item), day_path(item), item), :class => "buttons"
       end
     end

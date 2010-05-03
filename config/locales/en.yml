@@ -86,19 +86,20 @@ en:
 
   days:
     enter_date: "Enter date"
-    weight: "Weight"
-    metabolic_norm: "Metabolic norm"
-    total_calories: "Total calories"
+    weight: Weight
+    metabolic_norm: Metabolic norm
+    total_calories: Total calories
+    to_eat: Can eat
 
     index:
-      title: "Days"
-      new_day: "New Day"
+      title: Days
+      new_day: New Day
 
     edit:
-      title: "Edit day"
+      title: Edit day
 
     new:
-      title: "New Day"
+      title: New Day
 
     show:
       title: "My Nutrition Log for {{date}}"

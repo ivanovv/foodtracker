@@ -1,10 +1,11 @@
 class Day < ActiveRecord::Base
   attr_accessible :enter_date, :weight
 
-  validates_presence_of :enter_date
+  validates_presence_of :enter_date, :weight, :user_id
   validates_uniqueness_of :enter_date, :scope=> [:user_id]
-  validates_presence_of :weight
-  validates_numericality_of :weight
+  validates_numericality_of :weight, :greater_than_or_equal_to => 20, :less_than_or_equal_to => 200
+  validates_inclusion_of :weight, :in => 20..200
+
 
   belongs_to :user
   has_many :calory_lines
@@ -44,11 +45,11 @@ class Day < ActiveRecord::Base
   end
 
   def total_calories
-    result = 0
-    calory_lines.each do |calory_line|
-      result += calory_line.total_calories
-    end
-    result
+    calory_lines.inject(0) { |sum, calory_line| sum + calory_line.total_calories }
+  end
+
+  def to_eat
+    user.base_metabolic_rate(weight) - total_calories
   end
 
 end
