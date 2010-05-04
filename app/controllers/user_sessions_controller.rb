@@ -6,8 +6,9 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      flash[:notice] = t(:success_login)
-      redirect_to (session[:return_to] || (Day.find_by_date() ? root_url : new_day_path))
+      flash[:notice] = t('user_sessions.create.success_login')
+      day = Day.find_by_date()
+      redirect_to (session[:return_to] || (day ? root_url : new_day_path))
       session[:return_to] = nil
     else
       render :action => 'new'
@@ -17,7 +18,7 @@ class UserSessionsController < ApplicationController
   def destroy
     @user_session = UserSession.find
     @user_session.destroy
-    flash[:notice] = t(:success_logout)
+    flash[:notice] = t('user_sessions.destroy.success_logout')
     redirect_to root_url
   end
 end

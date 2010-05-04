@@ -1,122 +1,310 @@
 ru:
-  application_title: "Название приложения"
-  cancel: "Отменить"
-  or: "или"
-  access_denied: "Доступ запрещён."
-  access_denied_try_to_login: "Доступ запрещён. Залогинтесь в приложение и повторите попытку."
-  title_of_reset_password_email: "Инструкции для востановлении пароля"
+  application_title: Считалка калорий
+  cancel: Отменить
+  or: или
+  access_denied: Доступ запрещён.
+  access_denied_try_to_login: Доступ запрещён. Залогинтесь в приложение и повторите попытку.
+  title_of_reset_password_email: Инструкции для востановлении пароля
+  kg: кг
+  cals: ккал
+  edit: Править
+  delete: Удалить
+  destroy: Стереть
+  show: Показать
+  view_all: Просмотреть все
+  back_to_list: Назад к списку
+  are_you_sure: Вы уверены?
+  search: Поиск
+  search_products: Искать продукт
+  today: Сегодня
+  tomorrow: Завтра
+  yesterday: Вчера
+  success_reg: Успешная регистрация.
+  success_profile_update: Ваш профиль обновлен успешно.
+  menu_categories: Категории
+  menu_products: Продукты
+  menu_days: Дни
+
 
   layouts:
     main_navigation:
-      dashboard: "Главная"
+      dashboard: Главная
 
     user_navigation:
-      login: "Вход"
-      logout: "Выход"
-      register: "Регистрация"
-      profile: "Профайл"
-      administration: "Управлене приложением"
+      login: Вход
+      logout: Выход
+      register: Регистрация
+      profile: Профайл
+      administration: Управлене приложением
 
     admin:
       main_navigation:
-        dashboard: "Главная"
-        users: "Аккаунты"
+        dashboard: Главная
+        users: Аккаунты
+
+  calory_lines:
+    day: День
+    product: Продукт
+    net_weight: Вес, г
+    energy: Калорийность, ккал
+    total_calories: Всего, ккал
+    specify_energy: Указать другую калорийность для данной записи
+    total_calories_footer: Всего калорий
+
+    index:
+      title: Записи о еде
+      no_calory_lines: Для этого дня записей нет.
+      confirm_for_delete: Вы хотите удалить запись о еде '{{name}}'?
+      new_calory_line: Создать запись о еде
+
+    new:
+      title: Запишите свою еду
+
+    edit:
+      title: Редактировать запись о еде
+
+    show:
+      title: Food record
+      add_another_record: Добавить еще запись
+
+  categories:
+    name: Название
+
+    index:
+      title: Категории
+      no_categories: Нет категорий.
+      confirm_for_delete: Вы хотите удалить категорию под названием '{{name}}'?
+      new_category: Создать категорию
+
+    new:
+      title: Новая категория
+
+    edit:
+      title: Редактировать категорию
+
+    show:
+      title: Категория
+
+    sidebar:
+      new: Новая категория...
+
+  days:
+    enter_date: Дата ввода
+    weight: Вес
+    metabolic_norm: Метаболическая норма
+    total_calories: Всего калорий
+    to_eat: Еще можно съесть
+
+    index:
+      title: Дни
+      new_day: Создать запись
+
+    edit:
+      title: Редактировать день
+
+    new:
+      title: Новая запись
+
+    show:
+      title: My Nutrition Log for {{date}}
+      my_weight: Мой вес
+      metabolic_norm: Моя метаболическая норма
+      total_calories: Всего калорий
+
+
+  products:
+    index:
+      title: Продукты
+      name: Название
+      water: Вода
+      protein: Белки
+      fat: Жиры
+      carbohydrate: Углеводы
+      carb: Углеводы
+      energy: Калорийность
+
+      no_products: Пока продуктов нет.
+      confirm_for_delete: Вы хотите удалить продукт '{{name}}'?
+      new_product: Добавить новый продукт
+
+    new:
+      title: Новый продукт
+
+    edit:
+      title: Редактировать продукт
+
+    show:
+      title: Продукт
+      record_food: Добавить этот продукт to the nutrition log, г
+
+    sidebar:
+      new: Новый продукт...
+
+  users:
+    new:
+      new_user: Новый пользователь
+      title: Новый профиль
+
+    edit:
+      title: Редактировать профиль
+
+    form:
+      male: М
+      female: Ж
+      confirm_pass: Подтвердите пароль
+      pass_hint: Введите пароль еще раз
+
 
   sidebar:
-    actions: "Действия"
-    information: "Информация"
+    actions: Действия
+    information: Информация
 
-  user_session:
-    login:
-      title: "Вход"
-      login: "Войти"
-      reset_password: "Забыли пароль?"
+  user_sessions:
+    new:
+      title: Вход
+      login: Войти
+      reset_password: Забыли пароль?
 
-      success_login: "Вы успешно вошли в приложение!"
+    create:
+      success_login: Вы вошли в приложение
 
-    logout:
-      success_logout: "Вы успешно вышли из приложения!"
+    destroy:
+      success_logout: Вы вышли из приложения
 
     register:
-      title: "Регистрация нового аккаунта"
-      register: "Зарегистрировать"
-
-      account_registred: "Аккаунт зарегистрирован!"
+      title: Регистрация нового аккаунта
+      register: Зарегистрировать
+      account_registred: Аккаунт зарегистрирован!
 
     request_reset_password:
-      title: "Восстановление пароля"
+      title: Восстановление пароля
       description: "Заполните форму находящуюся ниже и следуйте инструкциям отправленным по e-mail для восстановления пароля:"
-      email: "E-Mail"
-      send_request: "Отправить запрос"
-
-      email_notification: "Инструкции для восстановления пароля были отправлены на ваш e-mail."
-      nonexistent_email: "Не найдено пользователя с указанным e-mail адресом"
+      email: E-Mail
+      send_request: Отправить запрос
+      email_notification: Инструкции для восстановления пароля были отправлены на ваш e-mail.
+      nonexistent_email: Не найдено пользователя с указанным e-mail адресом
 
     reset_password:
-      title: "Смена пароля"
-      reset: "Применить новый пароль"
-
-      password_updated: "Пароль востановлен"
+      title: Смена пароля
+      reset: Применить новый пароль
+      password_updated: Пароль востановлен
 
     load_user_using_perishable_token:
-      wrong_perishable_token: "Информация для востановления пароля устарела. Попробуйте повторить процедуру востановление пароля."
+      wrong_perishable_token: Информация для востановления пароля устарела. Попробуйте повторить процедуру востановление пароля.
 
     profile:
-      edit: "Изменить"
-      connection_information: "Информация о соединении"
+      edit: Изменить
+      connection_information: Информация о соединении
 
     edit_profile:
-      title: "Изменение профайла"
-      change: "Изменить"
+      title: Изменение профайла
+      change: Изменить
 
   admin:
     users:
       index:
-        title: "Аккаунты"
-        login: "Логин"
-        name: "ФИО"
-        email: "E-Mail"
-        created_at: "Создан"
-        last_login_at: "Последний логин"
-        last_login_ip: "IP последнего логина"
+        title: Аккаунты
+        login: Логин
+        name: ФИО
+        email: E-Mail
+        created_at: Создан
+        last_login_at: Последний логин
+        last_login_ip: IP последнего логина
 
-        confirm_for_delete: "Вы действительно хотите удалить пользователя с логином '{{login}}'?"
-        edit_hint: "Изменить"
-        delete_hint: "Удалить"
+        confirm_for_delete: Вы действительно хотите удалить пользователя с логином '{{login}}'?
+        edit_hint: Изменить
+        delete_hint: Удалить
 
       new:
-        title: "Новый аккаунт"
+        title: Новый аккаунт
 
       edit:
-        title: "Изменить аккаунт"
+        title: Изменить аккаунт
 
       sidebar:
-        new: "Новый аккаунт..."
+        new: Новый аккаунт...
 
   activerecord:
     attributes:
       user:
-        login: "Логин"
-        email: "E-Mail"
-        first_name: "Имя"
-        last_name: "Фамилия"
-        password: "Пароль"
-        password_confirmation: "Повторить пароль"
-        created_at: "Создан"
-        last_login_at: "Последний логин"
-        last_login_ip: "IP последнего логина"
-        current_login_ip: "Текущий IP"
+        login: Логин
+        username: Логин
+        email: E-Mail
+        first_name: Имя
+        last_name: Фамилия
+        password: Пароль
+        password_confirmation: Повторить пароль
+        created_at: Создан
+        last_login_at: Последний логин
+        last_login_ip: IP последнего логина
+        current_login_ip: Текущий IP
+        born: Дата рождения
+        height: Рост
+
+      product:
+        water: Вода
+        name: Название
+        protein: Белки
+        fat: Жиры
+        carbohydrate: Углеводы
+        energy: Калорийность
+        category: Категория
+
+      category:
+        name: Название
+
+      day:
+        enter_date: Дата
+        weight: Вес
+
+      calory_line:
+        product: Продукт
+        day: День
+        net_weight: Вес
+        energy: Калорийность
+
+
 
   authlogic:
     attributes:
       user_session:
-        login: "Логин"
-        email: "E-Mail"
-        password: "Пароль"
-        remember_me: "Запомнить"
+        login: Логин
+        username: Логин
+        email: E-Mail
+        password: Пароль
+        remember_me: Запомнить
 
   formtastic:
     actions:
       user:
-        create: "Создать аккаунт"
-        update: "Изменить аккаунт"
+        create: Создать аккаунт
+        update: Изменить аккаунт
+
+      calory_line:
+        create: Запись еду
+        update: Изменить запись
+
+      day:
+        create: Создать день
+
+      product:
+        create: Создать
+        update: Изменить
+
+      category:
+        update: Изменить
+
+    hints:
+      calory_line:
+        net_weight: г
+        energy: ккал
+      day:
+        weight: Ввведите свой вес в килограммах
+      user:
+        height: Укажите свой рост в сантиметрах
+        password_confirmation: Введите пароль еще раз
+
+    labels:
+      password_confirmation: Подтвердите пароль
+      female: Пол
+

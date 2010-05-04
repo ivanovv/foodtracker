@@ -20,8 +20,10 @@ en:
   yesterday: Yesterday
   success_reg: Registration successful.
   success_profile_update: Successfully updated your profile.
-  success_login: Successfully logged in.
-  success_logout: Successfully logged out.
+  menu_categories: Categories
+  menu_products: Products
+  menu_days: Days
+
 
 
   layouts:
@@ -41,17 +43,19 @@ en:
         users: Accounts
 
   calory_lines:
-    day: Day
-    product: Product
-    net_weight: Net weight, g
-    energy: Energy, cal
-    total_calories: Total, cal
-    specify_energy: I want to enter alternative energy for this product
+    day: День
+    product: Продукт
+    net_weight: Вес, г
+    energy: Калорийность, ккал
+    total_calories: Всего, ккал
+    specify_energy: Указать другую калорийность для данной записи
+    total_calories_footer: Total calories
 
     index:
       title: Food records
       no_calory_lines: No records for this day
       confirm_for_delete: Do you want to delete food record '{{name}}'?
+      new_calory_line: New Food Record
 
     new:
       title: Record your food
@@ -68,9 +72,9 @@ en:
 
     index:
       title: Categories
-
       no_categories: There are no categories.
       confirm_for_delete: Do you want to delete category named '{{name}}'?
+      new_category: Create category
 
     new:
       title: New Category
@@ -121,6 +125,7 @@ en:
 
       no_products: There are no products.
       confirm_for_delete: Do you want to delete product named '{{name}}'?
+      new_product: New Product
 
     new:
       title: New Product
@@ -144,8 +149,6 @@ en:
       title: Update Account
 
     form:
-      height_hint: Specify your height in sm
-      gender: Gender
       male: Male
       female: Female
       confirm_pass: Confirm password
@@ -162,15 +165,15 @@ en:
       login: Login
       reset_password: Reset password
 
+    create:
       success_login: Login successful!
 
-    logout:
+    destroy:
       success_logout: Logout successful!
 
     register:
       title: Register
       register: Register
-
       account_registred: Account registered!
 
     request_reset_password:
@@ -178,14 +181,12 @@ en:
       description: "Fill out the form below and instructions to reset your password will be emailed to you:"
       email: E-Mail
       send_request: Send request
-
       email_notification: Instructions to reset your password have been emailed to you. Please check your email.
       nonexistent_email: No user was found with that email address
 
     reset_password:
       title: Change password
       reset: Reset Password
-
       password_updated: Password successfully updated
 
     load_user_using_perishable_token:
@@ -228,6 +229,7 @@ en:
     attributes:
       user:
         login: Login
+        username: Login
         email: E-Mail
         first_name: First Name
         last_name: Last Name
@@ -238,16 +240,35 @@ en:
         last_login_ip: Last Login IP
         current_login_ip: Current IP
         born: Born
+        height: Height
 
       category:
         name: Name
       product:
+        water: Water
         name: Name
+        protein: Protein
+        fat: Fat
+        carbohydrate: Carbohydrates
+        energy: Energy
+        category: Category
+
+      day:
+        enter_date: Date
+        weight: Weignt
+
+      calory_line:
+        product: Product
+        day: Day
+        net_weight: Weight
+        energy: Energy
+
 
   authlogic:
     attributes:
       user_session:
         login: Login
+        username: Login
         email: E-Mail
         password: Password
         remember_me: Remember me
@@ -261,6 +282,16 @@ en:
       calory_line:
         create: Record food
         update: Change record
+
+      day:
+        create: Create Day
+
+      product:
+        create: Create Product
+        update: Change Product
+
+      category:
+        update: Change Category
 
     hints:
       calory_line:
