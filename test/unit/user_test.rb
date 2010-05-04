@@ -4,6 +4,7 @@ class UserTest < ActiveSupport::TestCase
 
   should_have_many :days
   should_validate_numericality_of :height
+  should_have_authlogic
 
   should "new user be invalid" do
     assert !User.new.valid?
@@ -23,6 +24,12 @@ class UserTest < ActiveSupport::TestCase
     vic = users(:vic)
     assert_equal vic.base_metabolic_rate(60),
       (10 * 60) + (6.25 * vic.height) - (5 * vic.age) + 5, "base metabolic rate differs"
+  end
+
+  should "not allow born date less than 120 years from now" do
+    u = users(:vic)
+    u.born = 130.years.ago
+    assert !u.save, "saved a person who is 130 years old"
   end
 
 end
