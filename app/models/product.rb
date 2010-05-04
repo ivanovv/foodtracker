@@ -6,7 +6,13 @@ class Product < ActiveRecord::Base
 
   validates_presence_of :name, :energy, :category_id
   validates_uniqueness_of :name
-  validates_numericality_of :water, :protein, :fat, :carbohydrate, :energy
+  validates_numericality_of :protein, :fat, :carbohydrate, :water
+    {:greater_than_or_equal_to => 0, :less_than_or_equal_to => 100}
+  validates_numericality_of :energy, :greater_than => -1, :less_than => 700
+
+  validates_inclusion_of :protein, :fat, :carbohydrate, :water, {:in => 0..100}
+  #validates_inclusion_of :energy, :in => 0..700
+
 
   def self.search(product_name = nil)
     if product_name
@@ -21,4 +27,3 @@ class Product < ActiveRecord::Base
   end
 
 end
-

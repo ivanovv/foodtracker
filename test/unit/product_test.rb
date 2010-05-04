@@ -8,17 +8,15 @@ class ProductTest < ActiveSupport::TestCase
   should_validate_uniqueness_of :name
   should_validate_presence_of :category_id, :energy
   should_ensure_value_in_range :energy, 0..700
+  should_ensure_value_in_range :fat, 0..100
+  should_ensure_value_in_range :protein, 0..100
+  should_ensure_value_in_range :carbohydrate, 0..100
+  should_ensure_value_in_range :water, 0..100
 
 
   should "new product fail validations" do
     p = Product.new
     assert !p.save, "saved invalid product"
-  end
-
-  test "category_id should be present" do
-    p = products(:ham)
-    p.category_id = nil
-    assert !p.valid?, "category_id is nil, and the record is valid"
   end
 
   test "search by name" do
