@@ -18,22 +18,22 @@
     #app-container
       %ul#nav
         %li
-          = link_to "Categories", categories_path
+          = link_to t(:menu_categories), categories_path
         %li
-          = link_to "Products", products_path
+          = link_to t(:menu_products), products_path
         %li
-          = link_to "Days", days_path
+          = link_to t(:menu_days), days_path
 
         - if current_user
           %li.right
-            = link_to "Logout", logout_path
+            = link_to t("layouts.user_navigation.logout"), logout_path
           %li.right
-            = link_to "Edit Profile", edit_user_path(:current)
+            = link_to t("user_sessions.edit_profile.title"), edit_user_path(:current)
         - else
           %li.right
-            = link_to "Login", login_path
+            = link_to t("layouts.user_navigation.login"), login_path
           %li.right
-            = link_to "Register", new_user_path
+            = link_to t("layouts.user_navigation.register"), new_user_path
       .clear
 
       #content-container
