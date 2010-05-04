@@ -4,8 +4,8 @@ class CaloryLine < ActiveRecord::Base
   belongs_to :product
   belongs_to :day
 
-  validates_presence_of :net_weight
-  validates_numericality_of :net_weight
+  validates_presence_of :net_weight, :product_id, :day_id
+  validates_numericality_of :net_weight, :greater_than => 10, :less_than => 5000
 
   scope :for_current_user, lambda {
     joins(:days).where("days.user_id = ?", UserSession.find.user.id)
