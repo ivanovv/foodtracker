@@ -98,6 +98,7 @@ en:
     index:
       title: Days
       new_day: New Day
+      confirm_for_delete: Do you want to delete day '{{name}}'?
 
     edit:
       title: Edit day

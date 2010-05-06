@@ -98,6 +98,7 @@ ru:
     index:
       title: Дни
       new_day: Создать запись
+      confirm_for_delete: Вы хотите удалить день '{{name}}'?
 
     edit:
       title: Редактировать день
