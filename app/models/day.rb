@@ -38,12 +38,12 @@ class Day < ActiveRecord::Base
     case
     when enter_date.year != current.year
       to_param
-    when enter_date.yday == (current.yday + 1)
-      I18n.t(:tomorrow)
-    when enter_date.yday == current.yday
-      I18n.t(:today)
-    when enter_date.yday == (current.yday - 1)
-      I18n.t(:yesterday)
+#    when enter_date.yday == (current.yday + 1)
+#      I18n.t(:tomorrow)
+#    when enter_date.yday == current.yday
+#      I18n.t(:today)
+#    when enter_date.yday == (current.yday - 1)
+#      I18n.t(:yesterday)
     when (current.yday - enter_date.yday).abs < 7
       enter_date.strftime("%A, %d %b")
     else
@@ -68,4 +68,3 @@ class Day < ActiveRecord::Base
   end
 
 end
-
