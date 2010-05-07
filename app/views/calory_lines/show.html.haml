@@ -28,6 +28,6 @@
     %p
       -#= text_field_tag :search, (params[:search]||"").force_encoding('utf-8')
       = text_field_tag :search, params[:search]
-      = hidden_field_tag :day_id, @day
+      = hidden_field_tag :day_id, @calory_line.day
       = submit_tag t(:search_products), :name => nil
 
