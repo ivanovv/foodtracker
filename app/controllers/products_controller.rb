@@ -36,9 +36,9 @@ class ProductsController < ApplicationController
   end
 
   def get_energy
-    @product = Product.find(params[:product_id])
-    respond_to do |format|
-      format.js if request.xhr?
+    if request.xhr?
+      @product = Product.find(params[:product_id])
+      render :text => @product.energy.to_s
     end
   end
 
