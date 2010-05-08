@@ -2,7 +2,7 @@
 !text_color = #333
 !light_text_color = #EAEAEA
 
-!footer_background_color = #DDDDDD
+!footer_background_color = #DDD
 !footer_height = 50px
 
 @import theme/core/core
@@ -54,7 +54,7 @@ a
   :width 70%
 
 #flash_notice
-  :background-color #CFC
+  :background-color = #CFC
   :border solid 1px #6C6
 
 #flash_error
@@ -86,19 +86,22 @@ form.formtastic
 
   li.right
     :float right
+  li.selected
+    :background-color = !footer_background_color
+    :font-weight bold
   li
     :float left
     a
       :display block
       :padding 8px 15px
       :text-decoration none
-      :font-weight bold
-      :color #069
+      //:font-weight bold
+      :color = !primary_color
       :border-right 1px solid #ccc
 
 #nav li a:hover
   :color #c00
-  :background-color #fff
+  //:background-color #fff
 
 
 .app-footer

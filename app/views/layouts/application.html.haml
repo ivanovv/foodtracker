@@ -7,37 +7,18 @@
     %meta{"http-equiv"=>"Content-Type", :content=>"text/html; charset=utf-8"}
     = javascript_include_tag :defaults,  :cache => "all"
     = javascript_include_tag 'scriptaculous', 'lightview'
-    -#= javascript_include_tag 'shadowbox'
 
     = stylesheet_link_tag 'clearfix', 'reset', 'application' #, 'formtastic'
     = stylesheet_link_tag 'lightview'
-    -#= stylesheet_link_tag 'shadowbox'
+
     = yield(:head)
 
   %body
     #app-container
-      %ul#nav
-        %li
-          = link_to t(:menu_categories), categories_path
-        %li
-          = link_to t(:menu_products), products_path
-        %li
-          = link_to t(:menu_days), days_path
-
-        - if current_user
-          %li.right
-            = link_to t("layouts.user_navigation.logout"), logout_path
-          %li.right
-            = link_to t("user_sessions.edit_profile.title"), edit_user_path(:current)
-        - else
-          %li.right
-            = link_to t("layouts.user_navigation.login"), login_path
-          %li.right
-            = link_to t("layouts.user_navigation.register"), new_user_path
+      %ul#nav= render_navigation
       .clear
 
       #content-container
-
         - if flash.present?
           .app-flash
             - flash.each do |type, message|

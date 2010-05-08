@@ -1,4 +1,5 @@
 class DaysController < ApplicationController
+  navigation :days
   before_filter :require_user
 
   def index

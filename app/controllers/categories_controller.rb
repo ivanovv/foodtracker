@@ -1,4 +1,5 @@
 class CategoriesController < ApplicationController
+  navigation :categories
   before_filter :find_category, :only => [:show, :edit, :update, :destroy]
 
   def index
@@ -39,4 +40,6 @@ class CategoriesController < ApplicationController
   def find_category
     @category = Category.find(params[:id])
   end
+
+end
 
