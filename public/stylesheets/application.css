@@ -312,7 +312,7 @@ a {
   width: 70%; }
 
 #flash_notice {
-  background-color: #CFC;
+  background-color: #ccffcc;
   border: solid 1px #6C6; }
 
 #flash_error {
@@ -505,19 +505,20 @@ form.formtastic .radio label, form.formtastic .check_boxes label {
   border-bottom: 1px solid #ccc; }
   #nav li.right {
     float: right; }
+  #nav li.selected {
+    background-color: #dddddd;
+    font-weight: bold; }
   #nav li {
     float: left; }
     #nav li a {
       display: block;
       padding: 8px 15px;
       text-decoration: none;
-      font-weight: bold;
-      color: #069;
+      color: #4b7399;
       border-right: 1px solid #ccc; }
 
 #nav li a:hover {
-  color: #c00;
-  background-color: #fff; }
+  color: #c00; }
 
 .app-footer {
   position: relative;
