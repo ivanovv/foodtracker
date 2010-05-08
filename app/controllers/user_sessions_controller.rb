@@ -17,8 +17,10 @@ class UserSessionsController < ApplicationController
 
   def destroy
     @user_session = UserSession.find
-    @user_session.destroy
-    flash[:notice] = t('user_sessions.destroy.success_logout')
+    if @user_session
+      @user_session.destroy
+      flash[:notice] = t('user_sessions.destroy.success_logout')
+    end
     redirect_to root_url
   end
 end
