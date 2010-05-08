@@ -1,7 +1,7 @@
 require 'iconv'
 
 class ProductsController < ApplicationController
-
+  before_filter :require_user, :only => [:edit, :update, :destroy]
   def index
 
     #if params[:search]
