@@ -1,5 +1,5 @@
 class CaloryLinesController < ApplicationController
-
+  navigation :days
   before_filter :require_user, :get_day, :get_product
 
   def index
