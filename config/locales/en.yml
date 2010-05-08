@@ -36,6 +36,7 @@ en:
       register: Register
       profile: Profile
       administration: Administration
+      greeting: Hi, {{name}}!
 
     admin:
       main_navigation:
@@ -216,6 +217,8 @@ en:
 
         no_users: There are no accounts
         confirm_for_delete: Do you want to delete user with login '{{login}}'?
+        edit_hint: Change
+        delete_hint: Delete
 
       new:
         title: New Account
@@ -243,8 +246,6 @@ en:
         born: Born
         height: Height
 
-      category:
-        name: Name
       product:
         water: Water
         name: Name
@@ -253,6 +254,9 @@ en:
         carbohydrate: Carbohydrates
         energy: Energy
         category: Category
+
+      category:
+        name: Name
 
       day:
         enter_date: Date
