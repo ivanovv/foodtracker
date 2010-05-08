@@ -36,6 +36,7 @@ ru:
       register: Регистрация
       profile: Профайл
       administration: Управлене приложением
+      greeting: Привет, {{name}}!
 
     admin:
       main_navigation:
@@ -212,6 +213,7 @@ ru:
         last_login_at: Последний логин
         last_login_ip: IP последнего логина
 
+        no_users: Нет аккаунов
         confirm_for_delete: Вы действительно хотите удалить пользователя с логином '{{login}}'?
         edit_hint: Изменить
         delete_hint: Удалить
@@ -263,7 +265,6 @@ ru:
         day: День
         net_weight: Вес
         energy: Калорийность
-
 
 
   authlogic:

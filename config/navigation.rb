@@ -41,10 +41,14 @@ SimpleNavigation::Configuration.run do |navigation|
     # You can also specify a condition-proc that needs to be fullfilled to display an item.
     # Conditions are part of the options. They are evaluated in the context of the views,
     # thus you can use all the methods and vars you have available in the views.
-    primary.item :logout, t("layouts.user_navigation.logout"), logout_path, :class => 'right', :if => Proc.new {current_user}
-    primary.item :edit_profile, t("user_sessions.edit_profile.title"), edit_user_path(:current), :class => 'right', :if => Proc.new {current_user}
-    primary.item :login, t("layouts.user_navigation.login"), login_path, :class => 'right', :unless => Proc.new { current_user }
-    primary.item :register, t("layouts.user_navigation.register"), new_user_path, :class =>'right', :unless => Proc.new { current_user }
+    primary.item :logout, t("layouts.user_navigation.logout"), logout_path,
+      :class => 'right', :if => Proc.new {current_user}
+    primary.item :edit_profile, t("layouts.user_navigation.greeting", :name => current_user.username),
+      edit_user_path(:current), :class => 'right', :if => Proc.new {current_user}
+    primary.item :login, t("layouts.user_navigation.login"), login_path,
+      :class => 'right', :unless => Proc.new { current_user }
+    primary.item :register, t("layouts.user_navigation.register"), new_user_path, 
+      :class =>'right', :unless => Proc.new { current_user }
 
     #primary.item :key_3, 'Admin', url, :class => 'special', :if => Proc.new { current_user.admin? }
     #primary.item :key_4, 'Account', url, :unless => Proc.new { logged_in? }
