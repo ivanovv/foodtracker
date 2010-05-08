@@ -12,6 +12,9 @@
     = stylesheet_link_tag 'lightview'
 
     = yield(:head)
+    - if yield :style
+      %style{:type => "text/css"}
+        = yield :style
 
   %body
     #app-container
