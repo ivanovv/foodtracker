@@ -5,7 +5,7 @@ class CaloryLineTest < ActiveSupport::TestCase
   should_belong_to :product, :day
   should_validate_presence_of :net_weight, :product_id, :day_id
   should_validate_numericality_of :net_weight
-  should_ensure_value_in_range :net_weight, 11..4999, :low_message => "must be greater than 10",
+  should_ensure_value_in_range :net_weight, 3..4999, :low_message => "must be greater than 3",
     :high_message =>  "must be less than 5000"
 
   should "new calory line be invalid" do
