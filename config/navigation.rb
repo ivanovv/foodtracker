@@ -43,7 +43,7 @@ SimpleNavigation::Configuration.run do |navigation|
     # thus you can use all the methods and vars you have available in the views.
     primary.item :logout, t("layouts.user_navigation.logout"), logout_path,
       :class => 'right', :if => Proc.new {current_user}
-    primary.item :edit_profile, t("layouts.user_navigation.greeting", :name => current_user.username),
+    primary.item :edit_profile, t("layouts.user_navigation.greeting", :name => current_user ? current_user.username : ''),
       edit_user_path(:current), :class => 'right', :if => Proc.new {current_user}
     primary.item :login, t("layouts.user_navigation.login"), login_path,
       :class => 'right', :unless => Proc.new { current_user }
