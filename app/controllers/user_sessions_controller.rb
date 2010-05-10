@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       flash[:notice] = t('user_sessions.create.success_login')
-      day = Day.find_by_date()
+      day = Day.find_by_date
       redirect_to (session[:return_to] || (day ? root_url : new_day_path))
       session[:return_to] = nil
     else
