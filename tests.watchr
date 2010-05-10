@@ -30,7 +30,7 @@ def standard_test
   result = yield
   if result
     lines = result.split("\n")
-    line = lines.select {|line| line =~ /\d+ tests, \d+ assertions, \d+ failures, \d+ errors, \d+ skips/}.first
+    line = lines.select {|line| line =~ /\d+ tests, \d+ assertions, \d+ failures, \d+ errors.?/}.first
     if line
       errors = line.match(/(\d+) failures, (\d+) errors/)
       puts errors[1,2].join('')
@@ -49,10 +49,6 @@ def run_all_tests
   standard_test {run "rake test"}
 end
 
-def run_all_features
-  system('clear')
-  run "cucumber"
-end
 
 def related_test_files(path)
   Dir['test/**/*.rb'].select { |file| file =~ /#{File.basename(path).split(".").first}_test.rb/ }
@@ -60,7 +56,6 @@ end
 
 def run_suite
   run_all_tests
-  run_all_features
 end
 
 watch('test/test_helper\.rb') { run_all_tests }
@@ -87,6 +82,7 @@ Signal.trap 'INT' do
     Kernel.sleep 1.5
     # raise Interrupt, nil # let the run loop catch it
     run_suite
+    @interrupted = true
   end
 end
 
