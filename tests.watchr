@@ -42,11 +42,11 @@ def standard_test
 end
 
 def run_test_file(file)
-  standard_test {run(%Q(ruby -I"lib:test" -rubygems #{file}))}
+  standard_test { run( %Q(ruby -I"lib:test" -rubygems #{file}) ) }
 end
 
 def run_all_tests
-  standard_test {run "rake test"}
+  standard_test { run "rake test" }
 end
 
 
@@ -82,7 +82,7 @@ Signal.trap 'INT' do
     Kernel.sleep 1.5
     # raise Interrupt, nil # let the run loop catch it
     run_suite
-    @interrupted = true
+    @interrupted = false
   end
 end
 
