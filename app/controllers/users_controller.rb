@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   respond_to :html
+  before_filter :require_user, :only => [:edit, :update]
 
   def new
     respond_with(@user = User.new)
