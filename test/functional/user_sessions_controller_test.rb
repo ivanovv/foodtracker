@@ -17,11 +17,19 @@ class UserSessionsControllerTest < ActionController::TestCase
     post :create
     assert_redirected_to root_url
   end
+
+  context "logged in user" do
+    setup do
+      activate_authlogic
+      UserSession.create users(:vic)
+    end
   
-  def test_destroy
-    user_session = UserSession.first
-    delete :destroy, :id => user_session
-    assert_redirected_to root_url
-    assert !UserSession.exists?(user_session.id)
+    should "destroy" do
+      user_session = UserSession.find
+      delete :destroy, :id => user_session
+      assert_redirected_to root_url
+      assert !UserSession.find
+    end
   end
+
 end
