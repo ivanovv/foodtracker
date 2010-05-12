@@ -25,5 +25,19 @@ module DaysHelper
     end
   end
 
+#  def day_calender(all_days)
+#    s = ''
+#    calendar_for(all_days, :today => Date.today) do |t|
+#      s << t.head('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun')
+#      t.day(:day_method => :enter_date) do |day, days|
+#        s << day.day
+#        days.each do |d|
+#          s << d.total_calories.to_s
+#        end
+#      end
+#    end
+#    s
+#  end
+
 end
 

@@ -1,6 +1,22 @@
 - title t('.title')
 
 = day_table
+-#
+  #calendar
+  - calendar_for(@days, :today => Date.today) do |t|
+    = t.head('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun')
+    - t.day(:day_method => :enter_date) do |day, days|
+      = day.day
+      .day
+        - days.each do |d|
+          = t('days.weight') + ':'
+          = d.weight.to_s
+          %br/
+          = t('days.total_calories') + ':'
+          = d.total_calories.to_s
+          %br/
+          = t('days.to_eat') + ':'
+          = d.to_eat.to_s
 
 %p= link_to t('.new_day'), new_day_path
 
