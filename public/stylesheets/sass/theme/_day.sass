@@ -3,13 +3,18 @@
   th.category-name
     width: auto
 
+
 #calendar
+
+  a
+    text-decoration: none
+  a:hover
+    text-decoration: none
+
   table
     border-collapse: collapse
     width: 100%
 
-
-#calendar
   td,th
     font-family: "Lucida Grande",arial,helvetica,sans-serif
     font-size: 10px
@@ -27,21 +32,43 @@
 
 #calendar
   td
-    background: #FFF
+    background-color: #F7FBFD
+    //background: #FFF
     color: #777
     height: 90px
     vertical-align: top
     font-size: 16px
+    text-align: right
 
-    div 
+    div.day
       font-size: 10px
+      text-align: left
+
+    div.add_day
+      padding-top: 15px
+      vertical-align: center
+      font-size: 50px
+      text-align: center
+      display: none
+
+    &:hover
+      background-color: #E5F2FF
+      //cursor: pointer
+    &:hover div.add_day
+      display: block
 
 
 #calendar .notmonth
-  color: #CCC
+  background-color: #FFF
 
 #calendar .today
-  background-color: #D7F2FF
+  //background-color: #D7F2FF
+  background-color: #E5F2FF
+  border: 1px dashed #999
+
+#calendar .weekend
+  background-color: #FEFCE3
+
 
 #calendar
   #month
@@ -49,12 +76,11 @@
     padding-top: 10px
     padding-bottom: 10px
     text-align: center
+
     a
-      text-decoration: none
       padding: 0 10px
       color: #999
     a:hover
-      text-decoration: none
       padding: 0 10px
       color: #999
 

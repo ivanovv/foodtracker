@@ -4,6 +4,8 @@ class DaysController < ApplicationController
   respond_to :html
 
   def index
+
+    @date = params[:month] ? Date.parse(params[:month]) : Date.today
     respond_with(@days = current_user.days.recent)
   end
 
@@ -12,7 +14,9 @@ class DaysController < ApplicationController
   end
 
   def new
-    respond_with(@day = Day.new(:user => current_user))
+    @day = Day.new(:user => current_user)
+    @day.enter_date = Date.parse(params[:enter_date])  if params[:enter_date]
+    respond_with(@day)
   end
 
   def create
