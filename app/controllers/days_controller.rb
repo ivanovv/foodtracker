@@ -4,6 +4,7 @@ class DaysController < ApplicationController
 
   def index
     @days = current_user.days.all(:order => 'enter_date DESC', :include=> [:calory_lines, :user])
+    @date = params[:month] ? Date.parse(params[:month]) : Date.today
   end
 
   def show
@@ -12,6 +13,7 @@ class DaysController < ApplicationController
 
   def new
     @day = Day.new(:user => current_user)
+    @day.enter_date = Date.parse(params[:enter_date])  if params[:enter_date]
   end
 
   def create

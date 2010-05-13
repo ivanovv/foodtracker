@@ -24,6 +24,8 @@ ru:
   menu_categories: Категории
   menu_products: Продукты
   menu_days: Дни
+  days_of_week: Понедельник, Вторник, Среда, Четверг, Пятница, Суббота, Воскресенье
+  days_of_week_short: Пон, Втр, Срд, Чтв, Пят, Суб, Вск
 
 
   layouts:
@@ -94,7 +96,7 @@ ru:
     weight: Вес
     metabolic_norm: Метаболическая норма
     total_calories: Всего калорий
-    to_eat: Еще можно съесть
+    to_eat: Еще можно
 
     index:
       title: Дни

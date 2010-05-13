@@ -46,10 +46,10 @@ module CalendarHelper
       options = {}
       if(day.strftime("%Y-%m-%d") ==  @today.strftime("%Y-%m-%d"))
         options[:class] = 'today'
-      elsif(day.month != @calendar.month)
-        options[:class] = 'notmonth'
       elsif(day.wday == 0 or day.wday == 6)
         options[:class] = 'weekend'
+      elsif(day.month != @calendar.month)
+        options[:class] = 'notmonth'
       end
       if id_pattern
         options[:id] = day.strftime(id_pattern)

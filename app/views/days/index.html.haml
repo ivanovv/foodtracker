@@ -1,22 +1,32 @@
 - title t('.title')
+-#= day_table
 
-= day_table
--#
-  #calendar
-  - calendar_for(@days, :today => Date.today) do |t|
-    = t.head('mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun')
+#calendar
+  %h2#month
+    = link_to "<", :month => (@date.beginning_of_month-1).strftime("%Y-%m-01")
+    = @date.strftime("%B %Y")
+    = link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m-01")
+
+  - calendar_for(@days, :year => @date.year, :month => @date.month, :first_day_of_week => 1) do |t|
+
+    = t.head(*t(:days_of_week_short).split(","))
     - t.day(:day_method => :enter_date) do |day, days|
+      - days_link = days.size>0 ? edit_day_path(days[0]) : new_day_path
       = day.day
-      .day
-        - days.each do |d|
-          = t('days.weight') + ':'
-          = d.weight.to_s
+      - if days.size==0
+        .add_day
+          = link_to "+", {:controller=>:days, :action=>"new", :enter_date=>day}
+      - days.each do |d|
+        .day
+          %a{:href=>edit_day_path(d)}
+            = t('days.weight') + ':'
+            = d.weight.to_s
           %br/
-          = t('days.total_calories') + ':'
-          = d.total_calories.to_s
+          %a{:href => day_calory_lines_path(d)}
+            = t('days.total_calories') + ':'
+            = d.total_calories.to_i.to_s
           %br/
           = t('days.to_eat') + ':'
-          = d.to_eat.to_s
-
+          = d.to_eat.to_i.to_s
+%br/
 %p= link_to t('.new_day'), new_day_path
-

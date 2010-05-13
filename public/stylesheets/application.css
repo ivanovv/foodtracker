@@ -1,5 +1,5 @@
 html, body {
-  font: normal 13px/19px "Lucida Grande","Lucida Sans Unicode",Lucida,arial,sans-serif;
+  font: normal 13px/19px "Lucida Grande", "Lucida Sans Unicode", Lucida, arial, sans-serif;
   color: #333333; }
 
 hr, p {
@@ -13,32 +13,32 @@ ul.square-list {
 h1 {
   font-size: 2.2em;
   line-height: 1;
-  margin-bottom: .5em; }
+  margin-bottom: 0.5em; }
 
 h2 {
   font-size: 2em;
   line-height: 1;
-  margin-bottom: .535em; }
+  margin-bottom: 0.535em; }
 
 h3 {
   font-size: 1.8em;
   line-height: 1;
-  margin-bottom: .57em; }
+  margin-bottom: 0.57em; }
 
 h4 {
   font-size: 1.6em;
   line-height: 1;
-  margin-bottom: .615em; }
+  margin-bottom: 0.615em; }
 
 h5 {
   font-size: 1.4em;
   line-height: 1;
-  margin-bottom: .67em; }
+  margin-bottom: 0.67em; }
 
 h6 {
   font-size: 1.2em;
   line-height: 1;
-  margin-bottom: .8em; }
+  margin-bottom: 0.8em; }
 
 h1, h2, h3, h4, h5, h6 {
   color: #333333; }
@@ -60,11 +60,11 @@ form.formtastic fieldset {
 form.formtastic li fieldset {
   padding: 0; }
 form.formtastic legend, form.formtastic label {
-  color: #333; }
+  color: #333333; }
 form.formtastic label, form.formtastic .label {
   padding-bottom: 5px; }
   form.formtastic label abbr, form.formtastic .label abbr {
-    color: #f00; }
+    color: red; }
 form.formtastic label {
   line-height: 1.4em;
   font-size: 13px; }
@@ -79,19 +79,19 @@ form.formtastic input, form.formtastic textarea, form.formtastic select {
   font-family: inherit;
   font-size: 14px; }
 form.formtastic textarea, form.formtastic input {
-  border: 1px solid #999;
+  border: 1px solid #999999;
   padding: 6px 8px;
   line-height: 100%; }
 form.formtastic input[type="text"], form.formtastic input[type="password"], form.formtastic textarea, form.formtastic select {
-  background: #FFFFFF url(images/input.gif) repeat-x scroll 0 0;
-  border: 1px solid #E5E3D8;
+  background: white url(images/input.gif) repeat-x scroll 0 0;
+  border: 1px solid #e5e3d8;
   padding: 3px;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 form.formtastic input[type="submit"], form.formtastic input[type="button"], form.formtastic input[type="checkbox"] {
-  background: #FFFFFF url(images/input.gif) repeat-x scroll 0 0;
-  border: 1px solid #AAA;
+  background: white url(images/input.gif) repeat-x scroll 0 0;
+  border: 1px solid #aaaaaa;
   padding: 3px; }
 form.formtastic input[type="checkbox"] {
   width: auto;
@@ -106,20 +106,20 @@ form.formtastic #errorExplanation li {
 form.formtastic form p, form.formtastic .errors {
   padding: 3px 0px; }
 form.formtastic .required input, form.formtastic .required textarea, form.formtastic .required select {
-  background-color: #fff; }
+  background-color: white; }
 form.formtastic .error input, form.formtastic .error textarea, form.formtastic .error select {
-  background-color: #fcc;
-  border: 1px solid #f66; }
+  background-color: #ffcccc;
+  border: 1px solid #ff6666; }
 form.formtastic .optional input, form.formtastic .optional textarea, form.formtastic .optional select {
-  background-color: #fff; }
+  background-color: white; }
 form.formtastic .errors {
-  color: #a00; }
+  color: #aa0000; }
   form.formtastic .errors li {
     margin-left: 1.2em; }
 form.formtastic p.inline-errors {
-  color: #f00; }
+  color: red; }
 form.formtastic p.inline-hints {
-  color: #777;
+  color: #777777;
   padding-top: 4px; }
 form.formtastic .buttons {
   padding-top: 8px;
@@ -130,15 +130,15 @@ form.formtastic .buttons {
   form.formtastic .buttons li.cancel {
     padding-top: 1.1em; }
   form.formtastic .buttons input {
-    border: 1px solid #999; }
+    border: 1px solid #999999; }
 
 .app-table {
   width: 100%; }
   .app-table thead tr th {
     text-align: left;
     white-space: nowrap;
-    color: #FFF;
-    background-color: #576C82;
+    color: white;
+    background-color: #576c82;
     padding: 2px; }
     .app-table thead tr th.left {
       text-align: left; }
@@ -166,9 +166,9 @@ form.formtastic .buttons {
       text-align: center;
       width: 65px; }
   .app-table tbody tr.ui-state-alternate {
-    background-color: #eef; }
+    background-color: #eeeeff; }
   .app-table tbody tr td {
-    border-bottom: 1px solid #AAA;
+    border-bottom: 1px solid #aaaaaa;
     padding: 2px; }
     .app-table tbody tr td.left {
       text-align: left; }
@@ -199,10 +199,10 @@ form.formtastic .buttons {
       text-decoration: none;
       color: #333333; }
   .app-table tbody tr:hover {
-    background-color: #DDDDDD; }
+    background-color: #dddddd; }
   .app-table tfoot tr td {
-    border-top: 2px solid #AAA;
-    border-bottom: 2px solid #AAA;
+    border-top: 2px solid #aaaaaa;
+    border-bottom: 2px solid #aaaaaa;
     padding: 2px;
     font-weight: bold; }
     .app-table tfoot tr td.name {
@@ -213,10 +213,87 @@ form.formtastic .buttons {
     .app-table tfoot tr td a {
       text-decoration: none; }
   .app-table tfoot tr:hover {
-    background-color: #FBFBFB; }
+    background-color: #fbfbfb; }
 
 .app-table.categories th.category-name {
   width: auto; }
+
+.app-table.categories th.category-name {
+  width: auto; }
+
+#calendar a {
+  text-decoration: none; }
+#calendar a:hover {
+  text-decoration: none; }
+#calendar table {
+  border-collapse: collapse;
+  width: 100%; }
+#calendar td, #calendar th {
+  font-family: "Lucida Grande", arial, helvetica, sans-serif;
+  font-size: 10px;
+  padding: 6px;
+  border: 1px solid #999999; }
+
+#calendar th {
+  background: #dddddd;
+  color: #666666;
+  text-align: center;
+  width: 14.286%; }
+
+#calendar td {
+  background-color: #f7fbfd;
+  color: #777777;
+  height: 90px;
+  vertical-align: top;
+  font-size: 16px;
+  text-align: right; }
+  #calendar td div.day {
+    font-size: 10px;
+    text-align: left; }
+  #calendar td div.add_day {
+    padding-top: 15px;
+    vertical-align: center;
+    font-size: 50px;
+    text-align: center;
+    display: none; }
+  #calendar td:hover {
+    background-color: #e5f2ff; }
+  #calendar td:hover div.add_day {
+    display: block; }
+
+#calendar .notmonth {
+  background-color: white; }
+
+#calendar .today {
+  background-color: #e5f2ff;
+  border: 1px dashed #999999; }
+
+#calendar .weekend {
+  background-color: #fefce3; }
+
+#calendar #month {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center; }
+  #calendar #month a {
+    padding: 0 10px;
+    color: #999999; }
+  #calendar #month a:hover {
+    padding: 0 10px;
+    color: #999999; }
+
+#calendar ul {
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+  list-style: none; }
+
+#calendar li {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  text-align: center; }
 
 .app-table.products th.product-name {
   width: 350px; }
@@ -227,30 +304,30 @@ form.formtastic .buttons {
 
 .pagination {
   text-align: center;
-  padding: .3em;
+  padding: 0.3em;
   margin-top: 7px; }
   .pagination a, .pagination span {
-    padding: .2em .5em; }
+    padding: 0.2em 0.5em; }
   .pagination span.disabled {
-    border: 1px solid #AAA;
-    color: #AAA; }
+    border: 1px solid #aaaaaa;
+    color: #aaaaaa; }
   .pagination span.current {
     font-weight: bold;
-    background-color: #EEE;
-    color: #364B69;
-    border: 1px solid #AAA; }
+    background-color: #eeeeee;
+    color: #364b69;
+    border: 1px solid #aaaaaa; }
   .pagination a {
-    border-top: 1px solid #5C738A;
-    background: #456;
-    color: #EEE;
+    border-top: 1px solid #5c738a;
+    background: #445566;
+    color: #eeeeee;
     text-decoration: none; }
     .pagination a:hover, .pagination a:focus {
-      border-top: 1px solid #7593B0;
-      background: #576C82;
-      color: #EEE; }
+      border-top: 1px solid #7593b0;
+      background: #576c82;
+      color: #eeeeee; }
   .pagination .page_info {
-    color: #aaa;
-    padding-top: .8em; }
+    color: #aaaaaa;
+    padding-top: 0.8em; }
   .pagination .prev_page {
     margin-right: 1em; }
   .pagination .next_page {
@@ -265,8 +342,8 @@ form.formtastic .buttons {
   .app-flash .flash-message p {
     margin: 8px; }
 .app-flash .error {
-  border: 1px solid #fbb;
-  background-color: #fdd; }
+  border: 1px solid #ffbbbb;
+  background-color: #ffdddd; }
 .app-flash .warning {
   border: 1px solid #ffff66;
   background-color: #ffffcc; }
@@ -280,7 +357,7 @@ body {
   font-size: 14px; }
 
 a {
-  color: #0000FF; }
+  color: blue; }
   a img {
     border: none; }
 
@@ -293,15 +370,15 @@ a {
   width: 881px;
   margin-top: 40px;
   margin: 0 auto;
-  background: #fff;
+  background: white;
   padding: 0;
   margin-top: 40px;
-  border: solid 1px #ccc; }
+  border: solid 1px #cccccc; }
 
 #content-container {
   width: 800px;
   margin: 0 auto;
-  background: #fff;
+  background: white;
   padding: 0px 40px 20px 40px;
   margin-top: 10px; }
 
@@ -313,11 +390,11 @@ a {
 
 #flash_notice {
   background-color: #ccffcc;
-  border: solid 1px #6C6; }
+  border: solid 1px #66cc66; }
 
 #flash_error {
-  background-color: #FCC;
-  border: solid 1px #C66; }
+  background-color: #ffcccc;
+  border: solid 1px #cc6666; }
 
 .fieldWithErrors {
   display: inline; }
@@ -501,8 +578,8 @@ form.formtastic .radio label, form.formtastic .check_boxes label {
   margin: 0;
   padding: 0;
   list-style: none;
-  background-color: #fff;
-  border-bottom: 1px solid #ccc; }
+  background-color: white;
+  border-bottom: 1px solid #cccccc; }
   #nav li.right {
     float: right; }
   #nav li.selected {
@@ -515,10 +592,10 @@ form.formtastic .radio label, form.formtastic .check_boxes label {
       padding: 8px 15px;
       text-decoration: none;
       color: #4b7399;
-      border-right: 1px solid #ccc; }
+      border-right: 1px solid #cccccc; }
 
 #nav li a:hover {
-  color: #c00; }
+  color: #cc0000; }
 
 .app-footer {
   position: relative;
@@ -526,7 +603,7 @@ form.formtastic .radio label, form.formtastic .check_boxes label {
   height: 50px;
   width: 100%;
   background-color: #dddddd;
-  border-top: 1px solid #BBB; }
+  border-top: 1px solid #bbbbbb; }
   .app-footer p {
     text-align: right;
     margin: 15px 0;
