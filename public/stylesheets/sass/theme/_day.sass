@@ -1,8 +1,8 @@
+!calendar_link_color = #999
 .app-table.categories
 
   th.category-name
     width: auto
-
 
 #calendar
 
@@ -21,16 +21,12 @@
     padding: 6px
     border: 1px solid #999
 
-
-#calendar
   th
     background: #DDD
     color: #666
     text-align: center
-    width: 14.2857142857143%
+    width: 14.2857142857143%    
 
-
-#calendar
   td
     background-color: #F7FBFD
     //background: #FFF
@@ -42,7 +38,7 @@
 
     div.day
       font-size: 10px
-      text-align: left
+      text-align: left      
 
     div.add_day
       padding-top: 15px
@@ -50,27 +46,41 @@
       font-size: 50px
       text-align: center
       display: none
+      font-weight: bold
+
+      &:hover
+        a
+          :color = !link_color
 
     &:hover
       background-color: #E5F2FF
-      //cursor: pointer
-    &:hover div.add_day
-      display: block
+      div.add_day
+        display: block
+
+  .notmonth
+    background-color: #FFF
+
+  .today
+    background-color: #E5F2FF
+    border: 1px dashed #999
+
+  .weekend
+    background-color: #FEFCE3
+
+  ul
+    margin: 0
+    margin-top: 5px
+    padding: 0
+    list-style: none
 
 
-#calendar .notmonth
-  background-color: #FFF
-
-#calendar .today
-  //background-color: #D7F2FF
-  background-color: #E5F2FF
-  border: 1px dashed #999
-
-#calendar .weekend
-  background-color: #FEFCE3
+  li
+    margin: 0
+    padding: 0
+    font-size: 11px
+    text-align: center
 
 
-#calendar
   #month
     margin: 0
     padding-top: 10px
@@ -79,22 +89,7 @@
 
     a
       padding: 0 10px
-      color: #999
-    a:hover
-      padding: 0 10px
-      color: #999
-
-#calendar
-  ul
-    margin: 0
-    margin-top: 5px
-    padding: 0
-    list-style: none
-
-
-#calendar
-  li
-    margin: 0
-    padding: 0
-    font-size: 11px
-    text-align: center
+      :color = !calendar_link_color
+      &:hover
+        padding: 0 10px
+        :color =  !calendar_link_color
