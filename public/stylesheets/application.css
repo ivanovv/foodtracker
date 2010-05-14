@@ -233,13 +233,11 @@ form.formtastic .buttons {
   font-size: 10px;
   padding: 6px;
   border: 1px solid #999999; }
-
 #calendar th {
   background: #dddddd;
   color: #666666;
   text-align: center;
   width: 14.286%; }
-
 #calendar td {
   background-color: #f7fbfd;
   color: #777777;
@@ -255,22 +253,31 @@ form.formtastic .buttons {
     vertical-align: center;
     font-size: 50px;
     text-align: center;
-    display: none; }
+    display: none;
+    font-weight: bold; }
+    #calendar td div.add_day:hover a {
+      color: #3399ff; }
   #calendar td:hover {
     background-color: #e5f2ff; }
-  #calendar td:hover div.add_day {
-    display: block; }
-
+    #calendar td:hover div.add_day {
+      display: block; }
 #calendar .notmonth {
   background-color: white; }
-
 #calendar .today {
   background-color: #e5f2ff;
   border: 1px dashed #999999; }
-
 #calendar .weekend {
   background-color: #fefce3; }
-
+#calendar ul {
+  margin: 0;
+  margin-top: 5px;
+  padding: 0;
+  list-style: none; }
+#calendar li {
+  margin: 0;
+  padding: 0;
+  font-size: 11px;
+  text-align: center; }
 #calendar #month {
   margin: 0;
   padding-top: 10px;
@@ -279,21 +286,9 @@ form.formtastic .buttons {
   #calendar #month a {
     padding: 0 10px;
     color: #999999; }
-  #calendar #month a:hover {
-    padding: 0 10px;
-    color: #999999; }
-
-#calendar ul {
-  margin: 0;
-  margin-top: 5px;
-  padding: 0;
-  list-style: none; }
-
-#calendar li {
-  margin: 0;
-  padding: 0;
-  font-size: 11px;
-  text-align: center; }
+    #calendar #month a:hover {
+      padding: 0 10px;
+      color: #999999; }
 
 .app-table.products th.product-name {
   width: 350px; }
