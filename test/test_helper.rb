@@ -2,7 +2,8 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
 require 'shoulda'
-require 'sham'
+require "authlogic/test_case"
+#require 'sham'
 
 class ActiveSupport::TestCase
   # Transactional fixtures accelerate your tests by wrapping each test method
@@ -36,7 +37,7 @@ class ActiveSupport::TestCase
   # -- they do not yet inherit this setting
   fixtures :all
 
-  setup { Sham.reset }
+  #setup { Sham.reset }
 
   # Add more helper methods to be used by all tests here...
   # Test::Unit::UI::Console::TestRunner.set_test_benchmark_limits(1,5)
