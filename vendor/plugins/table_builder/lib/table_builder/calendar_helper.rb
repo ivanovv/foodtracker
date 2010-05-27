@@ -6,9 +6,9 @@ module CalendarHelper
     html_options = options[:html]
     builder = options[:builder] || CalendarBuilder
     calendar = options[:calendar] || Calendar
-    concat(tag(:table, html_options, true))
-    yield builder.new(objects || [], self, calendar, options)
-    concat('</table>')
+    content_tag(:table, nil, html_options) do
+      yield builder.new(objects || [], self, calendar, options)
+    end
   end
 
   class CalendarBuilder < TableHelper::TableBuilder
@@ -44,16 +44,13 @@ module CalendarHelper
     
     def td_options(day, id_pattern)
       options = {}
-      if(day.strftime("%Y-%m-%d") ==  @today.strftime("%Y-%m-%d"))
-        options[:class] = 'today'
-      elsif(day.wday == 0 or day.wday == 6)
-        options[:class] = 'weekend'
-      elsif(day.month != @calendar.month)
-        options[:class] = 'notmonth'
-      end
-      if id_pattern
-        options[:id] = day.strftime(id_pattern)
-      end
+      css_classes = []
+      css_classes << 'today'    if day.strftime("%Y-%m-%d") ==  @today.strftime("%Y-%m-%d")
+      css_classes << 'notmonth' if day.month != @calendar.month
+      css_classes << 'weekend'  if day.wday == 0 or day.wday == 6
+      css_classes << 'future'   if day > @today.to_date
+      css_classes = day.strftime(id_pattern) if id_pattern
+      options[:class] = css_classes.join(' ') unless css_classes.empty?
       options
     end
 
@@ -67,8 +64,13 @@ module CalendarHelper
       @first_day_of_week = options[:first_day_of_week] || 0
       @first_weekday = first_day_of_week(@first_day_of_week)
       @last_weekday = last_day_of_week(@first_day_of_week)
-      @first = Date.civil(@year, @month, 1)
-      @last = Date.civil(@year, @month, -1)           
+      if options[:thirty_days_from_now]
+        @first = Date.today
+        @last = @first + 30
+      else
+        @first = Date.civil(@year, @month, 1)
+        @last = Date.civil(@year, @month, -1)           
+      end
     end
     
     def each_day
