@@ -15,6 +15,7 @@ gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branc
 gem 'sqlite3'
 gem 'nokogiri'
 gem 'mechanize'
+gem 'simple-navigation'
 
 # Use unicorn as the web server
 # gem 'unicorn'
