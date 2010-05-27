@@ -6,11 +6,11 @@ class DaysController < ApplicationController
   def index
 
     @date = params[:month] ? Date.parse(params[:month]) : Date.today
-    respond_with(@days = current_user.days.recent)
+    respond_with(@days = current_user.days.recent.all)
   end
 
   def show
-    respond_with(@day = current_user.days.date(params[:id].to_date))
+    respond_with(@day = current_user.days.date(params[:id].to_date).first)
   end
 
   def new
@@ -20,7 +20,7 @@ class DaysController < ApplicationController
   end
 
   def create
-    @day = current_user.days.build(params[:day])    
+    @day = current_user.days.build(params[:day])
     flash[:notice] = "Successfully created day." if @day.save
     respond_with(@day)
   end
@@ -30,7 +30,7 @@ class DaysController < ApplicationController
   end
 
   def update
-    @day = current_user.days.date(params[:id].to_date)    
+    @day = current_user.days.date(params[:id].to_date)
     flash[:notice] = "Successfully updated day." if @day.update_attributes(params[:day])
     respond_with(@day)
   end
@@ -47,3 +47,4 @@ class DaysController < ApplicationController
     @day ||= current_user.days.date(params[:id].to_date)
   end
 end
+
