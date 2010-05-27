@@ -8,8 +8,7 @@ module TableHelper
     
     concat(tag(:table, html_options, true))
     yield builder.new(objects || [], self, options)
-    concat('</table>'.html_safe)
-    ""
+    concat('</table>')
   end
 
   class TableBuilder
@@ -29,7 +28,7 @@ module TableHelper
         @num_of_columns = args.size
         content_tag(:thead,
           content_tag(:tr,
-            args.collect { |c| content_tag(:th, c.html_safe)}.join('').html_safe
+            args.collect { |c| content_tag(:th, c)}.join('')
           )
         )
       end
@@ -103,8 +102,7 @@ module TableHelper
     end
     
     def concat(tag)
-      @template.safe_concat(tag)
-      ""
+       @template.concat(tag)
     end
 
     def content_tag(tag, content, *args)
