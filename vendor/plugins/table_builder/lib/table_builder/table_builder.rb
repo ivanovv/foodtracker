@@ -124,4 +124,8 @@ module TableHelper
       concat('</tr>')      
     end
   end
+<<<<<<< HEAD
 end
+=======
+end
+>>>>>>> master
