@@ -13,6 +13,7 @@ en:
   show: Show
   view_all: View All
   back_to_list: Back to List
+  are_you_sure: Are you sure?
   search: Search
   search_products: Search products
   today: Today
@@ -23,7 +24,8 @@ en:
   menu_categories: Categories
   menu_products: Products
   menu_days: Days
-
+  days_of_week: Monday, Tuesday, Wednesday, Thursday, Friday, Satturday, Sunday
+  days_of_week_short: Mon, Tue, Wed, Thr, Fri, Sat, Sun
 
 
   layouts:
@@ -36,7 +38,7 @@ en:
       register: Register
       profile: Profile
       administration: Administration
-      greeting: Hi, {{name}}!
+      greeting: Hi, %{name}!
 
     admin:
       main_navigation:
@@ -44,18 +46,18 @@ en:
         users: Accounts
 
   calory_lines:
-    day: День
-    product: Продукт
-    net_weight: Вес, г
-    energy: Калорийность, ккал
-    total_calories: Всего, ккал
-    specify_energy: Указать другую калорийность для данной записи
+    day: Day
+    product: Product
+    net_weight: Weight, g
+    energy: Energy, cal
+    total_calories: Total, cal
+    specify_energy: Specify energy for this record
     total_calories_footer: Total calories
 
     index:
       title: Food records
       no_calory_lines: No records for this day
-      confirm_for_delete: Do you want to delete food record '{{name}}'?
+      confirm_for_delete: Do you want to delete food record '%{name}'?
       new_calory_line: New Food Record
 
     new:
@@ -74,7 +76,7 @@ en:
     index:
       title: Categories
       no_categories: There are no categories.
-      confirm_for_delete: Do you want to delete category named '{{name}}'?
+      confirm_for_delete: Do you want to delete category named '%{name}'?
       new_category: Create category
 
     new:
@@ -99,7 +101,7 @@ en:
     index:
       title: Days
       new_day: New Day
-      confirm_for_delete: Do you want to delete day '{{name}}'?
+      confirm_for_delete: Do you want to delete day '%{name}'?
 
     edit:
       title: Edit day
@@ -108,7 +110,7 @@ en:
       title: New Day
 
     show:
-      title: My Nutrition Log for {{date}}
+      title: My Nutrition Log for %{date}
       my_weight: My weight
       metabolic_norm: My Metabolic Norm
       total_calories: Total Calories
@@ -126,7 +128,7 @@ en:
       energy: Energy
 
       no_products: There are no products.
-      confirm_for_delete: Do you want to delete product named '{{name}}'?
+      confirm_for_delete: Do you want to delete product named '%{name}'?
       new_product: New Product
 
     new:
@@ -216,7 +218,7 @@ en:
         last_login_ip: Last Login IP
 
         no_users: There are no accounts
-        confirm_for_delete: Do you want to delete user with login '{{login}}'?
+        confirm_for_delete: Do you want to delete user with login '%{login}'?
         edit_hint: Change
         delete_hint: Delete
 

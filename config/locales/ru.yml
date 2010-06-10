@@ -38,7 +38,7 @@ ru:
       register: Регистрация
       profile: Профайл
       administration: Управлене приложением
-      greeting: Привет, {{name}}!
+      greeting: Привет, %{name}!
 
     admin:
       main_navigation:
@@ -57,7 +57,7 @@ ru:
     index:
       title: Записи о еде
       no_calory_lines: Для этого дня записей нет.
-      confirm_for_delete: Вы хотите удалить запись о еде '{{name}}'?
+      confirm_for_delete: Вы хотите удалить запись о еде '%{name}'?
       new_calory_line: Создать запись о еде
 
     new:
@@ -76,7 +76,7 @@ ru:
     index:
       title: Категории
       no_categories: Нет категорий.
-      confirm_for_delete: Вы хотите удалить категорию под названием '{{name}}'?
+      confirm_for_delete: Вы хотите удалить категорию под названием '%{name}'?
       new_category: Создать категорию
 
     new:
@@ -101,7 +101,7 @@ ru:
     index:
       title: Дни
       new_day: Создать запись
-      confirm_for_delete: Вы хотите удалить день '{{name}}'?
+      confirm_for_delete: Вы хотите удалить день '%{name}'?
 
     edit:
       title: Редактировать день
@@ -110,7 +110,7 @@ ru:
       title: Новая запись
 
     show:
-      title: My Nutrition Log for {{date}}
+      title: My Nutrition Log for %{date}
       my_weight: Мой вес
       metabolic_norm: Моя метаболическая норма
       total_calories: Всего калорий
@@ -128,7 +128,7 @@ ru:
       energy: Калорийность
 
       no_products: Пока продуктов нет.
-      confirm_for_delete: Вы хотите удалить продукт '{{name}}'?
+      confirm_for_delete: Вы хотите удалить продукт '%{name}'?
       new_product: Добавить новый продукт
 
     new:
@@ -216,7 +216,7 @@ ru:
         last_login_ip: IP последнего логина
 
         no_users: Нет аккаунов
-        confirm_for_delete: Вы действительно хотите удалить пользователя с логином '{{login}}'?
+        confirm_for_delete: Вы действительно хотите удалить пользователя с логином '%{login}'?
         edit_hint: Изменить
         delete_hint: Удалить
 
