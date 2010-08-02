@@ -1,7 +1,7 @@
 # A sample Gemfile
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.beta3'
+gem 'rails', '3.0.0.rc'
 #gem 'authlogic', :git => 'http://github.com/binarylogic/authlogic.git'
 #gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 gem 'authlogic', :git => 'http://github.com/jsierles/authlogic.git'
