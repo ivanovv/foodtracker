@@ -1,0 +1,45 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    actionmailer (2.3.8)
+      actionpack (= 2.3.8)
+    actionpack (2.3.8)
+      activesupport (= 2.3.8)
+      rack (~> 1.1.0)
+    activerecord (2.3.8)
+      activesupport (= 2.3.8)
+    activeresource (2.3.8)
+      activesupport (= 2.3.8)
+    activesupport (2.3.8)
+    authlogic (2.1.5)
+      activesupport
+    formtastic (0.9.10)
+      actionpack (>= 2.3.0)
+      activesupport (>= 2.3.0)
+    haml (3.0.15)
+    rack (1.1.0)
+    rails (2.3.8)
+      actionmailer (= 2.3.8)
+      actionpack (= 2.3.8)
+      activerecord (= 2.3.8)
+      activeresource (= 2.3.8)
+      activesupport (= 2.3.8)
+      rake (>= 0.8.3)
+    rake (0.8.7)
+    russian (0.2.7)
+    shoulda (2.11.1)
+    table_helper (0.2.2)
+    will_paginate (2.3.14)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  authlogic
+  formtastic
+  haml
+  rails
+  russian
+  shoulda
+  table_helper
+  will_paginate
