@@ -1,45 +1,38 @@
-!calendar_link_color = #999
-.app-table.categories
+$calendar_link_color: #999999
 
+.app-table.categories
   th.category-name
     width: auto
 
 #calendar
-
   a
     text-decoration: none
   a:hover
     text-decoration: none
-
   table
     border-collapse: collapse
     width: 100%
-
   td,th
-    font-family: "Lucida Grande",arial,helvetica,sans-serif
+    font-family: "Lucida Grande", arial, helvetica, sans-serif
     font-size: 10px
     padding: 6px
-    border: 1px solid #999
-
+    border: 1px solid #999999
   th
-    background: #DDD
-    color: #666
+    background: #dddddd
+    color: #666666
     text-align: center
-    width: 14.2857142857143%    
-
+    width: 14.286%
   td
-    background-color: #F7FBFD
+    background-color: #f7fbfd
     //background: #FFF
-    color: #777
+    color: #777777
     height: 90px
     vertical-align: top
     font-size: 16px
     text-align: right
-
     div.day
       font-size: 10px
-      text-align: left      
-
+      text-align: left
     div.add_day
       padding-top: 15px
       vertical-align: center
@@ -47,49 +40,39 @@
       text-align: center
       display: none
       font-weight: bold
-
       &:hover
         a
-          :color = !link_color
-
+          color: $link_color
     &:hover
-      background-color: #E5F2FF
+      background-color: #e5f2ff
       div.add_day
         display: block
-
   .notmonth
-    background-color: #FFF
-
+    background-color: white
   .today
-    background-color: #E5F2FF
-    border: 1px dashed #999
-
+    background-color: #e5f2ff
+    border: 1px dashed #999999
   .weekend
-    background-color: #FEFCE3
-
+    background-color: #fefce3
   ul
     margin: 0
     margin-top: 5px
     padding: 0
     list-style: none
-
-
   li
     margin: 0
     padding: 0
     font-size: 11px
     text-align: center
-
-
   #month
     margin: 0
     padding-top: 10px
     padding-bottom: 10px
     text-align: center
-
     a
       padding: 0 10px
-      :color = !calendar_link_color
+      color: $calendar_link_color
       &:hover
         padding: 0 10px
-        :color =  !calendar_link_color
+        color: $calendar_link_color
+
