@@ -2,5 +2,5 @@
 
 = render :partial => 'form'
 
-%p You are #{h @user.age} years old, correct?
+%p= t(".age", :age => "#{h(@user.age)} #{Russian.p(@user.age, 'год', 'года', 'лет')}" )
 

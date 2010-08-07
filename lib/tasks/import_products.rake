@@ -23,12 +23,7 @@ namespace :app do
 
       i = 0
       raw_product = {}
-
-      if heading_index == 100
-        add_row = 4
-      else
-        add_row = 3
-      end
+      add_row = heading_index == 100 ? 4 : 3
 
       page.search(".tbl:nth-child(#{heading_index + add_row}) td").each do |item|
         raw_product[column_names[i]] = item.text.tr(',', '.')
