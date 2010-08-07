@@ -151,6 +151,7 @@ en:
 
     edit:
       title: Update Account
+      age: You are %{age} years old, correct?
 
     form:
       male: Male
