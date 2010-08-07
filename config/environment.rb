@@ -13,17 +13,9 @@ Rails::Initializer.run do |config|
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
   # Specify gems that this application depends on and have them installed with rake gems:install
-  # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-  config.gem 'formtastic'
-  config.gem 'haml'
-  #config.gem 'mongo_mapper'
-  config.gem 'authlogic'
-  config.gem 'table_helper'
-  config.gem 'will_paginate'
-  config.gem 'russian'
-  config.gem 'simple-navigation'
+
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

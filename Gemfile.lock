@@ -28,6 +28,8 @@ GEM
     rake (0.8.7)
     russian (0.2.7)
     shoulda (2.11.1)
+    simple-navigation (2.7.0)
+    sqlite3-ruby (1.3.1)
     table_helper (0.2.2)
     will_paginate (2.3.14)
 
@@ -41,5 +43,7 @@ DEPENDENCIES
   rails
   russian
   shoulda
+  simple-navigation
+  sqlite3-ruby
   table_helper
   will_paginate
