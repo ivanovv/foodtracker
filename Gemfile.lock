@@ -1,123 +1,109 @@
 GIT
   remote: git://github.com/ivanovv/table_helper.git
-  revision: 937582c
+  revision: 937582ca1cc576db6c3b035086d2ae698d91f787
   specs:
     table_helper (0.2.2)
 
 GIT
-  remote: git://github.com/justinfrench/formtastic.git
-  revision: 9fee543
-  branch: rails3
-  specs:
-    formtastic (1.0.0.rc)
-      actionpack (>= 2.3.0)
-      activesupport (>= 2.3.0)
-      i18n (>= 0.4.0)
-
-GIT
   remote: git://github.com/mislav/will_paginate.git
-  revision: fccbb0b
+  revision: b1a5beeec9f56ecbe3594fcdca76d92b6767ce50
   branch: rails3
   specs:
-    will_paginate (3.0.pre2)
-
-GIT
-  remote: git://github.com/yaroslav/russian.git
-  revision: af15b71
-  specs:
-    russian (0.2.7)
+    will_paginate (3.0.pre3)
 
 GIT
   remote: http://github.com/jsierles/authlogic.git
-  revision: b65bf2f
+  revision: b65bf2fbf7cbd784a3b9b6830df747abc66f8ba0
   specs:
     authlogic (2.1.3)
       activesupport
-
-GIT
-  remote: http://github.com/rutgerclaes/shoulda.git
-  revision: bc65f1e
-  branch: rails3
-  specs:
-    shoulda (2.10.3)
 
 GEM
   remote: http://rubygems.org/
   specs:
     abstract (1.0.0)
-    actionmailer (3.0.0.rc)
-      actionpack (= 3.0.0.rc)
-      mail (~> 2.2.5)
-    actionpack (3.0.0.rc)
-      activemodel (= 3.0.0.rc)
-      activesupport (= 3.0.0.rc)
+    actionmailer (3.0.3)
+      actionpack (= 3.0.3)
+      mail (~> 2.2.9)
+    actionpack (3.0.3)
+      activemodel (= 3.0.3)
+      activesupport (= 3.0.3)
       builder (~> 2.1.2)
       erubis (~> 2.6.6)
-      i18n (~> 0.4.1)
+      i18n (~> 0.4)
       rack (~> 1.2.1)
-      rack-mount (~> 0.6.9)
-      rack-test (~> 0.5.4)
-      tzinfo (~> 0.3.22)
-    activemodel (3.0.0.rc)
-      activesupport (= 3.0.0.rc)
+      rack-mount (~> 0.6.13)
+      rack-test (~> 0.5.6)
+      tzinfo (~> 0.3.23)
+    activemodel (3.0.3)
+      activesupport (= 3.0.3)
       builder (~> 2.1.2)
-      i18n (~> 0.4.1)
-    activerecord (3.0.0.rc)
-      activemodel (= 3.0.0.rc)
-      activesupport (= 3.0.0.rc)
-      arel (~> 0.4.0)
-      tzinfo (~> 0.3.22)
-    activeresource (3.0.0.rc)
-      activemodel (= 3.0.0.rc)
-      activesupport (= 3.0.0.rc)
-    activesupport (3.0.0.rc)
-    arel (0.4.0)
-      activesupport (>= 3.0.0.beta)
+      i18n (~> 0.4)
+    activerecord (3.0.3)
+      activemodel (= 3.0.3)
+      activesupport (= 3.0.3)
+      arel (~> 2.0.2)
+      tzinfo (~> 0.3.23)
+    activeresource (3.0.3)
+      activemodel (= 3.0.3)
+      activesupport (= 3.0.3)
+    activesupport (3.0.3)
+    arel (2.0.6)
     builder (2.1.2)
     erubis (2.6.6)
       abstract (>= 1.0.0)
-    ffi (0.6.3)
+    ffi (1.0.1)
       rake (>= 0.8.7)
-    haml (3.0.15)
-    i18n (0.4.1)
-    mail (2.2.5)
+    formtastic (1.2.2)
+      actionpack (>= 2.3.7)
+      activesupport (>= 2.3.7)
+      i18n (>= 0.4.0)
+    haml (3.0.24)
+    i18n (0.5.0)
+    jquery-rails (0.2.6)
+      rails (~> 3.0)
+      thor (~> 0.14.4)
+    mail (2.2.12)
       activesupport (>= 2.3.6)
-      mime-types
-      treetop (>= 1.4.5)
+      i18n (>= 0.4.0)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
     mechanize (1.0.0)
       nokogiri (>= 1.2.1)
     mime-types (1.16)
-    mocha (0.9.8)
+    mocha (0.9.10)
       rake
-    nokogiri (1.4.3.1)
+    nokogiri (1.4.4)
     polyglot (0.3.1)
     rack (1.2.1)
-    rack-mount (0.6.9)
+    rack-mount (0.6.13)
       rack (>= 1.0.0)
-    rack-test (0.5.4)
+    rack-test (0.5.6)
       rack (>= 1.0)
-    rails (3.0.0.rc)
-      actionmailer (= 3.0.0.rc)
-      actionpack (= 3.0.0.rc)
-      activerecord (= 3.0.0.rc)
-      activeresource (= 3.0.0.rc)
-      activesupport (= 3.0.0.rc)
-      bundler (>= 1.0.0.rc.1)
-      railties (= 3.0.0.rc)
-    railties (3.0.0.rc)
-      actionpack (= 3.0.0.rc)
-      activesupport (= 3.0.0.rc)
-      rake (>= 0.8.3)
-      thor (~> 0.14.0)
+    rails (3.0.3)
+      actionmailer (= 3.0.3)
+      actionpack (= 3.0.3)
+      activerecord (= 3.0.3)
+      activeresource (= 3.0.3)
+      activesupport (= 3.0.3)
+      bundler (~> 1.0)
+      railties (= 3.0.3)
+    railties (3.0.3)
+      actionpack (= 3.0.3)
+      activesupport (= 3.0.3)
+      rake (>= 0.8.7)
+      thor (~> 0.14.4)
     rake (0.8.7)
-    redgreen (1.2.2)
-    simple-navigation (2.7.0)
+    russian (0.2.7)
+    shoulda (2.11.3)
+    simple-navigation (3.0.2)
+      activesupport (>= 2.3.2)
     sqlite3 (0.1.1)
       ffi (>= 0.6.3)
-    thor (0.14.0)
-    treetop (1.4.8)
+    thor (0.14.6)
+    treetop (1.4.9)
       polyglot (>= 0.3.1)
-    tzinfo (0.3.22)
+    tzinfo (0.3.23)
 
 PLATFORMS
   ruby
@@ -125,15 +111,15 @@ PLATFORMS
 DEPENDENCIES
   authlogic!
   builder
-  formtastic!
+  formtastic
   haml
+  jquery-rails
   mechanize
   mocha
   nokogiri
-  rails (= 3.0.0.rc)
-  redgreen
-  russian!
-  shoulda!
+  rails (= 3.0.3)
+  russian
+  shoulda
   simple-navigation
   sqlite3
   table_helper!

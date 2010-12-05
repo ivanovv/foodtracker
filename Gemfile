@@ -1,21 +1,22 @@
 # A sample Gemfile
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.0.rc'
+gem 'rails', '3.0.3'
 #gem 'authlogic', :git => 'http://github.com/binarylogic/authlogic.git'
-#gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
 gem 'authlogic', :git => 'http://github.com/jsierles/authlogic.git'
+#gem 'authlogic'
 
-gem 'formtastic', :git => 'git://github.com/justinfrench/formtastic.git', :branch => 'rails3'
-gem 'haml'#, :git => 'git://github.com/nex3/haml.git'
+gem 'formtastic'
+gem 'haml'
 gem 'builder'
-gem 'russian', :git => 'git://github.com/yaroslav/russian.git'
+gem 'russian'
 gem 'table_helper', :git => 'git://github.com/ivanovv/table_helper.git'
 gem 'will_paginate', :git => 'git://github.com/mislav/will_paginate.git', :branch => 'rails3'
 gem 'sqlite3'
 gem 'nokogiri'
 gem 'mechanize'
 gem 'simple-navigation'
+gem 'jquery-rails'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -25,7 +26,7 @@ gem 'simple-navigation'
 
 # Bundle the extra gems:
 # gem 'bj'
-# gem 'nokogiri', '1.4.1'
+# gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
@@ -33,8 +34,7 @@ gem 'simple-navigation'
 # gem 'rspec', :group => :test
  group :test do
    gem 'mocha'
-   gem 'shoulda', :git => 'http://github.com/rutgerclaes/shoulda.git', :branch => 'rails3'
-   gem 'redgreen'
+   gem 'shoulda'
    #gem  'webrat'
  end
 
