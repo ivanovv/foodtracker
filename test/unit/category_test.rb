@@ -2,10 +2,10 @@ require 'test_helper'
 
 class CategoryTest < ActiveSupport::TestCase
 
-  should_have_many :products
+  should have_many :products
 
-  should_validate_uniqueness_of :name
-  should_validate_presence_of :name
+  should validate_uniqueness_of :name
+  should validate_presence_of :name
 
   should "to_s be equal to name" do
     cat = categories(:meat)

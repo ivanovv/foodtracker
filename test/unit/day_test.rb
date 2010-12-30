@@ -2,10 +2,10 @@ require 'test_helper'
 
 class DayTest < ActiveSupport::TestCase
 
-  should_belong_to :user
-  should_validate_presence_of :user_id, :enter_date, :weight
-  should_have_many :calory_lines
-  should_ensure_value_in_range :weight, 20..200
+  should belong_to :user
+  should validate_presence_of :user_id, :enter_date, :weight
+  should have_many :calory_lines
+  should ensure_value_in_range :weight, 20..200
 
   should "new day not be valid" do
     assert !Day.new.valid?

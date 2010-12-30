@@ -2,16 +2,16 @@ require 'test_helper'
 
 class ProductTest < ActiveSupport::TestCase
 
-  should_belong_to :category
+  should belong_to :category
 
-  should_validate_numericality_of :water, :protein, :fat, :carbohydrate, :energy
-  should_validate_uniqueness_of :name
-  should_validate_presence_of :category_id, :energy
-  should_ensure_value_in_range :energy, 0..700
-  should_ensure_value_in_range :fat, 0..100
-  should_ensure_value_in_range :protein, 0..100
-  should_ensure_value_in_range :carbohydrate, 0..100
-  should_ensure_value_in_range :water, 0..100
+  should validate_numericality_of :water, :protein, :fat, :carbohydrate, :energy
+  should validate_uniqueness_of :name
+  should validate_presence_of :category_id, :energy
+  should ensure_value_in_range :energy, 0..700
+  should ensure_value_in_range :fat, 0..100
+  should ensure_value_in_range :protein, 0..100
+  should ensure_value_in_range :carbohydrate, 0..100
+  should ensure_value_in_range :water, 0..100
 
 
   should "new product fail validations" do
