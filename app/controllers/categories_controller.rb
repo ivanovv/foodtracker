@@ -1,6 +1,5 @@
 class CategoriesController < ApplicationController
   respond_to :html
-  navigation :categories
 
   before_filter :find_category, :only => [:show, :edit, :update, :destroy]
 

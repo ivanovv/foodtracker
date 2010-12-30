@@ -1,5 +1,4 @@
 class DaysController < ApplicationController
-  navigation :days
   before_filter :require_user
   respond_to :html
 

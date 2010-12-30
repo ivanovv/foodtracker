@@ -346,6 +346,31 @@ form.formtastic .buttons {
   border: 1px solid #c6c6c6;
   background-color: #e6e6e6; }
 
+#nav {
+  width: 100%;
+  float: left;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: white;
+  border-bottom: 1px solid #cccccc; }
+  #nav li.right {
+    float: right; }
+  #nav li.selected {
+    background-color: #dddddd;
+    font-weight: bold; }
+  #nav li {
+    float: left; }
+    #nav li a {
+      display: block;
+      padding: 8px 15px;
+      text-decoration: none;
+      color: #4b7399;
+      border-right: 1px solid #cccccc; }
+
+#nav li a:hover {
+  color: #cc3333; }
+
 body {
   background-color: #4b7399;
   font-family: Verdana, Helvetica, Arial;
@@ -566,31 +591,6 @@ form.formtastic .radio label, form.formtastic .check_boxes label {
   padding-left: 0;
   line-height: 150%;
   margin-right: 10px; }
-
-#nav {
-  width: 100%;
-  float: left;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  background-color: white;
-  border-bottom: 1px solid #cccccc; }
-  #nav li.right {
-    float: right; }
-  #nav li.selected {
-    background-color: #dddddd;
-    font-weight: bold; }
-  #nav li {
-    float: left; }
-    #nav li a {
-      display: block;
-      padding: 8px 15px;
-      text-decoration: none;
-      color: #4b7399;
-      border-right: 1px solid #cccccc; }
-
-#nav li a:hover {
-  color: #cc0000; }
 
 .app-footer {
   position: relative;

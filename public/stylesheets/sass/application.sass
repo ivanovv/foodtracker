@@ -14,6 +14,7 @@
 @import theme/product
 @import theme/pagination
 @import theme/flash
+@import theme/navigation
 
 
 body
@@ -74,35 +75,6 @@ form.formtastic
   +float-form-left(100%,20%,72%,2%)
   +float-inputs
 
-#nav
-  :width 100%
-  :float left
-  :margin 0
-  :padding 0
-  :list-style none
-  //:background-color #f2f2f2
-  :background-color  #fff
-  :border-bottom 1px solid #ccc
-  //:border-top 1px solid #ccc
-
-  li.right
-    :float right
-  li.selected
-    :background-color = !footer_background_color
-    :font-weight bold
-  li
-    :float left
-    a
-      :display block
-      :padding 8px 15px
-      :text-decoration none
-      //:font-weight bold
-      :color = !primary_color
-      :border-right 1px solid #ccc
-
-#nav li a:hover
-  :color #c00
-  //:background-color #fff
 
 
 .app-footer
