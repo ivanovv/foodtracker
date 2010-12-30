@@ -14,12 +14,12 @@ class Day < ActiveRecord::Base
     where("user_id = ?", UserSession.find.user)
   }
 
-  scope :user, proc { |user| where(:user => user) }
+  scope :user, proc { |user| where(:user => user).all }
   scope :date, proc { |date|
     if date
-      where(:enter_date => date)
+      where(:enter_date => date).first
     else
-      where(:enter_date => Date.today)
+      where(:enter_date => Date.today).first
     end
   }
 
@@ -68,3 +68,4 @@ class Day < ActiveRecord::Base
   end
 
 end
+

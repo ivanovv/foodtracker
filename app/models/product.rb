@@ -13,12 +13,13 @@ class Product < ActiveRecord::Base
   validates_inclusion_of :protein, :fat, :carbohydrate, :water, :in => 0..100
   validates_inclusion_of :energy, :in => 0..700
 
+  scope :ordered_by_name, order("name ASC")
 
   def self.search(product_name = nil)
     if product_name
       where('name like ?', "%#{product_name}%")
     else
-      all
+      scoped
     end
   end
 
@@ -27,3 +28,4 @@ class Product < ActiveRecord::Base
   end
 
 end
+
