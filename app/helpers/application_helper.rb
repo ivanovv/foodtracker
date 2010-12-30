@@ -30,7 +30,7 @@ module ApplicationHelper
 
     parts << link_to(image_tag("delete.png"), delete_url, :method => "delete",
                      :title => t(:delete),
-                     :confirm => t(".confirm_for_delete", :name => item.to_s))
+                     :confirm => t("products.index.confirm_for_delete", :name => item.to_s))
 
     parts.join("\n").html_safe
   end

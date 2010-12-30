@@ -1,15 +1,9 @@
 require 'iconv'
 
 class ProductsController < ApplicationController
-  navigation :products
   before_filter :require_user, :only => [:edit, :update, :destroy]
 
   def index
-
-    #if params[:search]
-      #params[:search] = params[:search].force_encoding('utf-8')
-      #params[:search] = params[:search]
-    #end
 
     options = default_options
 
@@ -20,17 +14,11 @@ class ProductsController < ApplicationController
       @categories = Category.search_by_product_name(params[:search])
     end
 
-    if params[:search]
-      add_and_to_conditions(options)
-      options[:conditions] << "name LIKE '%#{params[:search]}%'"
-    end
-
-    @products = Product.paginate(options)
+    @products = Product.search(params[:search]).ordered_by_name.paginate(options)
 
     if @products.size == 0  && !params[:category_id] #&& params[:search].chars.length > 3
       find_category_by_name(params[:search])
     end
-
   end
 
   def show
@@ -60,8 +48,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    #params[:product][:name] = params[:product][:name].force_encoding('UTF-8')
-
     @product = Product.new(params[:product])
     if @product.save
       flash[:notice] = "Successfully created product."
@@ -97,7 +83,6 @@ class ProductsController < ApplicationController
 
   def default_options
     {
-      :order => 'name ASC',
       :per_page => 10,
       :page => params[:page]
     }
@@ -107,7 +92,7 @@ class ProductsController < ApplicationController
     category = Category.search_by_name(category_name).first
       if category
         @categories = [category]
-        @products = category.products.paginate(default_options)
+        @products = category.products.ordered_by_name.paginate(default_options)
       end
   end
 

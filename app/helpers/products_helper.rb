@@ -10,16 +10,16 @@ module ProductsHelper
   def product_table(products = @products)
     collection_table(products, :class => 'app-table') do |t|
       t.header.hide_when_empty = false
-      t.header.column :name, t('.name')
-      t.header.column :water, t('.water'), :class => "float"
-      t.header.column :protein, t('.protein'), :class => "float"
-      t.header.column :fat, t('.fat'), :class => "float"
-      t.header.column :carbohydrate, t('.carb'), :class => "float"
-      t.header.column :energy, t('.energy'), :class => "float"
+      t.header.column :name, t('products.index.name')
+      t.header.column :water, t('products.index.water'), :class => "float"
+      t.header.column :protein, t('products.index.protein'), :class => "float"
+      t.header.column :fat, t('products.index.fat'), :class => "float"
+      t.header.column :carbohydrate, t('products.index.carb'), :class => "float"
+      t.header.column :energy, t('products.index.energy'), :class => "float"
       t.header.column :actions, ''
 
       t.rows.alternate = :odd
-      t.rows.empty_caption = t('.no_products')
+      t.rows.empty_caption = t('products.index.no_products')
       t.rows.each do |row, item, index|
 
         row[:id] = "product-#{item.id}"

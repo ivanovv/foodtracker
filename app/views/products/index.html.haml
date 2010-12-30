@@ -1,25 +1,13 @@
 - title t('.title')
 
-- form_tag(products_path, :method => 'get') do
+= form_tag(products_path, :method => 'get', :id => "products_search") do
   %p
-    -# = text_field_tag :search, (params[:search]||"").force_encoding('utf-8')
     = text_field_tag :search, params[:search]
     - if params[:day_id] && !params[:day_id].empty?
       = hidden_field_tag :day_id, (params[:day_id])
     = submit_tag t(:search), :name => nil
-
-- for category in @categories
-  - products = @products.select {|p| p.category_id == category.id}
-  - if products.size > 0
-    -#%h5= Unichars.new(category.name).capitalize
-    %h5= category.name.mb_chars.capitalize
-    = product_table(products)
-    %br
-
-.pagination
-  = will_paginate(@products, :container => false)
-  %br
-  = page_entries_info(@products)
+#products_list
+  = render "products"
 
 %p= link_to t('.new_product'), new_product_path
 

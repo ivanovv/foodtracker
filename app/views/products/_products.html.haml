@@ -1,0 +1,12 @@
+- for category in @categories
+  - products = @products.select {|p| p.category_id == category.id}
+  - if products.size > 0
+    %h5= category.name.mb_chars.capitalize
+    = product_table(products)
+    %br
+
+.pagination
+  = will_paginate(@products, :container => false)
+  %br
+  = page_entries_info(@products)
+
