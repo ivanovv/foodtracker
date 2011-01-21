@@ -12,13 +12,11 @@ var delay = (function() {
 
   $(function () {
     // Sorting and pagination links.
-    $('#products_list th a, #products_list .pagination a').live('click',
-      function () {
+    $('#products_list th a, #products_list .pagination a').live('click', function () {
         $.getScript(this.href);
         if (history && history.pushState) { history.pushState(null, document.title, this.href); }
         return false;
-      }
-    );
+    });
 
 
   // Search form.
@@ -28,8 +26,7 @@ var delay = (function() {
         if (history && history.pushState) {
           history.replaceState(null, document.title, $("#products_search").attr("action") + "?" + $("#products_search").serialize());
         }
-        $.get($('#products_search').attr('action'),
-          $('#products_search').serialize(), null, 'script');
+        $.get($('#products_search').attr('action'), $('#products_search').serialize(), null, 'script');
         return false;
       }, 500);
   });
@@ -39,9 +36,10 @@ var delay = (function() {
     $.get(this.action, $(this).serialize(), null, 'script');
     return false;
     });
-  });
 
-   $(window).bind("popstate", function() {
-      $.getScript(location.href);
-    });
+  /*$(window).bind("popstate", function() {
+    $.getScript(location.href);
+  });*/
+
+  });
 
