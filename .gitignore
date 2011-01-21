@@ -6,3 +6,6 @@ tmp/**/*
 .bundle/*
 nbproject/*
 
+/test/passenger.3000.log
+/test/passenger.3000.pid.lock
+/tmp/restart.txt
