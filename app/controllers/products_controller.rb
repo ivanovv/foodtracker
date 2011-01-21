@@ -27,20 +27,17 @@ class ProductsController < ApplicationController
 
   def get_energy
     if request.xhr?
-      @product = Product.find(params[:product_id])
-      render :text => @product.energy.to_s
+      product = Product.find(params[:product_id])
+      render :text => product.energy.to_s
     end
   end
 
   def get_utkonos_link
-    @link = CGI.escape(Iconv.conv("WINDOWS-1251", "UTF-8", params[:product_name])) if !params[:product_name].blank?
-    @link||= ""
-    @link = "http://www.utkonos.ru/search.php?q=" + @link
-    respond_to do |format|
-      format.js
-    end
+    link = CGI.escape(Iconv.conv("WINDOWS-1251", "UTF-8", params[:product_name])) if !params[:product_name].blank?
+    link ||= ""
+    link = "http://www.utkonos.ru/search.php?q=" + link
+    render :text => link
   end
-
 
   def new
     @product = product_with_defaults
