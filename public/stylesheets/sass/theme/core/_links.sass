@@ -1,6 +1,14 @@
 !link_color = #3399ff
 !selected_link_color = #CC3333
 
+
+a
+  :margin 0
+  :padding 0
+  :font-size 100%
+  :vertical-align baseline
+  :background transparent
+
 a:link, a:visited
   :color = !link_color
   text-decoration: none
@@ -8,3 +16,9 @@ a:link, a:visited
 a:hover, a:active
   :color = !selected_link_color
   text-decoration: underline
+  outline: none
+
+
+a:link
+  -webkit-tap-highlight-color: #FF5E99
+
