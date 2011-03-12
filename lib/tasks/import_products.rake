@@ -11,12 +11,11 @@ namespace :app do
     require 'mechanize'
 
     url = 'http://www.missfit.ru/diet/table-calory'
-    agent = WWW::Mechanize.new
+    agent = Mechanize.new
     page = agent.get(url)
 
     column_names = [:name, :water, :protein, :fat, :carbohydrate, :energy]
     heading_index = 8
-    add_row = 3
     while heading_index < 108  do
       heading_index += 1 if heading_index > 100
       category = Category.find_or_create_by_name( page.at("h2:nth-child(#{heading_index})").text)
