@@ -1,7 +1,7 @@
 *~
 .bundle
 db/*.sqlite3
-log/*.log
+log/**
 tmp/**/*
 .bundle/*
 nbproject/*
@@ -9,3 +9,5 @@ nbproject/*
 /test/passenger.3000.log
 /test/passenger.3000.pid.lock
 /tmp/restart.txt
+/.idea
+/public/stylesheets/sass/.sass-cache
