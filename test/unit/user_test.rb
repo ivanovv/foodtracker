@@ -2,9 +2,9 @@ require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
 
-  should_have_many :days
-  should_validate_numericality_of :height
-  should_have_authlogic
+  should have_many :days
+  should validate_numericality_of :height
+  should have_authlogic
 
   should "new user be invalid" do
     assert !User.new.valid?
@@ -17,7 +17,7 @@ class UserTest < ActiveSupport::TestCase
 
   should "to_s be equal to username" do
     vic = users(:vic)
-    assert_equal vic.to_s, vic.username, "vic.to_s isn't equal to vic.username'"
+    assert_equal vic.to_s, vic.username, "vic.to_s isn't equal to vic.username"
   end
 
   should "calc base metabolic rate" do

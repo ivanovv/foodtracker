@@ -4,9 +4,12 @@ class CaloryLineTest < ActiveSupport::TestCase
 
   should belong_to :product
   should belong_to :day
-  should validate_presence_of :net_weight, :product_id, :day_id
+  should validate_presence_of :net_weight
+  should validate_presence_of :product_id
+  should validate_presence_of :day_id
+
   should validate_numericality_of :net_weight
-  should ensure_value_in_range :net_weight, 3..4999
+  should ensure_inclusion_of(:net_weight).in_range(3..4999)
 
   should "new calory line be invalid" do
     assert !CaloryLine.new.valid?
