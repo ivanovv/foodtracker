@@ -24,7 +24,7 @@
 
 %p
   Add another record
-  - form_tag(products_path, :method => 'get') do
+  = form_tag(products_path, :method => 'get') do
     %p
       -#= text_field_tag :search, (params[:search]||"").force_encoding('utf-8')
       = text_field_tag :search, params[:search]

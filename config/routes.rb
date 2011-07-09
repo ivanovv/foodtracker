@@ -1,7 +1,7 @@
-Demo::Application.routes.draw do |map|
+Demo::Application.routes.draw do
 
-  match "login", :to => "user_sessions#new"
-  match "logout", :to => "user_sessions#destroy"
+  match "login" => "user_sessions#new"
+  match "logout" => "user_sessions#destroy"
   resources :user_sessions, :only => [:new, :create, :destroy]
 
   resources :categories do

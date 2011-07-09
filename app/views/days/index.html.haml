@@ -7,13 +7,13 @@
     = @date.strftime "%B %Y"
     = link_to ">", :month => (@date.end_of_month+1).strftime("%Y-%m-01")
 
-  - calendar_for(@days, :year => @date.year, :month => @date.month, :first_day_of_week => 1) do |t|
+  = calendar_for(@days, :year => @date.year, :month => @date.month, :first_day_of_week => 1) do |t|
 
     = t.head(*t(:days_of_week_short).split(","))
-    - t.day(:day_method => :enter_date) do |day, days|
-      - days_link = days.size>0 ? edit_day_path(days[0]) : new_day_path
+    = t.day(:day_method => :enter_date) do |day, days|
+      - days_link = days.size > 0 ? edit_day_path(days[0]) : new_day_path
       = day.day
-      - if days.size==0
+      - if days.size == 0
         .add_day
           = link_to "+", {:controller=>:days, :action=>"new", :enter_date=>day}
       - days.each do |d|
@@ -21,14 +21,14 @@
           %a{:href=>edit_day_path(d)}
             = t('days.weight') + ':'
             = d.weight.to_s
-          %br/
+          %br
           %a{:href => day_calory_lines_path(d)}
             = t('days.total_calories') + ':'
             = d.total_calories.to_i.to_s
-          %br/
+          %br
           = t('days.to_eat') + ':'
           = d.to_eat.to_i.to_s
 
-%br/
+%br
 %p= link_to t('.new_day'), new_day_path
 
