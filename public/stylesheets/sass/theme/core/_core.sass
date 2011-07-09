@@ -1,23 +1,22 @@
 html, body
-  :font 13px/1.231 sans-serif
-  :*font-size small
-  :color = !text_color
+  font: 13px / 1.231 sans-serif
+  *font-size: small
+  color: $text_color
 
 html
-  :overflow-y scroll
+  overflow-y: scroll
 
 hr, p
-  :margin-bottom 0.8em
+  margin-bottom: 0.8em
 
 select, input, textarea, button
-  :font 99% sans-serif
-
+  font: 99% sans-serif
 
 pre, code, kbd, samp
-  :font-family monospace, sans-serif
+  font-family: monospace, sans-serif
 
 body, select, input, textarea
-  color: #444
+  color: #444444
   font-family: Georgia, serif
 
 ul.square-list
@@ -27,6 +26,7 @@ ul.square-list
 
 small
   font-size: 85%
+
 strong, th
   font-weight: bold
 
@@ -35,6 +35,7 @@ strong, th
 
 .ie7 input[type="checkbox"]
   vertical-align: baseline
+
 .ie6 input
   vertical-align: text-bottom
 
@@ -46,7 +47,6 @@ input:invalid, textarea:invalid
   -webkit-box-shadow: 0px 0px 5px red
   box-shadow: 0px 0px 5px red
 
-
 .no-boxshadow input:invalid, .no-boxshadow textarea:invalid
   background-color: #f0dddd
 
@@ -56,7 +56,6 @@ input:invalid, textarea:invalid
 .hidden
   display: none
   visibility: hidden
-
 
 .clearfix:before, .clearfix:after
   content: "\0020"
@@ -73,4 +72,3 @@ input:invalid, textarea:invalid
 @import headers
 @import links
 @import html5reset
-

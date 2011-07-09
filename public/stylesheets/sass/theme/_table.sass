@@ -1,37 +1,26 @@
 =table-data-types-align
   &.left
     text-align: left
-
   &.center
     text-align: center
-
   &.right
     text-align: right
-
   &.text
     text-align: left
-
   &.integer
     text-align: right
-
   &.float
     text-align: right
-
   &.date
     text-align: right
-
   &.time
     text-align: right
-
   &.datetime
     text-align: left
-
   &.email
     text-align: left
-
   &.enum
     text-align: left
-
   &.buttons
     text-align: center
     width: 65px
@@ -39,57 +28,41 @@
 =table-footer-align
   &.name
     text-align: left
-
   &.value
     text-align: right
     padding-right: 70px
 
-
 .app-table
   width: 100%
-
   thead tr
-
     th
       text-align: left
       white-space: nowrap
-      color: #FFF
-      background-color: #576C82
+      color: white
+      background-color: #576c82
       padding: 2px
-
       +table-data-types-align
-
   tbody tr.ui-state-alternate
-    background-color: #eef
-
+    background-color: #eeeeff
   tbody tr
-
     td
-      border-bottom: 1px solid #AAA
+      border-bottom: 1px solid #aaaaaa
       padding: 2px
-
       +table-data-types-align
-
       a
         text-decoration: none
-        color = !text_color
-
+        color: $text_color
     &:hover
       //background-color: #FBFBFB
-      background-color: #DDDDDD
-
+      background-color: #dddddd
   tfoot tr
-
     td
-      border-top: 2px solid #AAA
-      border-bottom: 2px solid #AAA
+      border-top: 2px solid #aaaaaa
+      border-bottom: 2px solid #aaaaaa
       padding: 2px
       font-weight: bold
       +table-footer-align
-
       a
         text-decoration: none
-
     &:hover
-      background-color: #FBFBFB
-
+      background-color: #fbfbfb

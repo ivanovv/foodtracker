@@ -1,24 +1,21 @@
-!link_color = #3399ff
-!selected_link_color = #CC3333
-
+$link_color: #3399ff
+$selected_link_color: #cc3333
 
 a
-  :margin 0
-  :padding 0
-  :font-size 100%
-  :vertical-align baseline
-  :background transparent
+  margin: 0
+  padding: 0
+  font-size: 100%
+  vertical-align: baseline
+  background: transparent
 
 a:link, a:visited
-  :color = !link_color
+  color: $link_color
   text-decoration: none
 
 a:hover, a:active
-  :color = !selected_link_color
+  color: $selected_link_color
   text-decoration: underline
   outline: none
 
-
 a:link
-  -webkit-tap-highlight-color: #FF5E99
-
+  -webkit-tap-highlight-color: #ff5e99
